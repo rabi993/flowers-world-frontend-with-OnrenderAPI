@@ -32,7 +32,7 @@ const displayDetails = (doctor) => {
   console.log(doctor);
   const parent = document.getElementById("doc-details");
   const div = document.createElement("div");
-  div.classList.add("doc-details-container", "row" ,"py-3");
+  div.classList.add("doc-details-container", "row" ,"py-3", "gap-5");
   div.innerHTML = `
     <div class="doctor-img img-fluid col-md-4 col-lg-4">
       <img src=${doctor.image} alt="" />
