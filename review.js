@@ -1,96 +1,61 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const userId = localStorage.getItem("user_id");
-//   const flowerId = new URLSearchParams(window.location.search).get("flowerId");
+const loadReviews = async () => {
+    try {
+      const response = await fetch("https://flowers-world.onrender.com/flowers/reviews/");
+      const reviews = await response.json();
+      await displayReviews(reviews);
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
 
-//   if (!userId || !flowerId) {
-//     alert("Missing user or flower information.");
-//     return;
-//   }
+  const displayReviews = async (reviews) => {
+    const parent = document.getElementById("allreview-container");
+    parent.innerHTML = ""; // Clear existing reviews if any
 
-//   // Fetch and fill the reviewer's name
-//   fetch(`https://flowers-world.onrender.com/users/${userId}/`) // Replace with your actual user API endpoint
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Failed to fetch user details");
-//       }
-//       return response.json();
-//     })
-//     .then((userData) => {
-//       const reviewerNameInput = document.getElementById("reviewerName");
-//       reviewerNameInput.value = userData.first_name || "Guest";
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//       alert("Failed to retrieve user details.");
-//     });
+    // Process all reviews sequentially
+    for (const review of reviews) {
+      try {
+        // Fetch buyer information
+        const buyerResponse = await fetch(`https://flowers-world.onrender.com/users/${review.reviewer}`);
+        const userData = await buyerResponse.json();
+        const username = userData.username;
+        const fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
 
-//   // Fetch and fill the flower's name
-//   fetch(`https://flowers-world.onrender.com/flowers/${flowerId}/`) // Replace with your actual flower API endpoint
-//     .then((response) => {
-//       if (!response.ok) {
-//         // throw new Error("Failed to fetch flower details");
-//       }
-//       return response.json();
-//     })
-//     .then((flowerData) => {
-//       const flowerNameInput = document.getElementById("flowerName");
-//       flowerNameInput.value = flowerData.title || "Unknown Flower";
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//       // alert("Failed to retrieve flower details.");
-//     });
-// });
+        // Fetch the complete user list
+        const userResponse = await fetch(`https://flowers-world.onrender.com/buyers/list/`);
+        const buyersData = await userResponse.json();
 
-// const handleReviewSubmission = (event) => {
-//   event.preventDefault(); // Prevent form refresh
+        // Find the specific user by username
+        const buyerData = buyersData.find((buyer) => buyer.user === username);
+        if (!buyerData) {
+          throw new Error(`Buyer with username ${username} not found.`);
+        }
 
-//   const userId = localStorage.getItem("user_id");
-//   const flowerId = new URLSearchParams(window.location.search).get("flowerId");
+        // Extract user details
+      
+        const image = buyerData.image || "./Images/man.jpg";
 
-//   if (!userId || !flowerId) {
-//     alert("Missing user or flower information.");
-//     return;
-//   }
+        // Fetch flower information
+        const flowerResponse = await fetch(`https://flowers-world.onrender.com/flowers/list/${review.flower}`);
+        const flowerData = await flowerResponse.json();
+        const flowerName = flowerData.title;
 
-//   // Gather form data
-//   const reviewBody = document.getElementById("reviewBody").value;
-//   const reviewRating = document.getElementById("reviewRating").value;
+        // Create and append review card
+        const div = document.createElement("div");
+        div.classList.add("allreview-card","col-md-4","col-lg-4");
+        div.innerHTML = `
+          <img src="${image}" alt="Reviewer Image" /> 
+          <h4>${fullName}</h4> 
+          <h5>Flower Name: ${flowerName}</h5> 
+          <p>${review.body.slice(0, 100)}</p>
+          <h6>Rating: ${review.rating}</h6>
+        `;
+        parent.appendChild(div);
+      } catch (error) {
+        console.error("Error processing review:", error);
+      }
+    }
+  };
 
-//   const reviewData = {
-//     reviewer: userId, // Use user ID for backend submission
-//     flower: flowerId, // Use flower ID for backend submission
-//     body: reviewBody,
-//     rating: reviewRating,
-//   };
-
-//   // Submit the review
-//   fetch("https://flowers-world.onrender.com/flowers/reviews/", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(reviewData),
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Failed to submit review");
-//       }
-//       return response.json();
-//     })
-//     .then((data) => {
-//       alert("Review submitted successfully!");
-
-//       // Optionally reload reviews section
-//       const reviewList = document.getElementById("doc-details-review");
-//       reviewList.innerHTML = ""; // Clear existing reviews
-//       fetch(`https://flowers-world.onrender.com/flowers/reviews/?flower_id=${flowerId}`)
-//         .then((res) => res.json())
-//         .then((data) => doctorReview(data)); // Update the reviews display
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//       alert("Error submitting review. Please try again later.");
-//     });
-// };
-
+  // Call the function to load reviews
+  loadReviews();

@@ -72,6 +72,20 @@
          
       </div>
     </nav> -->
+
+    <div class="container my-3  text-center ">
+      <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
+      <select class="h5 border  rounded text-center bg-light" id="status-filter" onchange="handleStatusFilter()">
+        <option value="All">All</option>
+        <option value="Pending">Pending</option>
+        <option value="Processing">Processing</option>
+        <option value="Completed">Completed</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+
+    <hr class="container">
+    
     
 
     <div class="order-container all-order-container">

@@ -113,17 +113,25 @@
 // loadAllOrder();
 
 
-const loadAllOrder = () => {
+const loadAllOrder = (filterStatus = null) => {
   fetch(`https://flowers-world.onrender.com/orders/`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       const parent = document.getElementById("table-body");
       parent.innerHTML = ""; // Clear any existing rows before appending new ones
-      
-      data.sort((a, b) => b.id - a.id);
+      const filteredData = filterStatus
+        ? data.filter((item) => item.order_status === filterStatus)
+        : data;
 
-      data.forEach((item) => {
+      if (filteredData.length === 0) {
+        parent.innerHTML = `<tr><td colspan="15">No orders found.</td></tr>`;
+        return;
+      }
+      
+      filteredData.sort((a, b) => b.id - a.id);
+
+      filteredData.forEach((item) => {
         // console.log(item.paid );
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -213,7 +221,10 @@ const loadAllOrder = () => {
       });
     });
 };
-
+const handleStatusFilter = () => {
+  const filterStatus = document.getElementById("status-filter").value; // Get selected status
+  loadAllOrder(filterStatus === "All" ? null : filterStatus); // Reload data with filter
+};
 
 const updateOrderStatus = (orderId, newStatus) => {
   fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, {
