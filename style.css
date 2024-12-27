@@ -143,6 +143,9 @@ width: 400px;
 height: 300px;
 border-radius: 100px;
 }
+.doc-info{
+    margin-left: 70px;
+}
 .doc-details-container{
     display: flex;
     justify-content: center;
