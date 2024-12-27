@@ -143,9 +143,9 @@ width: 350px;
 height: 300px;
 border-radius: 70px;
 }
-.doc-info{
+/* .doc-info{
     margin-left: 70px;
-}
+} */
 .doc-details-container{
     display: flex;
     justify-content: center;
