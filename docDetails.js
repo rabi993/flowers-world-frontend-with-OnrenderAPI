@@ -37,7 +37,7 @@ const displayDetails = (doctor) => {
     <div class="doctor-img img-fluid col-md-6 col-lg-6">
       <img src=${doctor.image} alt="" />
     </div>
-    <div class="doc-info col-md-6 col-lg-6 py-4 px-4 ">
+    <div class="doc-info col-md-5 col-lg-5 py-4 px-4 ">
       <h4>${doctor?.title}</h4>
       ${doctor?.category?.map((item) => {
         return `<button class="btn btn-info rounded btn-sm ">${item}</button>`;
