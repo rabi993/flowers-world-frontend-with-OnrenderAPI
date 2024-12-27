@@ -9,6 +9,7 @@ li{
 }
 nav{
     background-color:rgb(9, 113, 113);
+    
 
 }
 .nav_text a{
@@ -30,19 +31,20 @@ nav{
 }
 .menu{
     font-size: 20px;
+
 }
 .menu:hover{
     color: white;
     cursor: pointer;
 }
 .banner-container{
-    width: 1200px;
+    /* width: 1200px; */
     margin: auto;
     padding: 30px;
 
 }
 .banner{
-    height: 450px;
+    /* height: 450px; */
     margin: auto;
     display: flex;
     text-align: center;
@@ -54,17 +56,18 @@ nav{
     /* padding: 30px; */
 }
 .bn-img{
-    width: 650px;
-    height: 400px;
+    /* width: 650px;
+    height: 400px; */
+    
     margin-right: 20px;
     border-radius: 20px;
 }
-.service-container{
-    width: 1000px;
-    margin: auto;
+/* .service-container{ */
+    /* width: 1000px;
+    margin: auto; */
     /* margin-top: 50px; */
     
-}
+/* } */
 .service_card {
     width: 370px;
     height: 330px;
@@ -85,7 +88,7 @@ nav{
 .doctors-container{
 
     /* margin-top: 50px; */
-    padding: 30px;
+    /* padding: 30px; */
 }
 .doc-card{
     width: 250px;
@@ -103,7 +106,7 @@ nav{
 }
 #search{
     padding:10px;
-    width: 75%;
+    width: 90%;
     border: none;
 }
 #noData{
@@ -136,15 +139,15 @@ footer{
 }
 
 .doctor-img img{
-width: 600px;
-height: 450px;
+width: 400px;
+height: 300px;
 border-radius: 100px;
 }
 .doc-details-container{
     display: flex;
     justify-content: center;
-    padding: 30px;
-    gap: 100px;
+    /* padding: 30px; */
+    /* gap: 100px; */
     width: 75%;
     margin: auto;
 }
@@ -242,4 +245,8 @@ border-radius:100px;
 #message{
     font-weight: 700;
     font-size: xx-large;
+}
+
+.gap-nav{
+    
 }

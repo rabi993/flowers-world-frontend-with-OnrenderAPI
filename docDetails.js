@@ -32,37 +32,37 @@ const displayDetails = (doctor) => {
   console.log(doctor);
   const parent = document.getElementById("doc-details");
   const div = document.createElement("div");
-  div.classList.add("doc-details-container");
+  div.classList.add("doc-details-container", "row", "container" ,"py-3");
   div.innerHTML = `
-    <div class="doctor-img">
-    <img src=${doctor.image} alt="" />
-  </div>
-  <div class="doc-info">
-    <h4>${doctor?.title}</h4>
-    ${doctor?.category?.map((item) => {
-      return `<button>${item}</button>`;
-    })}
-    <h6>Available : ${doctor?.available}</h6>
-    <p>
-    ${doctor?.content}
-    </p>
-    
-    <h6>Price : ${doctor?.price}</h6>
-    <p>
-    ${doctor?.color?.map((item) => {
-      return `<button>${item}</button>`;
-    })}
-    </p>
-    <button
-    type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-    id="buyNowBtn" onclick="openOrderModal()"
-    >
-    Buy Now
-    </button>
-  </div>
+    <div class="doctor-img img-fluid col-md-4 col-lg-4">
+      <img src=${doctor.image} alt="" />
+    </div>
+    <div class="doc-info col-md-6 col-lg-6 py-4 px-4">
+      <h4>${doctor?.title}</h4>
+      ${doctor?.category?.map((item) => {
+        return `<button class="btn btn-info rounded btn-sm ">${item}</button>`;
+      })}
+      <h6>Available : ${doctor?.available}</h6>
+      <p>
+      ${doctor?.content}
+      </p>
+      
+      <h6>Price : ${doctor?.price} $</h6>
+      <p>
+      ${doctor?.color?.map((item) => {
+        return `<button class="btn btn-secondary rounded btn-sm ">${item}</button>`;
+      })}
+      </p>
+      <button
+      type="button"
+      class="btn btn-success"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      id="buyNowBtn" onclick="openOrderModal()"
+      >
+      Buy Now
+      </button>
+    </div>
     `;
   parent.appendChild(div);
 };

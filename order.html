@@ -20,7 +20,37 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <nav class="d-flex justify-content-around align-items-center p-4">
+    <nav class="navbar navbar-expand-lg  py-3">
+      <div class="container-fluid container ">
+        <div class=" col-lg-4 logo-container d-flex align-items-center gap-2 ">
+          <img id="logo_img" src="./Images/flogo.png" alt="" />
+          <h2 style="padding-top: 10px;">Flower's World</h2>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse col-lg-8  "  id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav_text  gap-3 " style="padding-left: 100px;">
+            
+            <li class="menu nav-item"><a  href="index.html">Home</a></li>
+            <li class="menu nav-item"><a  href="allflowers.html">All_Flower</a></li>
+            <li class="menu nav-item"><a href="service.html">Services</a></li>
+            <li class="menu nav-item"><a href="reviews.html">Reviews</a></li>
+            <li class="menu nav-item"><a href="contactus.html">Contact_us</a></li>
+            <li class="menu nav-item"><a href="cart.html">Cart</a></li>
+            
+            <li class="menu nav-item"><a class="btn btn-secondary" href="order.html">All_Order</a></li>
+
+            <li class="menu login-menu nav-item"><a  href="login.html">Login</a></li>
+            <li class="menu registration-menu nav-item"><a href="registration.html">Registration</a></li>
+            <li class="menu logout-menu d-none nav-item" onclick="handlelogOut()"><a href="#">Logout</a></li>
+            <li class="menu profile-menu d-none nav-item"><a href="profile.html">Profile</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <!-- <nav class="d-flex justify-content-around align-items-center p-4">
       <div class="logo-container d-flex align-items-center gap-2">
         <img id="logo_img" src="./Images/flogo.png" alt="" />
         <h2 style="padding-top: 10px;">Flower's World</h2>
@@ -33,11 +63,7 @@
         <li class="menu"><a href="cart.html">Cart</a></li>
         
         <li class="menu"><a class="btn btn-secondary"  href="order.html">All_Order</a></li>
-        <!-- <li class="menu"><a href="login.html">Login</a></li>
-        <li class="menu"><a href="registration.html">Registration</a></li>
         
-        <li class="menu" onclick="handlelogOut()"><a >Logout</a></li>
-        <li class="menu"><a href="profile.html">Profile</a></li> -->
         <li class="menu login-menu"><a href="login.html">Login</a></li>
         <li class="menu registration-menu"><a href="registration.html">Registration</a></li>
         <li class="menu logout-menu d-none" onclick="handlelogOut()"><a href="#">Logout</a></li>
@@ -45,7 +71,7 @@
 
          
       </div>
-    </nav>
+    </nav> -->
     
 
     <div class="order-container all-order-container">
