@@ -34,7 +34,7 @@ const displayDetails = (doctor) => {
   const div = document.createElement("div");
   div.classList.add("doc-details-container", "row" ,"py-3", "gap-5");
   div.innerHTML = `
-    <div class="doctor-img img-fluid col-md-4 col-lg-4">
+    <div class="doctor-img img-fluid col-md-6 col-lg-6">
       <img src=${doctor.image} alt="" />
     </div>
     <div class="doc-info col-md-6 col-lg-6 py-4 px-4 ">
