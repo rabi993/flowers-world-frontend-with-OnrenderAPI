@@ -130,6 +130,7 @@ const handleLogin = (event) => {
       if (data.token && data.user_id) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("user_id", data.user_id);
+        alert("Welcome! Flower's World. You are Successfully Logged in")
         
 
         // Use `user_id` to fetch user details

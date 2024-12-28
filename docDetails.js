@@ -10,22 +10,47 @@ const getparams = () => {
     .then((data) => doctorReview(data));
 };
 
-const doctorReview = (reviews) => {
-  reviews.forEach((review) => {
-    const parent = document.getElementById("doc-details-review");
-    const div = document.createElement("div");
-    div.classList.add("review-card");
-    div.innerHTML = `
-          <img src="./Images/girl.png" alt="" />
-              <h4>${review.reviewer}</h4>
-            <h5>${review.flower}</h5>
-            <p>
-             ${review.body.slice(0, 100)}
-            </p>
-            <h6>${review.rating}</h6>
-          `;
-    parent.appendChild(div);
-  });
+const doctorReview = async (reviews) => {
+  const parent = document.getElementById("doc-details-review");
+
+  for (const review of reviews) {
+    try {
+      // Fetch user data
+      const buyerResponse = await fetch(`https://flowers-world.onrender.com/users/${review.reviewer}`);
+      const userData = await buyerResponse.json();
+      const username = userData.username;
+      const fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
+
+      // Fetch the complete user list
+      const userResponse = await fetch(`https://flowers-world.onrender.com/buyers/list/`);
+      const buyersData = await userResponse.json();
+      const buyerData = buyersData.find((buyer) => buyer.user === username);
+      if (!buyerData) {
+        console.error(`Buyer with username ${username} not found.`);
+        continue;
+      }
+      const image = buyerData.image || "./Images/man.jpg";
+
+      // Fetch flower information
+      const flowerResponse = await fetch(`https://flowers-world.onrender.com/flowers/list/${review.flower}`);
+      const flowerData = await flowerResponse.json();
+      const flowerName = flowerData.title;
+
+      // Create and append the review card
+      const div = document.createElement("div");
+      div.classList.add("review-card");
+      div.innerHTML = `
+        <img src="${image}" alt="User Image" />
+        <h4>${fullName}</h4>
+        <h5>${flowerName}</h5>
+        <p>${review.body.slice(0, 100)}</p>
+        <h6>${review.rating}</h6>
+      `;
+      parent.appendChild(div);
+    } catch (error) {
+      console.error("Error processing review:", error);
+    }
+  }
 };
 
 const displayDetails = (doctor) => {

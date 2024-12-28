@@ -187,29 +187,66 @@ document.addEventListener("DOMContentLoaded", loadServices);
 // };
 
 const loadReview = () => {
-  // fetch("https://testing-8az5.onrender.com/doctor/review/")
   fetch("https://flowers-world.onrender.com/flowers/reviews/")
     .then((res) => res.json())
-    .then((data) => displayReview(data));
+    .then((data) => displayReview(data))
+    .catch((error) => console.error("Error fetching reviews:", error));
 };
 
 const displayReview = (reviews) => {
+  const parent = document.getElementById("review-container");
+  parent.innerHTML = ""; // Clear existing reviews
+
   reviews.forEach((review) => {
-    const parent = document.getElementById("review-container");
-    const div = document.createElement("div");
-    div.classList.add("review-card");
-    div.innerHTML = `
-        <img src="${review.image ? review.buyer.image : './Images/man.jpg'}" alt="Reviewer Image" />
-            <h4>${review.reviewer}</h4>
-            <h5>${review.flower}</h5>
-            <p>
-             ${review.body.slice(0, 100)}
-            </p>
-            <h6>${review.rating}</h6>
+    let username = "Unknown User";
+    let fullName = "Anonymous Reviewer";
+    let image = "./Images/man.jpg";
+    let flowerName = "Unknown Flower";
+
+    // Fetch reviewer information
+    fetch(`https://flowers-world.onrender.com/users/${review.reviewer}`)
+      .then((res) => res.json())
+      .then((userData) => {
+        username = userData.username;
+        fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
+
+        // Fetch the complete buyer list
+        return fetch("https://flowers-world.onrender.com/buyers/list/");
+      })
+      .then((res) => res.json())
+      .then((buyersData) => {
+        const buyerData = buyersData.find((buyer) => buyer.user === username);
+        if (buyerData) {
+          image = buyerData.image || "./Images/man.jpg";
+        } else {
+          console.warn(`Buyer with username ${username} not found.`);
+        }
+
+        // Fetch flower information
+        return fetch(`https://flowers-world.onrender.com/flowers/list/${review.flower}`);
+      })
+      .then((res) => res.json())
+      .then((flowerData) => {
+        flowerName = flowerData.title || "Unknown Flower";
+
+        // Create and append the review card
+        const div = document.createElement("div");
+        div.classList.add("review-card");
+        div.innerHTML = `
+          <img src="${image}" alt="Reviewer Image" />
+          <h4>${fullName}</h4>
+          <h5><b>Flower:</b> ${flowerName}</h5>
+          <p>${review.body.slice(0, 100)}</p>
+          <h6>Rating: ${review.rating}</h6>
         `;
-    parent.appendChild(div);
+        parent.appendChild(div);
+      })
+      .catch((error) => {
+        console.error("Error processing review:", error);
+      });
   });
 };
+
 
 loadServices();
 // loadDoctors();

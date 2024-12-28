@@ -20,21 +20,14 @@ const loadReviews = async () => {
         const userData = await buyerResponse.json();
         const username = userData.username;
         const fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
-
         // Fetch the complete user list
         const userResponse = await fetch(`https://flowers-world.onrender.com/buyers/list/`);
         const buyersData = await userResponse.json();
-
-        // Find the specific user by username
         const buyerData = buyersData.find((buyer) => buyer.user === username);
         if (!buyerData) {
           throw new Error(`Buyer with username ${username} not found.`);
         }
-
-        // Extract user details
-      
         const image = buyerData.image || "./Images/man.jpg";
-
         // Fetch flower information
         const flowerResponse = await fetch(`https://flowers-world.onrender.com/flowers/list/${review.flower}`);
         const flowerData = await flowerResponse.json();
@@ -42,13 +35,13 @@ const loadReviews = async () => {
 
         // Create and append review card
         const div = document.createElement("div");
-        div.classList.add("allreview-card","col-md-4","col-lg-4");
+        div.classList.add("allreview-card","col-md-3","col-lg-3");
         div.innerHTML = `
-          <img src="${image}" alt="Reviewer Image" /> 
-          <h4>${fullName}</h4> 
-          <h5>Flower Name: ${flowerName}</h5> 
-          <p>${review.body.slice(0, 100)}</p>
-          <h6>Rating: ${review.rating}</h6>
+        <img src="${image}" alt="Reviewer Image" /> 
+        <h4>${fullName}</h4> 
+        <h5>Flower Name: ${flowerName}</h5> 
+        <p>${review.body.slice(0, 100)}</p>
+        <h6>Rating: ${review.rating}</h6>
         `;
         parent.appendChild(div);
       } catch (error) {
