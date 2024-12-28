@@ -50,7 +50,7 @@ const handlePdf = () => {
                       </div>
                     </div>
                     <h4>Total Price + Vat(15%): ${newData[0][newData[0].length - 1].total_price *1.15} $</h5>
-                     <input id="pdf-symtom" class="symtom" type="text" />
+                     <input id="pdf-comment" class="comment" type="text" />
                     `;
 
                     parent.appendChild(div);

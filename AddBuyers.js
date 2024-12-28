@@ -27,41 +27,6 @@ const fetchBuyers = () => {
         });
 };
 
-// Handle form submission to add a new buyer
-// const handleAddBuyer = (event) => {
-//     event.preventDefault();
-
-//     const username = document.getElementById("username").value.trim();
-//     const mobileNo = document.getElementById("mobileNo").value.trim();
-//     const address = document.getElementById("address").value.trim();
-//     const image = document.getElementById("image").files[0];
-
-//     if (!username || !mobileNo || !address) {
-//         alert("All fields are required.");
-//         return;
-//     }
-
-//     const formData = new FormData();
-//     formData.append("user", username);  // Assume username exists and is used as reference for the User model
-//     formData.append("mobile_no", mobileNo);
-//     formData.append("address", address);
-//     if (image) formData.append("image", image);
-
-//     fetch("https://flowers-world.onrender.com/buyers/list/", {
-//         method: "POST",
-//         body: formData,
-//     })
-//     .then((response) => response.json())
-//     .then((data) => {
-//         alert("Buyer added successfully!");
-//         document.getElementById("buyer-form").reset();
-//         fetchBuyers(); // Refresh the buyers list
-//     })
-//     .catch((error) => {
-//         console.error("Error adding buyer:", error);
-//         alert(`Error: ${error.message}`);
-//     });
-// };
 // Handle form submission to add or update a buyer
 const handleAddOrUpdateBuyer = (event) => {
     event.preventDefault();

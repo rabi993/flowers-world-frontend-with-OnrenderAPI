@@ -85,12 +85,18 @@ nav{
     text-align: center;
 
 }
-.doctors-container{
+.tora{
+    /* background-image:url("./Images/ba-removebg-preview.png") ; */
+    background-image:url("./Images/bbbbb.png") ;
+    /* background-image:url("./Images/ban2.jpg") ; */
+    background-repeat: no-repeat;
 
+    
+    border-radius: 15px;
     /* margin-top: 50px; */
     /* padding: 30px; */
 }
-.doc-card{
+.flower-card{
     width: 250px;
 
     height: 350px;
@@ -99,7 +105,7 @@ nav{
     text-align:center;
     padding: 5px;
 }
-.doc-img{
+.flow-img{
     width: 200px;
     height: 130px;
     border-radius: 50px;
@@ -142,7 +148,7 @@ footer{
     background: linear-gradient(66deg, #0c6c75 -5.25%, #06e8f8 46.76%, #1b7484 98.77%);;
 }
 
-.doctor-img img{
+.flower-img img{
 width: 350px;
 height: 300px;
 border-radius: 70px;
@@ -150,7 +156,7 @@ border-radius: 70px;
 /* .doc-info{
     margin-left: 70px;
 } */
-.doc-details-container{
+.flower-details-container{
     display: flex;
     justify-content: center;
     /* padding: 30px; */
@@ -158,7 +164,7 @@ border-radius: 70px;
     width: 75%;
     margin: auto;
 }
-.doc-detail-btn{
+.flower-detail-btn{
     border: none;
     padding:5px 10px;
     background-color:gray;
@@ -195,7 +201,7 @@ border-radius:100px;
 }
 
 
-.symtom{
+.comment{
     width: 50%;
     padding: 20px;
     margin: 20px;
@@ -254,6 +260,3 @@ border-radius:100px;
     font-size: xx-large;
 }
 
-.gap-nav{
-    
-}

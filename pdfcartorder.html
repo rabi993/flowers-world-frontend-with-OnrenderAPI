@@ -49,27 +49,7 @@
         </div>
       </div>
     </nav>
-    <!-- <nav class="d-flex justify-content-around align-items-center p-4">
-      <div class="logo-container d-flex align-items-center gap-2">
-        <img id="logo_img" src="./Images/flogo.png" alt="" />
-        <h2 style="padding-top: 10px;">Flower's World</h2>
-      </div>
-      <div class="menu-container d-flex gap-3 nav_text">
-        <li class="menu"><a href="index.html">Home</a></li>
-        <li class="menu"><a  href="allflowers.html">All Flower</a></li>
-        <li class="menu"><a href="service.html">Services</a></li>
-        <li class="menu"><a href="contactus.html">Contact us</a></li>
-        <li class="menu"><a  class="btn btn-secondary"  href="cart.html">Cart</a></li>
-        
-        <li class="menu"><a href="order.html">All_Order</a></li>
-        <li class="menu login-menu"><a href="login.html">Login</a></li>
-        <li class="menu registration-menu"><a href="registration.html">Registration</a></li>
-        <li class="menu logout-menu d-none" onclick="handlelogOut()"><a href="#">Logout</a></li>
-        <li class="menu profile-menu d-none"><a href="profile.html">Profile</a></li>
-
-         
-      </div>
-    </nav> -->
+    
     <div id="pdf-container1" class="pdf-container text-center">
       <h1 class="text-info text-center my-2">Flower's World</h1>
     </div>
@@ -105,72 +85,7 @@
     <div id="totalamountV" class="text-center">
       
     </div>
-    <!-- if paid{
-    <h3 class="text-center text-success d-none" >PAID</h3>
-    }
-    else{
-    <div class="text-center">
-      <div>
-        <input
-        type="number"
-        id="billInput"
-        placeholder="Enter Bill amount"
-        required
-      />
-      <button
-        id="payment"
-        class="btn btn-success px-5 py-2"
-        disabled
-      >
-        Pay Bill
-      </button>
-      </div>
-    }
-      
-    </div>
     
-    <script>
-      const billInput = document.getElementById("billInput");
-      const paymentButton = document.getElementById("payment");
-    
-      // Simulate a value stored in localStorage
-      const totalWithVAT = parseFloat(localStorage.getItem("totalWithVAT")) ;
-    
-      
-      
-    
-      billInput.addEventListener("input", () => {
-        const inputAmount = parseFloat(billInput.value) ; // Ensure a valid number
-    
-        // Enable the button only if input matches totalWithVAT
-        if (inputAmount === totalWithVAT) {
-          paymentButton.removeAttribute("disabled");
-        } 
-        else {
-          paymentButton.setAttribute("disabled", "true");
-        }
-      });
-    </script>
-    
-    
-    
-    <script>
-      // Attach a click event listener to the Confirm button
-      document.getElementById("payment").addEventListener("click", () => {
-        // Display an alert
-        alert("Paid");
-        alert("Congratulations! Your order is pending now.");
-    
-        // Redirect to index.html
-        // window.location.href = "index.html";
-        window.reload();
-    
-        // Remove order_ids from localStorage
-        localStorage.removeItem("order_ids");
-        localStorage.removeItem("totalWithVAT");
-      });
-    </script>
-     -->
     <div id="paid" class="text-center">
       <!-- PAID message will display here dynamically -->
     </div>
@@ -313,7 +228,7 @@
             } else {
               localStorage.removeItem("reloaded");
             }
-          }, 1000); // 1000 milliseconds = 1 second
+          }, 3000); // 1000 milliseconds = 1 second
         };
     </script>
     
@@ -324,10 +239,10 @@
     <!-- <button onclick="handleDownload()">Hello</button> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
-    <script src="./docDetails.js"></script>
+    <script src="./flowerDetails.js"></script>
     <script src="./pdf.js"></script>
     <script src="./app.js"></script>
-    <script src="./docDetails.js"></script>
+    <script src="./flowerDetails.js"></script>
     <script src="./logout.js"></script>
     <script src="./pdfcartorder.js"></script>
     <script src="./index.js"></script>

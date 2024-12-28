@@ -1,9 +1,9 @@
-const loadDoctors = (search = "") => {
-  const doctorsContainer = document.getElementById("doctors");
+const loadFlowers = (search = "") => {
+  const flowersContainer = document.getElementById("flowers");
   const spinner = document.getElementById("spinner");
   const noData = document.getElementById("nodata");
 
-  doctorsContainer.innerHTML = "";
+  flowersContainer.innerHTML = "";
   spinner.style.display = "block";
   noData.style.display = "none";
 
@@ -15,13 +15,13 @@ const loadDoctors = (search = "") => {
     .then((data) => {
       spinner.style.display = "none";
       if (data.results && data.results.length > 0) {
-        displyDoctors(data.results);
+        displayFlowers(data.results);
       } else {
         noData.style.display = "block";
       }
     })
     .catch((error) => {
-      console.error("Error fetching doctors:", error);
+      console.error("Error fetching flowers:", error);
       spinner.style.display = "none";
       noData.style.display = "block";
     });
@@ -29,68 +29,68 @@ const loadDoctors = (search = "") => {
 
 
   
-  const displyDoctors = (doctors) => {
-    // Sort doctors array by id in descending order
-    const sortedDoctors = doctors.sort((a, b) => b.id - a.id);
+  const displayFlowers = (flowers) => {
+    // Sort flowers array by id in descending order
+    const sortedflowers = flowers.sort((a, b) => b.id - a.id);
 
     let newTagLimit = 5;
 
   
-    const doctorsContainer = document.getElementById("doctors");
-    doctorsContainer.innerHTML = ""; // Clear previous content if any
+    const flowersContainer = document.getElementById("flowers");
+    flowersContainer.innerHTML = ""; // Clear previous content if any
   
-    sortedDoctors.forEach((doctor, index) => {
+    sortedflowers.forEach((flower, index) => {
       const isNew = index < newTagLimit; 
       const div = document.createElement("div");
-      div.classList.add("doc-card", "col-12", "col-md-6", "col-lg-4");
+      div.classList.add("flower-card", "col-12", "col-md-6", "col-lg-4");
       div.innerHTML = `
-        <img class="doc-img" src="${doctor.image}" alt="${doctor.title}" />
+        <img class="flow-img" src="${flower.image}" alt="${flower.title}" />
         
         
         
-        <h4>${doctor.title}</h4>
-        <div>${doctor.category.map((item) => `<button class="btn btn-info rounded btn-sm ">${item}</button>`).join("")}</div>
-        <p style="margin: 0px; "><b>Available:</b> ${doctor.available} Piece</p>
-        <small style="color: grey; margin: 0px;font-size:10px;">${doctor.content.slice(0, 50)}...</small>
-        <p style="margin: 0px; "<b>Price:</b> ${doctor.price}$</p>
-        <div>${doctor.color.map((item) => `<button  class="btn btn-secondary rounded btn-sm ">${item}</button>`).join("")}</div>
+        <h4>${flower.title}</h4>
+        <div>${flower.category.map((item) => `<button class="btn btn-info rounded btn-sm ">${item}</button>`).join("")}</div>
+        <p style="margin: 0px; "><b>Available:</b> ${flower.available} Piece</p>
+        <small style="color: grey; margin: 0px;font-size:10px;">${flower.content.slice(0, 50)}...</small>
+        <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
+        <div>${flower.color.map((item) => `<button  class="btn btn-secondary rounded btn-sm ">${item}</button>`).join("")}</div>
         
-          <a style="text-decoration: none; " class="btn btn-success rounded  mt-1" href="docDetails.html?flowerId=${doctor.id}">Details</a>
+          <a style="text-decoration: none; " class="btn btn-success rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
           <div>${isNew ? '<button class="btn btn-warning btn-sm ms-2 new">NEW</button>' : ''}</div>
         
       `;
-      doctorsContainer.appendChild(div);
+      flowersContainer.appendChild(div);
     });
   };
   
 
   
-  const loadDesignation = () => {
+  const loadCategory = () => {
     fetch("https://flowers-world.onrender.com/categories/")
       .then((res) => res.json())
       .then((data) => {
-        const parent = document.getElementById("drop-deg");
+        const parent = document.getElementById("drop-cat");
         parent.innerHTML = ""; // Clear previous items
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button class="btn btn-info" onclick="loadDoctors('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button class="btn btn-info" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
       .catch((error) => console.error("Error fetching categories:", error));
   };
   
-  const loadSpecialization = () => {
+  const loadColor = () => {
     fetch("https://flowers-world.onrender.com/colors/")
       .then((res) => res.json())
       .then((data) => {
-        const parent = document.getElementById("drop-spe");
+        const parent = document.getElementById("drop-color");
         parent.innerHTML = ""; // Clear previous items
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button class="btn btn-info" onclick="loadDoctors('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button class="btn btn-info" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -99,13 +99,13 @@ const loadDoctors = (search = "") => {
   
   const handleSearch = () => {
     const value = document.getElementById("search").value.trim();
-    loadDoctors(value);
+    loadFlowers(value);
   };
   
   // Load initial data on page load
   document.addEventListener("DOMContentLoaded", () => {
-    loadDoctors();
-    loadDesignation();
-    loadSpecialization();
+    loadFlowers();
+    loadCategory();
+    loadColor();
   });
 

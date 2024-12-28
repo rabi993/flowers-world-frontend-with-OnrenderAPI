@@ -1,34 +1,4 @@
-// const handlecontact = (event) => {
-//     event.preventDefault();
-//     const name = getValue("name");
-//     const phone = getValue("phone");
-//     const content = getValue("content");
-    
-//     const info = {
-//         name,
-//         phone,
-//         content,
-      
-//     };
-  
-    
-  
-//     fetch("https://flowers-world.onrender.com/contact_us/", {
-//           method: "POST",
-//           headers: { "content-type": "application/json" },
-//           body: JSON.stringify(info),
-//         })
-//           .then((res) => res.json())
-//           .then((data) => console.log(data));
-     
-    
-  
-  
-//     const getValue = (id) => {
-//     const value = document.getElementById(id).value;
-//     return value;
-//     }
-//   };
+
 
 const getValue = (id) => {
     return document.getElementById(id).value;

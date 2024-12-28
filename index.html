@@ -53,33 +53,6 @@
           </div>
         </div>
       </nav>
-      <!-- <nav class="d-flex justify-content-around align-items-center p-4">
-        <div class="logo-container d-flex align-items-center gap-2">
-          <img id="logo_img" src="./Images/flogo.png" alt="" />
-          <h2 style="padding-top: 10px;">Flower's World</h2>
-        </div>
-        <div class="menu-container d-flex gap-3 nav_text">
-          <li class="menu"><a class="btn btn-secondary"  href="index.html">Home</a></li>
-          <li class="menu"><a  href="allflowers.html">All Flower</a></li>
-          <li class="menu"><a href="service.html">Services</a></li>
-          <li class="menu"><a href="contactus.html">Contact us</a></li>
-          <li class="menu"><a href="cart.html">Cart</a></li>
-          
-          <li class="menu"><a href="order.html">All_Order</a></li>
-
-          <li class="menu login-menu"><a href="login.html">Login</a></li>
-          <li class="menu registration-menu"><a href="registration.html">Registration</a></li>
-          <li class="menu logout-menu d-none" onclick="handlelogOut()"><a href="#">Logout</a></li>
-          <li class="menu profile-menu d-none"><a href="profile.html">Profile</a></li>
-          ----- <li class="menu"><a href="login.html">Login</a></li>
-          <li class="menu"><a href="registration.html">Registration</a></li>
-          
-          <li class="menu" onclick="handlelogOut()"><a >Logout</a></li>
-          <li class="menu"><a href="profile.html">Profile</a></li> ------
-  
-           
-        </div>
-      </nav> -->
       
 
       <!-- banner contianer  -->
@@ -143,10 +116,10 @@
         </div>
       </div>
 
-      <!-- all doctors section  -->
+      <!-- all flowers section  -->
 
       <div class="container my-3 m-auto  row d-flex justify-content-center">
-        <div class="col-md-4 text-center d-flex gap-3 justify-content-start">
+        <div class="col-md-4 text-center tora d-flex gap-3 justify-content-start">
           <div class="dropdown">
             <button
               class="btn btn-secondary dropdown-toggle"
@@ -158,7 +131,7 @@
               Flower Category
             </button>
             <ul
-              id="drop-deg"
+              id="drop-cat"
               class="dropdown-menu dropdown-menu-dark"
               aria-labelledby="dropdownMenuButton2"
             ></ul>
@@ -174,7 +147,7 @@
               Flower Color
             </button>
             <ul
-              id="drop-spe"
+              id="drop-color"
               class="dropdown-menu dropdown-menu-dark"
               aria-labelledby="dropdownMenuButton2"
             ></ul>
@@ -188,7 +161,7 @@
          placeholder="Search..." 
          onkeydown="if(event.key === 'Enter') handleSearch()" />
           <button class="btn btn-secondary mb-2" onclick="handleSearch()">Search</button>
-          <div id="doctors" class="doctors d-flex  row gap-3 mt-5 container justify-content-center"></div>
+          <div id="flowers" class="flowers d-flex  row gap-3 mt-5 container justify-content-center"></div>
           <div id="nodata" class="nodata">
             <img src="./Images/nodata.png" alt="" />
           </div>
@@ -197,56 +170,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class=" mt-3 px-5 row d-flex justify-content-center">
-        <div class="col-lg-2 text-center d-flex gap-3 justify-content-center">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="categoryDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Flower Category
-            </button>
-            <ul
-              id="drop-deg"
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="categoryDropdown"
-            ></ul>
-          </div>
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="colorDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Color
-            </button>
-            <ul
-              id="drop-spe"
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="colorDropdown"
-            ></ul>
-          </div>
-        </div>
-        <div class="col-lg-10">
-          <div class="input-group mb-3 ps-5 ">
-            <input id="search" type="text" class="form-control bg-secondary " placeholder="Search..." />
-            <button class="btn btn-primary" onclick="handleSearch()">Search</button>
-          </div>
-          <div id="doctors" class="doctors d-flex row gap-3 pb-3  container"></div>
-          <div id="nodata" class="nodata text-center" style="display: none;">
-            <img src="./Images/nodata.png" alt="No data" />
-            <p>No results found</p>
-          </div>
-          <div id="spinner" class="loading text-center" style="display: none;">
-            <h4>Loading...</h4>
-          </div>
-        </div>
-      </div> -->
+      
       <div class="container text-center py-3">
 
         <a style="text-decoration: none; padding: 5px; font-weight: 500; font-size: larger;" class="btn btn-info p-2"  href="allflowers.html">See More Flower</a>
@@ -293,13 +217,7 @@
               aria-label="Go left"
             ></button>
 
-            <!-- <div class="slider-indicators">
-              <button class="active" aria-label="Go to slide"></button>
-              <button aria-label="Go to slide"></button>
-              <button aria-label="Go to slide"></button>
-              <button aria-label="Go to slide"></button>
-              <button aria-label="Go to slide" class=""></button>
-            </div> -->
+           
           </div>
         </div>
       </div>
@@ -338,35 +256,13 @@
           <li>Blog</li>
         </div>
       </div>
-      <hr />
+      <hr/>
       <p class="text-center mt-3">
         <small>Copyright © Flower's World. All Rights Reserved</small>
       </p>
     </footer>
 
-    <!-- add script file  -->
-    <!-- <script>
-      // Check if the user is logged in
-      if (localStorage.getItem("buyer_id")) {
-        // Show Logout and Profile links
-        document.querySelector(".logout-menu").classList.remove("d-none");
-        document.querySelector(".profile-menu").classList.remove("d-none");
-  
-        // Hide Login and Registration links
-        document.querySelector(".login-menu").classList.add("d-none");
-        document.querySelector(".registration-menu").classList.add("d-none");
-      } else {
-        // Show Login and Registration links
-        document.querySelector(".login-menu").classList.remove("d-none");
-        document.querySelector(".registration-menu").classList.remove("d-none");
-  
-        // Hide Logout and Profile links
-        document.querySelector(".logout-menu").classList.add("d-none");
-        document.querySelector(".profile-menu").classList.add("d-none");
-      }
-  
-      
-    </script> -->
+    
     <script>
       // Reload the page automatically once after 1 second
         window.onload = function () {
@@ -377,13 +273,13 @@
             } else {
               localStorage.removeItem("reloaded");
             }
-          }, 100); // 1000 milliseconds = 1 second
+          }, 1000); // 1000 milliseconds = 1 second
         };
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
 
     <script src="./app.js"></script>
-    <script src="./docDetails.js"></script>
+    <script src="./flowerDetails.js"></script>
     <script src="./logout.js"></script>
     <script src="./index.js"></script>
     <!-- <script src="./allflowers.js"></script> -->

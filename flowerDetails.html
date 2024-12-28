@@ -53,107 +53,11 @@
         </div>
       </div>
     </nav>
-    <!-- <nav class="d-flex justify-content-around align-items-center p-4">
-      <div class="logo-container d-flex align-items-center gap-2">
-        <img id="logo_img" src="./Images/flogo.png" alt="" />
-        <h2 style="padding-top: 10px;">Flower's World</h2>
-      </div>
-      <div class="menu-container d-flex gap-3 nav_text">
-        <li class="menu"><a href="index.html">Home</a></li>
-        <li class="menu"><a  class="btn btn-secondary"  href="allflowers.html">All Flower</a></li>
-        <li class="menu"><a href="service.html">Services</a></li>
-        <li class="menu"><a href="contactus.html">Contact us</a></li>
-        <li class="menu"><a href="cart.html">Cart</a></li>
-        
-        <li class="menu"><a href="order.html">All_Order</a></li>
-        <li class="menu login-menu"><a href="login.html">Login</a></li>
-        <li class="menu registration-menu"><a href="registration.html">Registration</a></li>
-        <li class="menu logout-menu d-none" onclick="handlelogOut()"><a href="#">Logout</a></li>
-        <li class="menu profile-menu d-none"><a href="profile.html">Profile</a></li>
-
-         
-      </div>
-    </nav> -->
+    
     
 
-    <div id="doc-details"></div>
-    <!-- <div id="review-form"></div> -->
-
-    <!-- <div class="review-form-container container">
-      <h3>Submit Your Review</h3>
-      <form id="review-form" onsubmit="handleReviewSubmission(event)">
-        <div class="mb-3">
-          <label for="reviewerName" class="form-label">Your Name</label>
-          <input
-            type="text"
-            id="reviewerName"
-            class="form-control"
-            placeholder="Enter your name"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <label for="reviewBody" class="form-label">Your Review</label>
-          <textarea
-            id="reviewBody"
-            class="form-control"
-            rows="3"
-            placeholder="Write your review here"
-            required
-          ></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="reviewRating" class="form-label">Rating</label>
-          <select id="reviewRating" class="form-control" required>
-            <option value="" disabled selected>Select a rating</option>
-            <option value="1">1 - Poor</option>
-            <option value="2">2 - Fair</option>
-            <option value="3">3 - Good</option>
-            <option value="4">4 - Very Good</option>
-            <option value="5">5 - Excellent</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Review</button>
-      </form>
-    </div> -->
+    <div id="flower-details"></div>
     
-    <!-- <div class="review-form-container container">
-      <h3>Submit Your Review</h3>
-      <form id="review-form" onsubmit="handleReviewSubmission(event)">
-        <div class="mb-3">
-          <label for="reviewerName" class="form-label">Your Name</label>
-          <input
-            type="text"
-            id="reviewerName"
-            class="form-control"
-            placeholder="Enter your name"
-            readonly
-          />
-        </div>
-        <div class="mb-3">
-          <label for="reviewBody" class="form-label">Your Review</label>
-          <textarea
-            id="reviewBody"
-            class="form-control"
-            rows="3"
-            placeholder="Write your review here"
-            required
-          ></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="reviewRating" class="form-label">Rating</label>
-          <select id="reviewRating" class="form-control" required>
-            <option value="" disabled selected>Select a rating</option>
-            <option value="⭐">1 - Poor</option>
-            <option value="⭐⭐">2 - Fair</option>
-            <option value="⭐⭐⭐">3 - Good</option>
-            <option value="⭐⭐⭐⭐">4 - Very Good</option>
-            <option value="⭐⭐⭐⭐⭐">5 - Excellent</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Review</button>
-      </form>
-    </div> -->
 
     <div class="w-25 m-auto mt-5 mb-3">
       <a id="reportButton" class="btn btn-secondary py-2 " target="_blank">Report PDF last order this item</a>
@@ -223,7 +127,7 @@
         <div
           class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
         >
-          <ul id="doc-details-review" class="slider-container py-4"></ul>
+          <ul id="flower-details-review" class="slider-container py-4"></ul>
 
           <button
             type="button"
@@ -247,10 +151,7 @@
       </div>
     </div>
 
-    <!-- modal area -->
-    <!-- Button trigger modal -->
-
-    <!-- Modal-->
+    
     <!-- Modal-->
     <div
       class="modal fade"
@@ -270,44 +171,7 @@
               aria-label="Close"
             ></button>
           </div>
-            <!-- <form id="orderForm" onsubmit="submitOrderForm(event)">
-              <div class="d-flex row my-2 mx-3">
-                <div class="my-2 mx-3">
-                  <label for="quantity">Quantity:</label>
-                  <input type="number" name="quantity" id="quantity" min="1" required />
-                </div>
-                <div class="my-2 mx-3">
-                  <label for="delivery_address">Delivery Address:</label>
-                  <textarea id="delivery_address" required></textarea>
-                </div>
-                <div class="my-2 mx-3">
-                  <label for="mobile_no">Mobile Number:</label>
-                  <input type="tel" id="mobile_no" pattern="[0-9]{11}" required />
-                </div>
-                <div class="my-2 mx-3">
-                  <label for="order_date">Order Date:</label>
-                  <input type="datetime-local" id="order_date" required />
-                </div>
-                <div class="my-2 mx-3">
-                  <label for="delivery_date">Delivery Date:</label>
-                  <input type="date" id="delivery_date" required />
-                </div>
-                <div class="my-2 mx-3">
-                  <label for="order_types">Order Type:</label>
-                  <select id="order_types" required>
-                    <option value="Online">Online</option>
-                    <option value="Offline">Offline</option>
-                  </select>
-                </div>
-                <div class="my-2 mx-3">
-                  <button type="submit">Place Order</button>
-                </div>
-
-              </div>
-              
-        
-              
-            </form> -->
+            
             <form id="orderForm" onsubmit="submitOrderForm(event)">
               <div class="my-2 mx-5">
                 <label for="quantity" class="form-label">Quantity</label>
@@ -423,7 +287,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
 
     <script src="./app.js"></script>
-    <script src="./docDetails.js"></script>
+    <script src="./flowerDetails.js"></script>
     <script src="./logout.js"></script>
     <script src="./pdf.js"></script>
     <script src="./cart.js"></script>

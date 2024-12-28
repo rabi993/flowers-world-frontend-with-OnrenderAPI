@@ -26,15 +26,7 @@
         <a style="padding-top: 10px; text-decoration: none; color: rgb(4, 66, 66);"  href="adminPanel.html"><h2><b>Flower's World</b> Admin Dashboard</h2></a>
       </div>
       <div class="menu-container d-flex gap-3 nav_text">
-        <!-- <li class="menu"><a href="">Home</a></li>
-        <li class="menu"><a href="">Services</a></li>
-        <li class="menu"><a href="">Contact us</a></li>
-        <li class="menu"><a href="">Cart</a></li>
-        
-        <li class="menu"><a href="">All_Order</a></li>
-        <li class="menu"><a href="">Login</a></li>
-        <li class="menu"><a href="">Registration</a></li>
-         -->
+       
         <li class="menu " onclick="handlelogOut()"><a >Logout</a></li>
         <li class="menu "><a href="profileadmin.html">Profile</a></li>
 
@@ -106,25 +98,7 @@
           
               <!-- Add Buyer Form -->
               <h3 class="mt-4">Add Buyer</h3>
-              <!-- <form id="buyer-form" onsubmit="handleAddBuyer(event)">
-                  <div class="mb-3">
-                      <label for="username" class="form-label">Username</label>
-                      <input type="text" id="username" class="form-control" placeholder="Enter username" required>
-                  </div>
-                  <div class="mb-3">
-                      <label for="mobileNo" class="form-label">Mobile Number</label>
-                      <input type="text" id="mobileNo" class="form-control" placeholder="Enter mobile number" required>
-                  </div>
-                  <div class="mb-3">
-                      <label for="address" class="form-label">Address</label>
-                      <textarea id="address" class="form-control" rows="3" placeholder="Enter address" required></textarea>
-                  </div>
-                  <div class="mb-3">
-                      <label for="image" class="form-label">Image (Optional)</label>
-                      <input type="file" id="image" class="form-control" accept="image/*">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Add Buyer</button>
-              </form> -->
+              
               <form id="buyer-form" onsubmit="handleAddOrUpdateBuyer(event)">
                 <input type="hidden" id="buyerId" />
                 <div class="mb-3">
@@ -178,7 +152,7 @@
     <!-- script tag from here  -->
     <script src="./app.js"></script>
     <script src="./auth.js"></script>
-    <script src="./docDetails.js"></script>
+    <script src="./flowerDetails.js"></script>
     <script src="./addorder.js"></script>
     <script src="./logout.js"></script>
     <script src="AddBuyers.js"></script>

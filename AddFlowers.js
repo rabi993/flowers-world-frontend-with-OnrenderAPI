@@ -220,51 +220,7 @@ const fetchFlowers = () => {
   // Initial fetch to populate the table
   fetchFlowers();
 
-  // Handle Edit Flower
-// const handleEditFlower = (flower) => {
-//   // Populate form fields
-  
-//   document.getElementById("flowerTitle").value = flower.title;
-//   document.getElementById("flowerContent").value = flower.content;
-//   document.getElementById("flowerAvailable").value = flower.available;
-//   document.getElementById("flowerPrice").value = flower.price;
 
-//   // Set categories and colors
-//   const categorySelect = document.getElementById("flowerCategory");
-//   Array.from(categorySelect.options).forEach(option => {
-//     option.selected = flower.category.includes(option.value);
-//   });
-
-//   const colorSelect = document.getElementById("flowerColor");
-//   Array.from(colorSelect.options).forEach(option => {
-//     option.selected = flower.color.includes(option.value);
-//   });
-
-//   // Attach event for saving the updated flower
-//   const flowerForm = document.getElementById("flower_form");
-//   flowerForm.onsubmit = (event) => {
-//     event.preventDefault();
-//     const formData = new FormData(flowerForm);
-
-//     fetch(`https://flowers-world.onrender.com/flowers/list/${flower.id}/`, {
-//       method: "PATCH",
-//       body: formData,
-//     })
-//       .then(response => {
-//         if (!response.ok) throw new Error("Failed to update flower.");
-//         return response.status === 204 ? {} : response.json();
-//       })
-//       .then(() => {
-//         alert("Flower updated successfully!");
-//         fetchFlowers(); // Refresh the table
-//       })
-//       .catch(async (error) => {
-//         const errorMessage = error.message;
-//         console.error("Error updating flower:", errorMessage);
-//         alert(`Error updating flower: ${errorMessage}`);
-//       });
-//   };
-// };
 const handleEditFlower = (flower) => {
   document.getElementById("flowerTitle").value = flower.title;
   document.getElementById("flowerContent").value = flower.content;

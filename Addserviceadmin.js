@@ -110,14 +110,7 @@ const handleAddService = async (event) => {
   }
 };
 
-// Function to reset the form
-// const resetForm = () => {
-//   document.getElementById("service_form").reset();
-//   document.getElementById("form-title").textContent = "Add Service";
-//   document.getElementById("addServiceButton").textContent = "Add Service";
-//   document.getElementById("serviceId").value = ""; // Clear hidden input
-//   document.getElementById("imagePreview").src = ""; // Clear image preview
-// };
+
 const resetForm = () => {
   document.getElementById("service_form").reset();
   document.getElementById("form-title").textContent = "Add Service";
@@ -127,52 +120,7 @@ const resetForm = () => {
   document.getElementById("imagePreview").style.display = "none"; // Hide preview
 };
 
-// Handle adding or updating a service
-// const handleAddService = (event) => {
-//   event.preventDefault(); // Prevent form refresh
 
-//   const serviceName = document.getElementById("serviceName").value.trim();
-//   const serviceDescription = document.getElementById("serviceDescription").value.trim();
-//   const serviceImage = document.getElementById("serviceImage").files[0];
-//   const serviceId = document.getElementById("serviceId").value.trim();
-
-//   if (!serviceName || !serviceDescription || !serviceImage) {
-//     alert("All fields are required.");
-//     return;
-//   }
-
-//   const formData = new FormData();
-//   formData.append("name", serviceName);
-//   formData.append("description", serviceDescription);
-//   if (serviceImage) formData.append("image", serviceImage);
-
-//   const method = serviceId ? "PUT" : "POST"; // If serviceId exists, it's an update; otherwise, it's a new service
-//   const url = serviceId
-//     ? `https://flowers-world.onrender.com/services/${serviceId}/`
-//     : "https://flowers-world.onrender.com/services/";
-
-//   fetch(url, {
-//     method: method,
-//     body: formData,
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error(serviceId ? "Failed to update service" : "Failed to add service");
-//       }
-//       return response.json();
-//     })
-//     .then(() => {
-//       alert(serviceId ? "Service updated successfully!" : "Service added successfully!");
-//       document.getElementById("service_form").reset();
-//       document.getElementById("form-title").textContent = "Add Service"; // Reset form title
-//       document.getElementById("addServiceButton").textContent = "Add Service"; // Reset button text
-//       fetchServices(); // Refresh the service list
-//     })
-//     .catch((error) => {
-//       console.error("Error adding/updating service:", error);
-//       alert("Error processing service. Please try again.");
-//     });
-// };
 
 
 
@@ -198,21 +146,7 @@ const handleDeleteService = (id) => {
       alert("Error deleting service. Please try again.");
     });
 };
-// Handle editing a service
-// Handle editing a service
-// const handleEditService = (id, currentName, currentDescription, currentImage) => {
-//   // Fill in the form with the current values
-//   document.getElementById("serviceName").value = currentName;
-//   document.getElementById("serviceDescription").value = currentDescription;
-//   document.getElementById("serviceId").value = id;  // Hidden input field to store the service id
-//   if (currentImage) {
-//     document.getElementById("imagePreview").src = currentImage;
-//   }
 
-//   // Change the form title to "Edit Service"
-//   document.getElementById("form-title").textContent = "Edit Service";
-//   document.getElementById("addServiceButton").textContent = "Update Service";
-// };
 
 const handleEditService = (id, currentName, currentDescription, currentImage) => {
   // Populate form fields with current values

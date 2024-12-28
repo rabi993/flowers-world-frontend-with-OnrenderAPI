@@ -1,28 +1,4 @@
-// Fetch and display users
-// const fetchUsers = () => {
-//     fetch("https://flowers-world.onrender.com/users/")
-//         .then((response) => response.json())
-//         .then((users) => {
-//             const usersList = document.getElementById("users-list");
-//             usersList.innerHTML = ""; // Clear existing rows
-//             users.forEach((user) => {
-//                 const row = document.createElement("tr");
-//                 row.innerHTML = `
-//                     <td>${user.id}</td>
-//                     <td>${user.username}</td>
-//                     <td>${user.email}</td>
-//                     <td>${user.first_name}</td>
-//                     <td>${user.last_name}</td>
-//                     <td>${user.is_superuser ? 'Yes' : 'No'}</td>
-//                 `;
-//                 usersList.appendChild(row);
-//             });
-//         })
-//         .catch((error) => {
-//             console.error("Error fetching users:", error);
-//             alert("Failed to load users.");
-//         });
-// };
+
 // Fetch and display users
 const fetchUsers = () => {
     fetch("https://flowers-world.onrender.com/users/")
