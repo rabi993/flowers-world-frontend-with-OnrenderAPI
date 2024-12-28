@@ -120,8 +120,8 @@ nav{
     display: none;
 }
 .review-card{
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
     box-shadow: 4px 4px 8px  gray;
     border-radius:15px;
     text-align: center;
@@ -129,7 +129,7 @@ nav{
     padding-right: 5px;
     padding-left: 5px;
     padding-top: 45px;
-    background: #bcdadf;
+    background: #bcccce;
 }
 .review-card img{
     width: 80px;
