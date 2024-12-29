@@ -96,11 +96,34 @@ const fetchFlowers = () => {
 
   fetchCategories();
   fetchColor();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const userId = localStorage.getItem("user_id"); 
+    
+    fetch(`https://flowers-world.onrender.com/users/${userId}/`) 
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch user details");
+        }
+        return response.json();
+      })
+      .then((userData) => {
+        const flowerOwnerInput = document.getElementById("flowerOwner");
+        flowerOwnerInput.value = userData.username ;
+      })
+      .catch((error) => {
+        console.error(error);
+        // alert("Failed to retrieve user details.");
+      });
+  
+    
+  });
   const handleAddFlower = async (event) => {
     event.preventDefault();
     const formMessage = document.getElementById("form-message");
     formMessage.innerHTML = "";
-  
+
+    const owner = document.getElementById("flowerOwner").value.trim();
     const title = document.getElementById("flowerTitle").value.trim();
     const content = document.getElementById("flowerContent").value.trim();
     const image = document.getElementById("flowerImage").files[0];
@@ -109,7 +132,7 @@ const fetchFlowers = () => {
     const available = parseInt(document.getElementById("flowerAvailable").value.trim());
     const price = parseFloat(document.getElementById("flowerPrice").value.trim());
   
-    if (!title || !content || !image || !category.length || !color.length || isNaN(available) || isNaN(price)) {
+    if (!owner || !title || !content || !image || !category.length || !color.length || isNaN(available) || isNaN(price)) {
       alert("All fields are required.");
       return;
     }
@@ -134,6 +157,7 @@ const fetchFlowers = () => {
   
       // Prepare form data
       const flowerData = {
+        owner,
         title,
         content,
         image: imageUrl,
@@ -164,58 +188,6 @@ const fetchFlowers = () => {
     }
   };
   
-  // Handle form submission to add a new flower
-  const handleAddFlower1 = (event) => {
-    event.preventDefault();
-    const formMessage = document.getElementById("form-message");
-    formMessage.innerHTML = "";
-  
-    const title = document.getElementById("flowerTitle").value.trim();
-    const content = document.getElementById("flowerContent").value.trim();
-    const image = document.getElementById("flowerImage").files[0];
-    // const category = document.getElementById("flowerCategory").value.split(",").map((c) => c.trim());
-    // const color = document.getElementById("flowerColor").value.split(",").map((c) => c.trim());
-    const category = Array.from(document.getElementById("flowerCategory").selectedOptions).map((option) => option.value);
-    const color = Array.from(document.getElementById("flowerColor").selectedOptions).map((option) => option.value);
-    const available = parseInt(document.getElementById("flowerAvailable").value.trim());
-    const price = parseFloat(document.getElementById("flowerPrice").value.trim());
-  
-    if (!title || !content || !image || !category.length || !color.length || isNaN(available) || isNaN(price)) {
-      alert("All fields are required.");
-      return;
-    }
-  
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("content", content);
-    formData.append("image", image);
-    category.forEach((cat) => formData.append("category", cat));
-    color.forEach((col) => formData.append("color", col));
-    formData.append("available", available);
-    formData.append("price", price);
-  
-    fetch("https://flowers-world.onrender.com/flowers/list/", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          return response.json().then((errorData) => {
-            throw new Error(errorData.detail || "Failed to add flower.");
-          });
-        }
-        return response.json();
-      })
-      .then(() => {
-        alert("Flower added successfully!");
-        document.getElementById("flower_form").reset();
-        fetchFlowers(); // Refresh the table
-      })
-      .catch((error) => {
-        console.error("Error adding flower:", error.message);
-        formMessage.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
-      });
-  };
   
   // Initial fetch to populate the table
   fetchFlowers();
@@ -290,83 +262,6 @@ const handleEditFlower = (flower) => {
       console.error("Error updating flower:", error.message);
       alert(`Error updating flower: ${error.message}`);
     }
-  };
-};
-
-const handleEditFlower1 = (flower) => {
-  // Populate form fields
-  document.getElementById("flowerTitle").value = flower.title;
-  document.getElementById("flowerContent").value = flower.content;
-  document.getElementById("flowerAvailable").value = flower.available;
-  document.getElementById("flowerPrice").value = flower.price;
-
-  // Set categories and colors
-  const categorySelect = document.getElementById("flowerCategory");
-  Array.from(categorySelect.options).forEach(option => {
-    option.selected = flower.category.includes(option.value);
-  });
-
-  const colorSelect = document.getElementById("flowerColor");
-  Array.from(colorSelect.options).forEach(option => {
-    option.selected = flower.color.includes(option.value);
-  });
-
-  // Attach event for saving the updated flower
-  const flowerForm = document.getElementById("flower_form");
-  flowerForm.onsubmit = (event) => {
-    event.preventDefault();
-
-    // Prepare FormData to include the image and other fields
-    const formData = new FormData();
-    formData.append("title", flowerForm.elements["flowerTitle"].value);
-    formData.append("content", flowerForm.elements["flowerContent"].value);
-    formData.append("available", flowerForm.elements["flowerAvailable"].value);
-    formData.append("price", flowerForm.elements["flowerPrice"].value);
-
-    // Add selected categories
-    Array.from(categorySelect.selectedOptions).forEach(option => {
-      formData.append("category", option.value);
-    });
-
-    // Add selected colors
-    Array.from(colorSelect.selectedOptions).forEach(option => {
-      formData.append("color", option.value);
-    });
-
-    // Add image if a file is selected
-    const fileInput = document.getElementById("flowerImage");
-    if (fileInput.files.length > 0) {
-      formData.append("image", fileInput.files[0]);
-    }
-
-    // Log the form data for debugging
-    for (const [key, value] of formData.entries()) {
-      console.log(`${key}:`, value);
-    }
-
-    // Make the API call to update the flower
-    fetch(`https://flowers-world.onrender.com/flowers/list/${flower.id}/`, {
-      method: "PUT", // Use PATCH if your backend supports partial updates
-      body: formData,
-    })
-      .then(async response => {
-        console.log("Response status:", response.status);
-        if (!response.ok) {
-          const responseBody = await response.json();
-          console.log("Response body:", responseBody);
-          throw new Error(responseBody.detail || "Failed to update flower.");
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log("Updated flower data:", data);
-        alert("Flower updated successfully!");
-        fetchFlowers(); // Refresh the flower list
-      })
-      .catch(error => {
-        console.error("Error updating flower:", error.message);
-        alert(`Error updating flower: ${error.message}`);
-      });
   };
 };
 

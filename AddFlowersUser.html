@@ -27,8 +27,20 @@
         </div>
         <div class="menu-container d-flex gap-3 nav_text">
           
-          <li class="menu" onclick="handlelogOut()"><a >Logout</a></li>
-          <li class="menu"><a href="profileadmin.html">Profile</a></li>
+          <li class="menu nav-item"><a   href="index.html">Home</a></li>
+            <li class="menu nav-item"><a  href="allflowers.html">All_Flower</a></li>
+            <li class="menu nav-item"><a class="btn btn-secondary" href="AddFlowersUser.html">Add</a></li>
+            <li class="menu nav-item"><a href="service.html">Services</a></li>
+            <li class="menu nav-item"><a href="reviews.html">Reviews</a></li>
+            <li class="menu nav-item"><a  href="contactus.html">Contact_us</a></li>
+            <li class="menu nav-item"><a  href="cart.html">Cart</a></li>
+            
+            <li class="menu nav-item"><a href="order.html">All_Order</a></li>
+
+            <li class="menu login-menu nav-item"><a href="login.html">Login</a></li>
+            <li class="menu registration-menu nav-item"><a href="registration.html">Registration</a></li>
+            <li class="menu logout-menu d-none nav-item" onclick="handlelogOut()"><a href="#">Logout</a></li>
+            <li class="menu profile-menu d-none nav-item"><a href="profile.html">Profile</a></li>
   
           
         </div>
@@ -40,50 +52,11 @@
       
     </header>
     <main>
-      <div class="d-flex ">
-          <div class="col-md-1 bg-secondary px-2 ">
-          <div>
-            <a class="btn btn-info border rounded mt-1 mb-1 dash-btn" href="adminPanel.html">Dashboard</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mt-1 mb-1 dash-btn" href="addorder.html">Order</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="addcategory.html">Category</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="addcolor.html">Color</a>
-          </div>
-          <div>
-              <a class="btn btn-secondary border rounded mb-1 dash-btn" href="AddFlowers.html">Flowers</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="AddUsers.html">Users</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="AddBuyers.html">Buyers</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="AddReviews.html">Reviews</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="Addserviceadmin.html">Services</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="addcontactus.html">Contact Us</a>
-          </div>
-          <div>
-              <a class="btn btn-info border rounded mb-1 dash-btn" href="profileadmin.html">Profile</a>
-          </div>
+      
           
-          
-          
-
-
-          </div>
-          <div class="col-md-11">
+          <div class="">
               <!-- button details -->
-              <div class="container mt-5">
+              <div class="container  mt-5">
                 <!-- Flowers Table -->
                 <h3>Flowers List</h3>
                 <table id="flowers-table" class="table table-bordered table-striped">
@@ -91,13 +64,13 @@
                     <tr>
                       <th >ID</th>
                       <th>Title</th>
+                      <th>Owner</th>
                       <th>Content</th>
                       <th>Image</th>
                       <th>Categories</th>
                       <th>Colors</th>
                       <th>Available</th>
                       <th>Price</th>
-                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody id="flowers-list">
@@ -156,7 +129,7 @@
               </div>
             
           </div>
-      </div>
+      
 
     
     
@@ -178,7 +151,7 @@
     <script src="./addcolor.js"></script>
     <script src="./Addserviceadmin.js"></script>
     <script src="./addcontactus.js"></script>
-    <script src="./AddFlowers.js"></script>
+    <script src="./AddFlowersUser.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"
       integrity="..."

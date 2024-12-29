@@ -140,63 +140,7 @@ const updateOrderStatus = (orderId, newStatus) => {
 
 
 
-const updateOrderStatus2 = async (orderId, newStatus) => {
-  try {
-    const response = await fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ order_status: newStatus }),
-    });
 
-    if (!response.ok) {
-      const errorDetails = await response.json();
-      console.error("Error details:", errorDetails);
-      throw new Error(errorDetails.detail || "Failed to update order status.");
-    }
-
-    const data = await response.json();
-    console.log("Order updated:", data);
-
-    // Update the order status in the table
-    const statusCell = document.getElementById(`order-status-${orderId}`);
-    if (statusCell) statusCell.textContent = newStatus;
-
-    alert(`Order #${orderId} status updated to ${newStatus}.`);
-    location.reload(); // Refresh the page to reflect changes
-  } catch (error) {
-    console.error("Error updating order status:", error.message);
-    alert(`Failed to update order status: ${error.message}`);
-  }
-};
-
-// Function to update the order status
-const updateOrderStatus1 = (orderId, newStatus) => {
-  fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ order_status: newStatus }),
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to update order status.");
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Order updated:", data);
-      // Update the order status in the table
-      const statusCell = document.getElementById(`order-status-${orderId}`);
-      statusCell.textContent = newStatus;
-      alert(`Order #${orderId} status updated to ${newStatus}.`);
-      location.reload();
-    })
-    .catch((error) => {
-      console.error("Error updating order status:", error.message);
-      alert(`Failed to update order status: ${error.message}`);
-    });
-};
 
 // Function to delete an order
 const deleteOrder = (orderId) => {
