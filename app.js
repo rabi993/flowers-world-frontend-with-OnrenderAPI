@@ -112,7 +112,7 @@ const loadFlowers = (search = "") => {
         <h4>${flower.title}</h4>
         <div>${flower.category.map((item) => `<button class="btn btn-info rounded btn-sm ">${item}</button>`).join("")}</div>
         <p style="margin: 0px; "><b>Available:</b> ${flower.available} Piece</p>
-        <small style="color: grey; margin: 0px;font-size:10px;">${flower.content.slice(0, 50)}...</small>
+        <small style="color: grey; margin: 0px;font-size:10px;">${flower.content.slice(0, 20)}...</small>
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
         <div>${flower.color.map((item) => `<button  class="btn btn-secondary rounded btn-sm ">${item}</button>`).join("")}</div>
         

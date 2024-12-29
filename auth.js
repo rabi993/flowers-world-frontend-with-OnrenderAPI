@@ -40,7 +40,7 @@ const handleRegistration = (event) => {
       .then((data) => {
         console.log(data);
         alert("Registration successful! Check Your Email and Activate your Account. After activated Then You can log in.");
-        window.location.href = "login.html";
+        window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/login.html";
       })
     } else {
       document.getElementById("error").innerText =
