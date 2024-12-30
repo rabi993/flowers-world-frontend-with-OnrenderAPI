@@ -1,5 +1,4 @@
 
-// Fetch and display users
 const fetchUsers = () => {
     fetch("https://flowers-world.onrender.com/users/")
         .then((response) => response.json())

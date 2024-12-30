@@ -1,6 +1,6 @@
-// Handle form submission to add a new category
+
 const handleAddCategory = (event) => {
-  event.preventDefault(); // Prevent form refresh
+  event.preventDefault(); 
 
   // Gather form data
   const categoryBody = document.getElementById("categoryBody").value.trim();
@@ -34,8 +34,8 @@ const handleAddCategory = (event) => {
     })
     .then(() => {
       alert("Category submitted successfully!");
-      document.getElementById("categoryBody").value = ""; // Clear input field
-      fetchCategories(); // Refresh the category list
+      document.getElementById("categoryBody").value = ""; 
+      fetchCategories(); 
     })
     .catch((error) => {
       console.error("Error:", error.message);
@@ -43,7 +43,6 @@ const handleAddCategory = (event) => {
     });
 };
 
-// Fetch and display the list of categories
 const fetchCategories = () => {
   fetch("https://flowers-world.onrender.com/categories/")
     .then((response) => {
@@ -54,8 +53,7 @@ const fetchCategories = () => {
     })
     .then((categories) => {
       const categoryTableBody = document.getElementById("category-table-body");
-      categoryTableBody.innerHTML = ""; // Clear existing rows
-
+      categoryTableBody.innerHTML = ""; 
       if (categories.length === 0) {
         const row = categoryTableBody.insertRow();
         const cell = row.insertCell(0);
@@ -66,11 +64,11 @@ const fetchCategories = () => {
         categories.forEach((category) => {
           const row = categoryTableBody.insertRow();
 
-          // Category column
+          
           const categoryCell = row.insertCell(0);
           categoryCell.textContent = category.name;
 
-          // Action column
+          
           const actionCell = row.insertCell(1);
           actionCell.innerHTML = `
             <button class="btn btn-warning mx-1" onclick="handleEditCategory('${category.id}', '${category.name}')">Edit</button>
@@ -86,7 +84,7 @@ const fetchCategories = () => {
     });
 };
 
-// Handle category edit
+
 const handleEditCategory = (id, currentName) => {
   const newName = prompt("Edit category name:", currentName);
   if (!newName || newName.trim() === "") {
@@ -94,11 +92,11 @@ const handleEditCategory = (id, currentName) => {
     return;
   }
 
-  const slug = newName.toLowerCase().replace(/\s+/g, "-"); // Generate slug
+  const slug = newName.toLowerCase().replace(/\s+/g, "-"); 
   const categoryData = { name: newName, slug };
 
   fetch(`https://flowers-world.onrender.com/categories/${id}/`, {
-    method: "PUT", // Assuming the API uses PUT for updates
+    method: "PUT", 
     headers: {
       "Content-Type": "application/json",
     },
@@ -115,7 +113,7 @@ const handleEditCategory = (id, currentName) => {
     })
     .then(() => {
       alert("Category updated successfully!");
-      fetchCategories(); // Refresh the category list
+      fetchCategories(); 
     })
     .catch((error) => {
       console.error("Error updating category:", error.message);
@@ -123,14 +121,13 @@ const handleEditCategory = (id, currentName) => {
     });
 };
 
-// Handle category delete
 const handleDeleteCategory = (id) => {
   if (!confirm("Are you sure you want to delete this category?")) {
     return;
   }
 
   fetch(`https://flowers-world.onrender.com/categories/${id}/`, {
-    method: "DELETE", // Assuming the API uses DELETE for deletion
+    method: "DELETE", 
     headers: {
       "Content-Type": "application/json",
     },
@@ -140,7 +137,7 @@ const handleDeleteCategory = (id) => {
         throw new Error("Failed to delete category.");
       }
       alert("Category deleted successfully!");
-      fetchCategories(); // Refresh the category list
+      fetchCategories(); 
     })
     .catch((error) => {
       console.error("Error deleting category:", error.message);
@@ -148,7 +145,6 @@ const handleDeleteCategory = (id) => {
     });
 };
 
-// Fetch categories when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   fetchCategories();
 });

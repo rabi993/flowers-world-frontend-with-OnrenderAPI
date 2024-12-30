@@ -1,5 +1,4 @@
 
-
 const loadorder = () => {
   const buyer_id = localStorage.getItem("buyer_id");
   const orderIds = JSON.parse(localStorage.getItem("order_ids")) || []; // Get stored order IDs
@@ -225,7 +224,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Call the function to load the filtered orders into the table
+
 loadorder();
 
 

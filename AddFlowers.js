@@ -1,4 +1,4 @@
-// Fetch and display flowers list
+
 const fetchFlowers = () => {
     const flowersList = document.getElementById("flowers-list");
     flowersList.innerHTML = `<tr><td colspan="8" class="text-center">Loading flowers...</td></tr>`;
@@ -12,7 +12,7 @@ const fetchFlowers = () => {
       })
       .then((data) => {
         const flowers = data.results;
-        flowersList.innerHTML = ""; // Clear the table rows
+        flowersList.innerHTML = ""; 
   
         if (flowers.length === 0) {
           flowersList.innerHTML = `
@@ -53,7 +53,6 @@ const fetchFlowers = () => {
   };
   
 
-  // Fetch categories and populate the multiple select dropdown
   const fetchCategories = () => {
     fetch("https://flowers-world.onrender.com/categories/")
       .then((response) => {
@@ -73,7 +72,6 @@ const fetchFlowers = () => {
       .catch((error) => console.error("Error fetching categories:", error));
   };
   
-  // Fetch colors and populate the multiple select dropdown
   const fetchColor = () => {
     fetch("https://flowers-world.onrender.com/colors/")
       .then((response) => {
@@ -215,7 +213,7 @@ const handleEditFlower = (flower) => {
     event.preventDefault();
 
     try {
-      const imgbbAPIKey = "6b0c007afbf8da08520a75fb493991aa"; // Replace with your actual API key
+      const imgbbAPIKey = "6b0c007afbf8da08520a75fb493991aa"; 
       const fileInput = document.getElementById("flowerImage");
       let imageUrl = flower.image;
 
@@ -268,7 +266,6 @@ const handleEditFlower = (flower) => {
 
 
 
-  // Handle Delete Flower
   const handleDeleteFlower = (id) => {
     if (confirm("Are you sure you want to delete this flower?")) {
       fetch(`https://flowers-world.onrender.com/flowers/list/${id}/`, {

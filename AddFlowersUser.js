@@ -1,4 +1,4 @@
-// Fetch and display flowers list
+
 const fetchFlowers = () => {
   const flowersList = document.getElementById("flowers-list");
   flowersList.innerHTML = `<tr><td colspan="8" class="text-center">Loading flowers...</td></tr>`;

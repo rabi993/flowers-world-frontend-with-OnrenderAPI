@@ -1,6 +1,6 @@
-// Handle form submission to add a new color
+
 const handleAddColor = (event) => {
-  event.preventDefault(); // Prevent form refresh
+  event.preventDefault(); 
 
   // Gather form data
   const colorBody = document.getElementById("colorBody").value.trim();
@@ -35,7 +35,7 @@ const handleAddColor = (event) => {
     })
     .then(() => {
       alert("Color submitted successfully!");
-      document.getElementById("colorBody").value = ""; // Clear input field
+      document.getElementById("colorBody").value = ""; 
       fetchColors(); // Refresh the color list
     })
     .catch((error) => {
@@ -44,7 +44,7 @@ const handleAddColor = (event) => {
     });
 };
 
-// Fetch and display the list of colors
+
 const fetchColors = () => {
   fetch("https://flowers-world.onrender.com/colors/")
     .then((response) => {
@@ -99,7 +99,7 @@ const handleEditColor = (id, currentName) => {
   const colorData = { name: newName, slug };
 
   fetch(`https://flowers-world.onrender.com/colors/${id}/`, {
-    method: "PUT", // Assuming the API uses PUT for updates
+    method: "PUT", 
     headers: {
       "Content-Type": "application/json",
     },
@@ -124,14 +124,13 @@ const handleEditColor = (id, currentName) => {
     });
 };
 
-// Handle color delete
 const handleDeleteColor = (id) => {
   if (!confirm("Are you sure you want to delete this color?")) {
     return;
   }
 
   fetch(`https://flowers-world.onrender.com/colors/${id}/`, {
-    method: "DELETE", // Assuming the API uses DELETE for deletion
+    method: "DELETE", 
     headers: {
       "Content-Type": "application/json",
     },
@@ -141,7 +140,7 @@ const handleDeleteColor = (id) => {
         throw new Error("Failed to delete color.");
       }
       alert("Color deleted successfully!");
-      fetchColors(); // Refresh the color list
+      fetchColors(); 
     })
     .catch((error) => {
       console.error("Error deleting color:", error.message);
@@ -149,7 +148,7 @@ const handleDeleteColor = (id) => {
     });
 };
 
-// Fetch colors when the page loads
+
 document.addEventListener("DOMContentLoaded", () => {
   fetchColors();
 });

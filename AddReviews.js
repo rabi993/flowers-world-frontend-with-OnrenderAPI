@@ -1,4 +1,3 @@
-// Fetch and display reviews
 const fetchReviews = () => {
     fetch("https://flowers-world.onrender.com/flowers/reviews/")
         .then((response) => response.json())
@@ -26,7 +25,6 @@ const fetchReviews = () => {
         });
 };
 
-// Handle form submission to add a review
 const handleAddReview = (event) => {
     event.preventDefault();
 
@@ -34,7 +32,7 @@ const handleAddReview = (event) => {
     const reviewBody = document.getElementById("reviewBody").value.trim();
     const reviewRating = document.getElementById("reviewRating").value;
 
-    // Ensure all fields are filled
+    
     if (!flowerTitle || !reviewBody || !reviewRating) {
         alert("All fields are required.");
         return;
@@ -57,7 +55,7 @@ const handleAddReview = (event) => {
         .then((data) => {
             alert("Review added successfully!");
             document.getElementById("review-form").reset();
-            fetchReviews(); // Refresh the reviews list
+            fetchReviews(); 
         })
         .catch((error) => {
             console.error("Error adding review:", error);
@@ -65,10 +63,8 @@ const handleAddReview = (event) => {
         });
 };
 
-// Initialize: Fetch reviews
 fetchReviews();
 
-// Handle delete review
 const deleteReview = (reviewId) => {
     if (!confirm("Are you sure you want to delete this review?")) return;
 
@@ -80,7 +76,7 @@ const deleteReview = (reviewId) => {
                 throw new Error("Failed to delete review");
             }
             alert("Review deleted successfully!");
-            fetchReviews(); // Refresh the reviews list
+            fetchReviews(); 
         })
         .catch((error) => {
             console.error("Error deleting review:", error);

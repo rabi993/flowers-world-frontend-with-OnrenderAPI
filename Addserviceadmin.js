@@ -58,7 +58,7 @@ const handleAddService = async (event) => {
 
     // Upload image only if a new image is selected
     if (serviceImage) {
-      const imgbbApiKey = "6b0c007afbf8da08520a75fb493991aa"; // Replace with your actual imgbb API key
+      const imgbbApiKey = "6b0c007afbf8da08520a75fb493991aa"; 
       const imgbbUrl = "https://api.imgbb.com/1/upload";
       const imageFormData = new FormData();
       imageFormData.append("image", serviceImage);

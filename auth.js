@@ -58,43 +58,43 @@ const getValue = (id) => {
   return value;
 };
 
-const handleLogin1 = (event) => {
-  event.preventDefault();
-  const username = getValue("login-username");
-  const password = getValue("login-password");
-  console.log(username, password);
-  // Input validation
-  if (!username || !password) {
-    alert("Please provide both username and password.");
-    return;
-  }
-  else  {
-    fetch("https://flowers-world.onrender.com/buyers/login/", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+// const handleLogin1 = (event) => {
+//   event.preventDefault();
+//   const username = getValue("login-username");
+//   const password = getValue("login-password");
+//   console.log(username, password);
+//   // Input validation
+//   if (!username || !password) {
+//     alert("Please provide both username and password.");
+//     return;
+//   }
+//   else  {
+//     fetch("https://flowers-world.onrender.com/buyers/login/", {
+//       method: "POST",
+//       headers: { "content-type": "application/json" },
+//       body: JSON.stringify({ username, password }),
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+//         console.log(data);
 
-        if (data.token && data.user_id ) {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("user_id", data.user_id);
+//         if (data.token && data.user_id ) {
+//           localStorage.setItem("token", data.token);
+//           localStorage.setItem("user_id", data.user_id);
           
-          if (data.is_superuser) {
-              window.location.href = "adminPanel.html";
-          } else {
-              window.location.href = "index.html";
-          }
+//           if (data.is_superuser) {
+//               window.location.href = "adminPanel.html";
+//           } else {
+//               window.location.href = "index.html";
+//           }
           
-        }
-        else {
-          alert("Invalid login Info Please provide both username and password.");
-        }
-      });
-  }
-};
+//         }
+//         else {
+//           alert("Invalid login Info Please provide both username and password.");
+//         }
+//       });
+//   }
+// };
 
 const handleLogin = (event) => {
   event.preventDefault();
@@ -153,9 +153,9 @@ const handleLogin = (event) => {
 
             localStorage.setItem("username", userData.username);
             if (userData.is_superuser) {
-              window.location.href = "adminPanel.html";
+              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/adminPanel.html";
             } else {
-              window.location.href = "index.html";
+              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index.html";
               
             }
           })

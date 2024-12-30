@@ -1,10 +1,10 @@
-// Fetch and display Contact Us entries
+
 const fetchContactUs = () => {
     fetch("https://flowers-world.onrender.com/contact_us/")
       .then((response) => response.json())
       .then((contacts) => {
         const contactUsList = document.getElementById("contactus-list");
-        contactUsList.innerHTML = ""; // Clear the table rows
+        contactUsList.innerHTML = ""; 
   
         if (contacts.length === 0) {
           const noDataRow = document.createElement("tr");
@@ -31,7 +31,6 @@ const fetchContactUs = () => {
       .catch((error) => console.error("Error fetching Contact Us entries:", error));
   };
   
-  // Handle form submission for adding a Contact Us entry
   const handleAddContactUs = (event) => {
     event.preventDefault();
   
@@ -77,7 +76,7 @@ const fetchContactUs = () => {
       });
   };
   
-  // Initial fetch to populate the table
+  
   fetchContactUs();
   
 

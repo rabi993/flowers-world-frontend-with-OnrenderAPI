@@ -1,10 +1,10 @@
-// Fetch and display buyers
+
 const fetchBuyers = () => {
     fetch("https://flowers-world.onrender.com/buyers/list/")
         .then((response) => response.json())
         .then((buyers) => {
             const buyersList = document.getElementById("buyers-list");
-            buyersList.innerHTML = ""; // Clear existing rows
+            buyersList.innerHTML = ""; 
             buyers.forEach((buyer) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
@@ -27,7 +27,6 @@ const fetchBuyers = () => {
         });
 };
 
-// Handle form submission to add or update a buyer
 const handleAddOrUpdateBuyer = (event) => {
     event.preventDefault();
   
@@ -71,13 +70,10 @@ const handleAddOrUpdateBuyer = (event) => {
   
 
 
-// Initialize: Fetch buyers
 fetchBuyers();
 
 
-// Edit buyer details
 const editBuyer = (buyerId) => {
-    // Fetch the specific buyer details
     fetch(`https://flowers-world.onrender.com/buyers/list/${buyerId}/`)
       .then((response) => response.json())
       .then((buyer) => {

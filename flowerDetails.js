@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // Fetch and fill the flower's name
-  fetch(`https://flowers-world.onrender.com/flowers/${flowerId}/`) // Replace with your actual flower API endpoint
+  fetch(`https://flowers-world.onrender.com/flowers/${flowerId}/`) 
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch flower details");
