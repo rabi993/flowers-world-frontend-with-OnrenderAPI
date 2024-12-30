@@ -25,6 +25,7 @@ const fetchFlowers = () => {
             row.innerHTML = `
               <td>${flower.id}</td>
               <td>${flower.title}</td>
+              <td>${flower.FlowerMalik}</td>
               <td>${flower.content}</td>
               <td><img src="${flower.image}" alt="${flower.title}" style="width: 100px; height: 100px; object-fit: cover;"></td>
               <td>${flower.category.join(", ")}</td>

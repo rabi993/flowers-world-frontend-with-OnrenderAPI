@@ -65,7 +65,7 @@ const handlelogOut = () => {
       console.log("LocalStorage cleared successfully.");
 
       // Redirect to login page
-      window.location.href = "login.html"; // Redirect to the login page
+      window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/login.html"; // Redirect to the login page
     })
     .catch((err) => {
       console.error("Logout failed:", err);

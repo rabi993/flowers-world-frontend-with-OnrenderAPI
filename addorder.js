@@ -1,6 +1,279 @@
 
 
-const loadAllOrder = (filterStatus = null) => {
+
+// const loadAllOrder3 = (filterStatus = null, fromDate = null, toDate = null, singleDate = null) => {
+//   fetch(`https://flowers-world.onrender.com/orders/`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       const parent = document.getElementById("table-body");
+//       parent.innerHTML = ""; // Clear any existing rows before appending new ones
+      
+//       let filteredData = filterStatus
+//         ? data.filter((item) => item.order_status === filterStatus)
+//         : data;
+
+//       // Filter by date range if provided
+//       if (fromDate || toDate) {
+//         const fromTimestamp = fromDate ? new Date(fromDate).getTime() : null;
+//         const toTimestamp = toDate ? new Date(toDate).getTime() : null;
+
+//         filteredData = filteredData.filter((item) => {
+//           const orderDateTimestamp = item.order_date
+//             ? new Date(item.order_date).getTime()
+//             : null;
+
+//           return (
+//             (!fromTimestamp || orderDateTimestamp >= fromTimestamp) &&
+//             (!toTimestamp || orderDateTimestamp <= toTimestamp)
+//           );
+//         });
+//       }
+
+//       // Filter by single date if provided
+//       if (singleDate) {
+//         const singleDateTimestamp = new Date(singleDate).setHours(0, 0, 0, 0); // Normalize single date to midnight
+//         filteredData = filteredData.filter((item) => {
+//           const orderDateTimestamp = item.order_date
+//             ? new Date(item.order_date).setHours(0, 0, 0, 0)
+//             : null;
+
+//           return orderDateTimestamp === singleDateTimestamp;
+//         });
+//       }
+
+//       if (filteredData.length === 0) {
+//         parent.innerHTML = `<tr><td colspan="15">No orders found.</td></tr>`;
+//         return;
+//       }
+      
+//       filteredData.sort((a, b) => b.id - a.id);
+
+//       filteredData.forEach((item) => {
+//         const tr = document.createElement("tr");
+//         tr.innerHTML = `
+//             <td>${item.id}</td>
+//             <td>${item.buyer}</td>
+//             <td>${item.flower}</td>
+//             <td>${item.order_types}</td>
+//             <td id="order-status-${item.id}">${item.order_status}</td>
+//             <td>
+//                 ${item.order_status == "Pending" ? "💤"
+//                   : item.order_status == "Processing" ? "🔄"
+//                   : item.order_status == "Completed" ? "✅"
+//                   : item.order_status == "Rejected" ? "❌"
+//                   : ""}
+//             </td>
+//             <td>${item.quantity}</td>
+//             <td>${item.mobile_no}</td>
+//             <td>
+//               ${item.order_date
+//                 ? (() => {
+//                     const date = new Date(item.order_date);
+//                     const day = String(date.getUTCDate()).padStart(2, "0");
+//                     const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+//                     const year = date.getUTCFullYear();
+//                     const hours = String(date.getUTCHours()).padStart(2, "0");
+//                     const minutes = String(date.getUTCMinutes()).padStart(2, "0");
+//                     return `${day}-${month}-${year}#T${hours}:${minutes}`;
+//                   })()
+//                 : "N/A"}
+//             </td>
+//             <td>
+//               ${item.delivery_date
+//                 ? (() => {
+//                     const date = new Date(item.delivery_date);
+//                     const day = String(date.getUTCDate()).padStart(2, "0");
+//                     const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+//                     const year = date.getUTCFullYear();
+//                     return `${day}-${month}-${year}`;
+//                   })()
+//                 : "N/A"}
+//             </td>
+//             <td>${item.delivery_address}</td>
+//             <td>${item.price} $</td>
+//             <td>${item.total_price} $</td>
+//             <td>
+//               ${item.paid 
+//                 ? `<button class="btn btn-success">Paid</button>` 
+//                 : `<button class="btn btn-secondary">NoPay</button>`}
+//             </td>
+//             <td>
+//               ${!item.paid
+//                 ? `<button class="btn btn-info">In Customer's Cart (not paid)</button>
+//                    <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>`
+//                 : `<button class="btn btn-secondary btn-update" data-id="${item.id}" data-status="Pending">💤</button>
+//                    <button class="btn btn-info btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
+//                    <button class="btn btn-success btn-update" data-id="${item.id}" data-status="Completed">✅</button>
+//                    <button class="btn btn-secondary btn-update mx-3" data-id="${item.id}" data-status="Rejected">❌</button>
+//                    <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>`}
+//             </td>
+//         `;
+//         parent.appendChild(tr);
+//       });
+
+//       // Add click event listeners to status buttons
+//       document.querySelectorAll(".btn-update").forEach((button) => {
+//         button.addEventListener("click", (event) => {
+//           const orderId = event.target.getAttribute("data-id");
+//           const newStatus = event.target.getAttribute("data-status");
+
+//           updateOrderStatus(orderId, newStatus);
+//         });
+//       });
+//     });
+// };
+
+// // const handleStatusFilter3 = () => {
+// //   const filterStatus = document.getElementById("status-filter").value; // Get selected status
+// //   const fromDate = document.getElementById("from-date").value; // Get 'from' date
+// //   const toDate = document.getElementById("to-date").value; // Get 'to' date
+// //   const singleDate = document.getElementById("single-date").value; // Get single date
+
+// //   loadAllOrder(
+// //     filterStatus === "All" ? null : filterStatus,
+// //     fromDate,
+// //     toDate,
+// //     singleDate
+// //   ); // Reload data with filters
+// // };
+// const handleStatusFilter3 = () => {
+//   const filterStatus = document.getElementById("status-filter").value; // Get selected status
+//   const fromDate = document.getElementById("from-date").value; // Get 'from' date
+//   const toDate = document.getElementById("to-date").value; // Get 'to' date
+//   const singleDate = document.getElementById("single-date").value; // Get single date
+
+//   if (singleDate) {
+//     // If single date is provided, use it for both fromDate and toDate
+//     loadAllOrder(filterStatus === "All" ? null : filterStatus,fromDate = null, toDate = null, singleDate);
+//   } else {
+//     // Use fromDate and toDate if no single date is provided
+//     loadAllOrder(filterStatus === "All" ? null : filterStatus, fromDate, toDate, );
+//   }
+// };
+
+
+const loadAllOrder = (filterStatus = null, fromDate = null, toDate = null) => {
+  fetch(`https://flowers-world.onrender.com/orders/`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      const parent = document.getElementById("table-body");
+      parent.innerHTML = ""; // Clear any existing rows before appending new ones
+      
+      let filteredData = filterStatus
+        ? data.filter((item) => item.order_status === filterStatus)
+        : data;
+
+      // Filter by date range if provided
+      if (fromDate || toDate) {
+        const fromTimestamp = fromDate ? new Date(fromDate).getTime() : null;
+        const toTimestamp = toDate ? new Date(toDate).getTime() : null;
+
+        filteredData = filteredData.filter((item) => {
+          const orderDateTimestamp = item.order_date
+            ? new Date(item.order_date).getTime()
+            : null;
+
+          return (
+            (!fromTimestamp || orderDateTimestamp >= fromTimestamp) &&
+            (!toTimestamp || orderDateTimestamp <= toTimestamp)
+          );
+        });
+      }
+
+      if (filteredData.length === 0) {
+        parent.innerHTML = `<tr><td colspan="15">No orders found.</td></tr>`;
+        return;
+      }
+      
+      filteredData.sort((a, b) => b.id - a.id);
+
+      filteredData.forEach((item) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${item.id}</td>
+            <td>${item.buyer}</td>
+            <td>${item.flower}</td>
+            <td>${item.order_types}</td>
+            <td id="order-status-${item.id}">${item.order_status}</td>
+            <td>
+                ${item.order_status == "Pending" ? "💤"
+                  : item.order_status == "Processing" ? "🔄"
+                  : item.order_status == "Completed" ? "✅"
+                  : item.order_status == "Rejected" ? "❌"
+                  : ""}
+            </td>
+            <td>${item.quantity}</td>
+            <td>${item.mobile_no}</td>
+            <td>
+              ${item.order_date
+                ? (() => {
+                    const date = new Date(item.order_date);
+                    const day = String(date.getUTCDate()).padStart(2, "0");
+                    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+                    const year = date.getUTCFullYear();
+                    const hours = String(date.getUTCHours()).padStart(2, "0");
+                    const minutes = String(date.getUTCMinutes()).padStart(2, "0");
+                    return `${day}-${month}-${year}#T${hours}:${minutes}`;
+                  })()
+                : "N/A"}
+            </td>
+            <td>
+              ${item.delivery_date
+                ? (() => {
+                    const date = new Date(item.delivery_date);
+                    const day = String(date.getUTCDate()).padStart(2, "0");
+                    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+                    const year = date.getUTCFullYear();
+                    return `${day}-${month}-${year}`;
+                  })()
+                : "N/A"}
+            </td>
+            <td>${item.delivery_address}</td>
+            <td>${item.price} $</td>
+            <td>${item.total_price} $</td>
+            <td>
+              ${item.paid 
+                ? `<button class="btn btn-success">Paid</button>` 
+                : `<button class="btn btn-secondary">NoPay</button>`}
+            </td>
+            <td>
+              ${!item.paid
+                ? `<button class="btn btn-info">In Customer's Cart (not paid)</button>
+                   <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>`
+                : `<button class="btn btn-secondary btn-update" data-id="${item.id}" data-status="Pending">💤</button>
+                   <button class="btn btn-info btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
+                   <button class="btn btn-success btn-update" data-id="${item.id}" data-status="Completed">✅</button>
+                   <button class="btn btn-secondary btn-update mx-3" data-id="${item.id}" data-status="Rejected">❌</button>
+                   <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>`}
+            </td>
+        `;
+        parent.appendChild(tr);
+      });
+
+      // Add click event listeners to status buttons
+      document.querySelectorAll(".btn-update").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const orderId = event.target.getAttribute("data-id");
+          const newStatus = event.target.getAttribute("data-status");
+
+          updateOrderStatus(orderId, newStatus);
+        });
+      });
+    });
+};
+
+const handleStatusFilter = () => {
+  const filterStatus = document.getElementById("status-filter").value; // Get selected status
+  const fromDate = document.getElementById("from-date").value; // Get 'from' date
+  const toDate = document.getElementById("to-date").value; // Get 'to' date
+
+  loadAllOrder(filterStatus === "All" ? null : filterStatus, fromDate, toDate); // Reload data with filters
+};
+
+
+const loadAllOrder1 = (filterStatus = null) => {
   fetch(`https://flowers-world.onrender.com/orders/`)
     .then((res) => res.json())
     .then((data) => {
@@ -82,7 +355,9 @@ const loadAllOrder = (filterStatus = null) => {
             <td>
               ${
                 !item.paid
-                  ? `<button class="btn btn-info">In Customer's Cart (not paid)</button>`
+                  ? `<button class="btn btn-info">In Customer's Cart (not paid)</button>
+                    <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>
+                    `
                   : `
                     <button class="btn btn-secondary btn-update" data-id="${item.id}" data-status="Pending">💤</button>
                     <button class="btn btn-info btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
@@ -108,7 +383,7 @@ const loadAllOrder = (filterStatus = null) => {
       });
     });
 };
-const handleStatusFilter = () => {
+const handleStatusFilter1 = () => {
   const filterStatus = document.getElementById("status-filter").value; // Get selected status
   loadAllOrder(filterStatus === "All" ? null : filterStatus); // Reload data with filter
 };

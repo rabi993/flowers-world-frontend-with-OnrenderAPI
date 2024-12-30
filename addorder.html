@@ -78,7 +78,7 @@
         </div>
         <div class="col-md-11">
             <!-- button details -->
-            <div class="container my-3  text-center ">
+            <!-- <div class="container my-3  text-center ">
               <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
               <select class="h5 border  rounded text-center bg-light " id="status-filter" onchange="handleStatusFilter()">
                 <option value="All">All</option>
@@ -87,7 +87,54 @@
                 <option value="Completed">Completed</option>
                 <option value="Rejected">Rejected</option>
               </select>
+            </div> -->
+            <!-- <div class="container my-3  text-center ">
+              <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
+              <select class="h5 border  rounded text-center bg-light me-3" id="status-filter" onchange="handleStatusFilter()">
+                <option value="All">All</option>
+                <option value="Pending">Pending</option>
+                <option value="Processing">Processing</option>
+                <option value="Completed">Completed</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            
+              <label for="from-date"><h4><b>From:</b></h4></label>
+              <input class="h6 border  rounded text-center bg-light " type="date" id="from-date" onchange="handleStatusFilter()">
+              
+            
+              <label for="to-date"><h4><b>--  To:</b></h4></label>
+              <input class="h6 border  rounded text-center bg-light me-3" type="date" id="to-date" onchange="handleStatusFilter()">
+
+              <label for="single-date"><h4><b>Single Date:</b></h4></label>
+              <input class="h6 border  rounded text-center bg-light " type="date" id="single-date" onchange="handleStatusFilter()">
+
+              
+            </div> -->
+            <div class="container my-3  text-center ">
+              <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
+              <select class="h5 border  rounded text-center bg-light me-3" id="status-filter" >
+                <option value="All">All</option>
+                <option value="Pending">Pending</option>
+                <option value="Processing">Processing</option>
+                <option value="Completed">Completed</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            
+              <label for="from-date"><h4><b>From:</b></h4></label>
+              <input class="h6 border  rounded text-center bg-light " type="date" id="from-date" >
+              
+            
+              <label for="to-date"><h4><b>--  To:</b></h4></label>
+              <input class="h6 border  rounded text-center bg-light me-3" type="date" id="to-date" >
+
+              <!-- <label for="single-date"><h4><b>Single Date:</b></h4></label>
+              <input class="h6 border  rounded text-center bg-light " type="date" id="single-date" > -->
+
+              <button class="btn btn-info py-2 px-4" onclick="handleStatusFilter()">Filter</button>
+
+              
             </div>
+            
         
             <hr class="container">
             <div class="order-container1 all-order-container px-2">

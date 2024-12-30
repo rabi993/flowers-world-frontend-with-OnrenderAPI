@@ -30,17 +30,17 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse col-lg-8  "  id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav_text  gap-3 " style="padding-left: 100px;">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav_text  gap-3 " >
             
             <li class="menu nav-item"><a  href="index.html">Home</a></li>
             <li class="menu nav-item"><a  href="allflowers.html">All_Flower</a></li>
-            <li class="menu nav-item"><a href="AddFlowersUser.html">Add</a></li>
+            <li class="menu aut_menu nav-item"><a href="AddFlowersUser.html">Add</a></li>
             <li class="menu nav-item"><a href="service.html">Services</a></li>
             <li class="menu nav-item"><a href="reviews.html">Reviews</a></li>
             <li class="menu nav-item"><a href="contactus.html">Contact_us</a></li>
-            <li class="menu nav-item"><a href="cart.html">Cart</a></li>
+            <li class="menu aut_menu1 nav-item"><a href="cart.html">Cart</a></li>
             
-            <li class="menu nav-item"><a class="btn btn-secondary" href="order.html">Orders</a></li>
+            <li class="menu aut_menu2 nav-item"><a class="btn btn-secondary" href="order.html">Orders</a></li>
 
             <li class="menu login-menu nav-item"><a  href="login.html">Login</a></li>
             <li class="menu registration-menu nav-item"><a href="registration.html">Registration</a></li>
@@ -55,13 +55,15 @@
 
     <div class="container my-3  text-center ">
       <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
-      <select class="h5 border  rounded text-center bg-light" id="status-filter" onchange="handleStatusFilter()">
+      <select class="h5 border  rounded text-center bg-light me-3" id="status-filter" onchange="handleStatusFilter()">
         <option value="All">All</option>
         <option value="Pending">Pending</option>
         <option value="Processing">Processing</option>
         <option value="Completed">Completed</option>
         <option value="Rejected">Rejected</option>
       </select>
+      
+
     </div>
 
     <hr class="container">

@@ -68,6 +68,7 @@ const displayDetails = (flower) => {
         return `<button class="btn btn-info rounded btn-sm ">${item}</button>`;
       })}
       <h6>Available : ${flower?.available}</h6>
+      <h6>Saler : ${flower?.FlowerMalik}</h6>
       <p>
       ${flower?.content}
       </p>

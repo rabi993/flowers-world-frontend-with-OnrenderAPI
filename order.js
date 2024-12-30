@@ -17,6 +17,9 @@ const loadAllOrder = (filterStatus = null) => {
         ? data.filter((item) => item.order_status === filterStatus)
         : data;
 
+        
+        
+
       if (filteredData.length === 0) {
         parent.innerHTML = `<tr><td colspan="15">No orders found.</td></tr>`;
         return;
@@ -119,6 +122,7 @@ const handleStatusFilter = () => {
   const filterStatus = document.getElementById("status-filter").value; // Get selected status
   loadAllOrder(filterStatus === "All" ? null : filterStatus); // Reload data with filter
 };
+
 
 // Load all orders on page load
 loadAllOrder();
