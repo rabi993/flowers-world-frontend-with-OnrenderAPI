@@ -24,12 +24,13 @@ const fetchFlowers = () => {
           </tr>`;
       } else {
         userFlowers.forEach((flower) => {
-          const row = document.createElement("tr");
+          const row = document.createElement("tr");          
+          row.className = "winner__table";
           row.innerHTML = `
             <td>${flower.id}</td>
             <td>${flower.title}</td>
             <td>${flower.FlowerMalik}</td>
-            <td>${flower.content}</td>
+            <td>${flower.content.length > 50 ? flower.content.slice(0, 50) + '...' : flower.content}</td>
             <td>
               <img src="${flower.image}" alt="${flower.title}" 
                    style="width: 100px; height: 100px; object-fit: cover;">

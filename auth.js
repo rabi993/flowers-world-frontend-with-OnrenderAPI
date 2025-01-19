@@ -153,11 +153,17 @@ const handleLogin = (event) => {
 
             localStorage.setItem("username", userData.username);
             if (userData.is_superuser) {
-              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/adminPanel.html";
+              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/adminDashboard.html";
             } else {
-              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index.html";
+              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index2.html";
               
             }
+            // if (userData.is_superuser) {
+            //   window.location.href = "http://127.0.0.1:5503/adminDashboard.html";
+            // } else {
+            //   window.location.href = "http://127.0.0.1:5503/index2.html";
+              
+            // }
           })
           .catch((error) => {
             console.error("Error fetching user details:", error);

@@ -15,8 +15,8 @@ const fetchUsers = () => {
                     <td>${user.last_name}</td>
                     <td>${user.is_superuser ? 'Yes' : 'No'}</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" onclick="openEditModal(${user.id})">Edit</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteUser(${user.id})">Delete</button>
+                        <button class="btn obtn" onclick="openEditModal(${user.id})">📝</button>
+                        <button class="btn obtn" onclick="deleteUser(${user.id})">🗑️</button>
                     </td>
                 `;
                 usersList.appendChild(row);

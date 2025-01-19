@@ -71,8 +71,8 @@ const fetchCategories = () => {
           
           const actionCell = row.insertCell(1);
           actionCell.innerHTML = `
-            <button class="btn btn-warning mx-1" onclick="handleEditCategory('${category.id}', '${category.name}')">Edit</button>
-            <button class="btn btn-danger mx-1" onclick="handleDeleteCategory('${category.id}')">Delete</button>
+            <button class="btn obtn  mx-1" onclick="handleEditCategory('${category.id}', '${category.name}')">📝</button>
+            <button class="btn obtn mx-1" onclick="handleDeleteCategory('${category.id}')">🗑️</button>
           `;
         });
       }

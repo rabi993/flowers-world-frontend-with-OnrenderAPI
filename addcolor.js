@@ -74,8 +74,8 @@ const fetchColors = () => {
           // Action column
           const actionCell = row.insertCell(1);
           actionCell.innerHTML = `
-            <button class="btn btn-warning mx-1" onclick="handleEditColor('${color.id}', '${color.name}')">Edit</button>
-            <button class="btn btn-danger mx-1" onclick="handleDeleteColor('${color.id}')">Delete</button>
+            <button class="btn obtn mx-1" onclick="handleEditColor('${color.id}', '${color.name}')">📝</button>
+            <button class="btn obtn mx-1" onclick="handleDeleteColor('${color.id}')">🗑️</button>
           `;
         });
       }

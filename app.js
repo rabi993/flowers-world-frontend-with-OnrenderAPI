@@ -91,7 +91,7 @@ const loadFlowers = (search = "") => {
     // Sort flowers array by id in descending order
     const sortedFlowers = flowers.sort((a, b) => b.id - a.id);
 
-    let newTagLimit = 5;
+    let newTagLimit = 6;
     let showLimit = 6;
 
   
@@ -103,21 +103,19 @@ const loadFlowers = (search = "") => {
       
       if (index >= showLimit) return;
       const div = document.createElement("div");
-      div.classList.add("flower-card", "col-12", "col-md-6", "col-lg-4");
+      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","bg-light");
       div.innerHTML = `
-        <img class="flow-img" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img2" src="${flower.image}" alt="${flower.title}" />
         
         
         
-        <h4>${flower.title}</h4>
-        <div>${flower.category.map((item) => `Category:<button class="btn btn-info rounded btn-sm ">${item}</button>`).join("")} </div>
-        <p style="margin: 0px; "><b>Available:</b> ${flower.available} Piece</p>
-        <small style="color: grey; margin: 0px;font-size:10px;">Saler : ${flower.FlowerMalik}</small>
+        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> ${isNew ? '<button class="btn btcn btn-sm ms-2 new2">NEW Arrival</button>' : ''}</h4>
+      
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
-        <div>${flower.color.map((item) => `<button  class="btn btn-secondary rounded btn-sm ">${item}</button>`).join("")}</div>
+        <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
         
-          <a style="text-decoration: none; " class="btn btn-success rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
-          <div>${isNew ? '<button class="btn btn-warning btn-sm ms-2 new">NEW</button>' : ''}</div>
+          <a style="text-decoration: none;" class="btn btc rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
+          
         
       `;
       flowersContainer.appendChild(div);
@@ -135,7 +133,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button class="btn btn-info" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -151,23 +149,94 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button class="btn btn-info" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
       .catch((error) => console.error("Error fetching colors:", error));
   };
   
+  
   const handleSearch = () => {
     const value = document.getElementById("search").value.trim();
     loadFlowers(value);
   };
+
+  
+const loadFlowersspring = () => {
+  const flowersContainer = document.getElementById("flowers2");
+  const spinner = document.getElementById("spinner");
+  const noData = document.getElementById("nodata");
+
+  flowersContainer.innerHTML = "";
+  spinner.style.display = "block";
+  noData.style.display = "none";
+
+  const url = `https://flowers-world.onrender.com/flowers/list/`;
+  console.log("Fetching data from:", url);
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      spinner.style.display = "none";
+      if (data.results && data.results.length > 0) {
+        displayFlowersspring(data.results);
+      } else {
+        noData.style.display = "block";
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching flowers:", error);
+      spinner.style.display = "none";
+      noData.style.display = "block";
+    });
+};
+
+
+  
+  const displayFlowersspring = (flowers) => {
+    // Sort flowers array by id in descending order
+    // const sortedFlowers = flowers.sort((a, b) => b.id - a.id);
+    
+
+    
+    let showLimit = 4;
+
+  
+    const flowersContainer = document.getElementById("flowers2");
+    flowersContainer.innerHTML = ""; // Clear previous content if any
+    // <small style="color: grey; margin: 0px;font-size:10px;">${flower.content.slice(0, 20)}...</small>
+    flowers.forEach((flower, index) => {
+      
+      
+      if (index >= showLimit) return;
+      const div = document.createElement("div");
+      div.classList.add("allflower-card3", "col-12", "col-md-6", "col-lg-6","bg-light");
+      div.innerHTML = `
+        <img class="allflow-img3" src="${flower.image}" alt="${flower.title}" />
+        
+        
+        
+        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> </h4>
+      
+        <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
+        <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
+        
+          <a style="text-decoration: none;" class="btn btc rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
+          
+        
+      `;
+      flowersContainer.appendChild(div);
+    });
+  };
+  
   
   // Load initial data on page load
   document.addEventListener("DOMContentLoaded", () => {
     loadFlowers();
     loadCategory();
     loadColor();
+    loadFlowersspring();
   });
 
 

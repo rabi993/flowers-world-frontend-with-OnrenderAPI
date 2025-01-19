@@ -59,13 +59,13 @@ const displayDetails = (flower) => {
   const div = document.createElement("div");
   div.classList.add("flower-details-container", "row" ,"py-3", "gap-5","d-flex","justify-content-center");
   div.innerHTML = `
-    <div class="flower-img img-fluid col-md-4 col-lg-4">
+    <div class="flower-img img-fluid col-md-4 col-lg-4 obtni">
       <img src=${flower.image} alt="" />
     </div>
     <div class="doc-info col-md-4 col-lg-4 py-4 px-4 ">
       <h4>${flower?.title}</h4>
       ${flower?.category?.map((item) => {
-        return `<button class="btn btn-info rounded btn-sm ">${item}</button>`;
+        return `<b class=" "> Category: <span class="text-danger">${item}</span></b>`;
       })}
       <h6>Available : ${flower?.available}</h6>
       <h6>Saler : ${flower?.FlowerMalik}</h6>
@@ -76,12 +76,12 @@ const displayDetails = (flower) => {
       <h6>Price : ${flower?.price} $</h6>
       <p>
       ${flower?.color?.map((item) => {
-        return `<button class="btn btn-secondary rounded btn-sm ">${item}</button>`;
+        return `<b class=" rounded ">${item} </b>`;
       })}
       </p>
       <button
       type="button"
-      class="btn btn-success"
+      class="btn btc"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
       id="buyNowBtn" onclick="openOrderModal()"

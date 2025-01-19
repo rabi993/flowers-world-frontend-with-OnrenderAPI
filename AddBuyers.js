@@ -14,8 +14,8 @@ const fetchBuyers = () => {
                     <td>${buyer.mobile_no || 'N/A'}</td>
                     <td>${buyer.address}</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" onclick="editBuyer(${buyer.id})">Edit</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteBuyer(${buyer.id})">Delete</button>
+                        <button class="btn obtn" onclick="editBuyer(${buyer.id})">📝</button>
+                        <button class="btn obtn" onclick="deleteBuyer(${buyer.id})">🗑️</button>
                     </td>
                 `;
                 buyersList.appendChild(row);

@@ -1,0 +1,369 @@
+cardbody{
+    /* width: 1200px; */
+    /* border: 1px solid gray; */
+    margin: auto;
+    background-color: rgb(245, 243, 243);
+}
+li{
+    list-style: none;
+}
+nav{
+    background-color:#e8e8e8;
+    
+
+}
+
+.nav_text a{
+ font-weight: 600;
+ font-size: large;
+ text-decoration: none;
+ color: rgb(8, 8, 8);
+ 
+}
+.nav_text a:hover{
+    font-weight: 700;
+    /* font-size: x-large; */
+    color: #F95441;
+    
+}
+
+
+#logo_img{
+    width: 50px;
+    height: 50px;
+}
+.menu{
+    font-size: 20px;
+
+}
+.menu:hover{
+    color: white;
+    cursor: pointer;
+}
+.btc{
+    background-color: #F95441;
+}
+.btcn{
+    background-color: #e07265;
+}
+/* .banner-container{
+    /* width: 1200px; */
+     /* margin: auto; 
+     padding: 20px;  */
+
+/* }  */
+.dash_bar div {
+    margin: 10px ;
+    
+}
+
+.dash_bar div a {
+    display: inline-block;
+    margin: 5px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.dash_bar div a:hover {
+    color: #fff;
+    background-color: #F95441;
+    border-radius: 5px;
+    padding: 5px 20px;
+    width: 80%;
+    
+}
+
+.banner{
+    /* height: 450px; */
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(#FFD0CA,#e07265,#FFD0CA);
+    /* box-shadow: 4px 4px 8px gray; */
+    /* border-radius:10px; */
+    /* padding: 30px; */
+}
+.bn-img{
+    /* width: 650px;
+    height: 400px; */
+    
+    margin-right: 20px;
+    border-radius: 20px;
+}
+/* .service-container{ */
+    /* width: 1000px;
+    margin: auto; */
+    /* margin-top: 50px; */
+    
+/* } */
+.service_card {
+    width: 370px;
+    height: 330px;
+}
+.service_card_img{
+    width: 368px;
+    height: 200px;
+}
+.service_card_body{
+    margin-top: -20px;
+}
+.title{
+    font-size: 44px;
+    color: black;
+    text-align: center;
+
+}
+.tora{
+    /* background-image:url("./Images/ba-removebg-preview.png") ; */
+    background-image:url("./Images/bbbbb.png") ;
+    /* background-image:url("./Images/ban2.jpg") ; */
+    background-repeat: no-repeat;
+
+    
+    border-radius: 15px;
+    /* margin-top: 50px; */
+    /* padding: 30px; */
+}
+.flower-card{
+    width: 250px;
+
+    height: 350px;
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 10px;
+    text-align:center;
+    padding: 5px;
+}
+.flow-img{
+    width: 200px;
+    height: 130px;
+    border-radius: 50px;
+}
+.allflower-card2{
+    width: 500px;
+
+    height: 450px;
+    box-shadow: 4px 4px 8px gray;
+    /* border-radius: 10px; */
+    text-align:center;
+    padding: 5px;
+    background-color: #e8e8e8;
+}
+.allflow-img2{
+    width: 480px;
+    height: 300px;
+    /* border-radius: 10px; */
+    
+}
+.allflower-card3{
+    width: 300px;
+
+    height: 300px;
+    /* box-shadow: 4px 4px 8px gray; */
+    /* border-radius: 10px; */
+    text-align:center;
+    padding: 5px;
+}
+.allflow-img3{
+    width: 280px;
+    height: 160px;
+    /* border-radius: 10px; */
+}
+#search{
+    padding:10px;
+    width: 90%;
+    border: none;
+}
+#noData{
+    display: none;
+}
+
+.nodata{
+    display: none;
+}
+#spinner{
+    display: none;
+}
+.review-card{
+    width: 250px;
+    height: 210px;
+    box-shadow: 4px 4px 8px  gray;
+    border-radius:15px;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    background: #F1EAEA;
+}
+.review-card img{
+    width: 60px;
+    height: 60px;
+    border-radius:50px;
+}
+
+footer{
+    padding: 50px;
+    /* background-color: #F95441; */
+    /* background: linear-gradient(66deg, #F95441 -5.25%, #e07265 46.76%, #F95441 98.77%);; */
+    background-image: url(./Images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    background: fluid;
+}
+
+.flower-img img{
+width: 350px;
+height: 300px;
+/* border-radius: 70px; */
+}
+/* .doc-info{
+    margin-left: 70px;
+} */
+.flower-details-container{
+    display: flex;
+    justify-content: center;
+    /* padding: 30px; */
+    /* gap: 100px; */
+    width: 75%;
+    margin: auto;
+}
+.flower-detail-btn{
+    border: none;
+    padding:5px 10px;
+    background-color:gray;
+    color: white;
+    border-radius: 5px;
+}
+
+.user-detais-container{
+    height: 100vh;
+    width: 75%;
+    margin: auto;
+}
+.user-img img{
+width: 200px;
+height: 200px;
+border-radius:100px;
+}
+.user-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.order-container{
+    width: 100%;
+    margin: auto;
+    /* height: 40vh; */
+}
+.order-container1{
+    width: 100%;
+    
+    /* margin: auto; */
+    /* height: 40vh; */
+}
+
+
+.comment{
+    width: 50%;
+    padding: 20px;
+    margin: 20px;
+    border: none;
+}
+
+.pdfhtml{
+    width: 350px;
+    height:450px;
+    box-shadow: 4px 4px 8px rgb(47, 46, 46);
+    text-align: start;
+    background-color:gray;
+    color: white;
+    border-radius:20px;
+}
+.dash-btn{
+    width: 100%;
+    font-weight: 500;
+    border-radius: 0;
+    
+    
+}
+.dash-btn:hover{
+    /* color: #cccdce; */
+    background-color: #FFD0CB;
+    
+}
+
+.new{
+    border-radius: 10px;
+    height: 40px;
+    width: 50px;
+    color: #e8e8e8;
+    
+    margin-top: -680px;
+    margin-right: -190px;
+}.new2{
+    border-radius: 10px;
+    height: 25px;
+    /* width: 50px; */
+    color: white;
+    font-size: 10px;
+    
+    /* margin-top: -800px; */
+    /* margin-right: -400px; */
+}
+.bottom_banner{
+    background-image: url("./Images/ban2.jpg") ;
+
+    height: 350px;   
+    text-align: center;   
+    box-shadow: 4px 4px 8px gray;
+    border-radius:10px;
+    /* padding: 30px; */
+}
+.bottom_banner2{
+    height: 200px;
+    width: 100%;
+    
+    box-shadow: 4px 4px 8px gray;
+    border-radius:10px;
+    /* padding: 30px; */
+}
+#message{
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.obtn{
+    padding: 0;
+    margin: 0;
+    
+}
+.obtn:hover{
+    
+    background-color: #e07265;
+    /* font-size: 20px; */
+    transform: scale(1.5); /* Increases size by 20% */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+    
+}
+.obtnp:hover{
+    
+    background-color: #e07265;
+    border-radius: 50%;
+    /* font-size: 20px; */
+    transform: scale(1.5); /* Increases size by 20% */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+    
+}
+.obtni:hover{
+    
+    
+    transform: scale(1.2); /* Increases size by 20% */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+    
+}

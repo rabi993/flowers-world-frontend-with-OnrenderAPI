@@ -33,7 +33,7 @@ const loadFlowers = (search = "") => {
     // Sort flowers array by id in descending order
     const sortedflowers = flowers.sort((a, b) => b.id - a.id);
 
-    let newTagLimit = 5;
+    let newTagLimit = 6;
 
   
     const flowersContainer = document.getElementById("flowers");
@@ -42,21 +42,19 @@ const loadFlowers = (search = "") => {
     sortedflowers.forEach((flower, index) => {
       const isNew = index < newTagLimit; 
       const div = document.createElement("div");
-      div.classList.add("flower-card", "col-12", "col-md-6", "col-lg-4");
+      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6");
       div.innerHTML = `
-        <img class="flow-img" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img2 img-fluid" src="${flower.image}" alt="${flower.title}" />
         
         
         
-        <h4>${flower.title}</h4>
-        <div>${flower.category.map((item) => `<button class="btn btn-info rounded btn-sm ">${item}</button>`).join("")}</div>
-        <p style="margin: 0px; "><b>Available:</b> ${flower.available} Piece</p>
-        <small style="color: grey; margin: 0px;font-size:10px;">${flower.content.slice(0, 20)}...</small>
+        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> ${isNew ? '<button class="btn btcn btn-sm ms-2 new2">NEW Arrival</button>' : ''}</h4>
+      
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
-        <div>${flower.color.map((item) => `<button  class="btn btn-secondary rounded btn-sm ">${item}</button>`).join("")}</div>
+        <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
         
-          <a style="text-decoration: none; " class="btn btn-success rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
-          <div>${isNew ? '<button class="btn btn-warning btn-sm ms-2 new">NEW</button>' : ''}</div>
+          <a style="text-decoration: none;" class="btn btc rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
+          
         
       `;
       flowersContainer.appendChild(div);
@@ -74,7 +72,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button class="btn btn-info" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -90,7 +88,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button class="btn btn-info" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })

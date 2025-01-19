@@ -34,8 +34,8 @@ const fetchFlowers = () => {
               <td>${flower.price.toFixed(2)}</td>
               <td>
                 <div class ="d-flex ">
-                  <button class="btn btn-info" onclick='handleEditFlower(${JSON.stringify(flower)})'>Edit</button>
-                  <button class="btn btn-danger mx-3" onclick='handleDeleteFlower(${flower.id})'>Delete</button>
+                  <button class="btn obtn" onclick='handleEditFlower(${JSON.stringify(flower)})'>📝</button>
+                  <button class="btn obtn mx-3" onclick='handleDeleteFlower(${flower.id})'>🗑️</button>
                 </div>
               </td>
             `;

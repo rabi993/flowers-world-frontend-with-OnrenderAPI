@@ -23,7 +23,7 @@ const loadorder = () => {
       if (filteredOrders.length === 0) {
         // Show a message if no orders are present
         const tr = document.createElement("tr");
-        tr.innerHTML = `<td colspan="12" class="text-center bg-secondary">No items added to your cart.</td>`;
+        tr.innerHTML = `<td colspan="12" class="text-center text-danger">No items added to your cart.</td>`;
         parent.appendChild(tr);
       } else {
         filteredOrders.forEach((item) => {
@@ -34,19 +34,7 @@ const loadorder = () => {
             <td>${item.flower}</td>
             <td>${item.order_types}</td>
             <td>${item.order_status}</td>
-            <td>
-              ${
-                item.order_status === "Pending"
-                  ? "🅿️"
-                  : item.order_status === "Processing"
-                  ? "🔄"
-                  : item.order_status === "Completed"
-                  ? "✅"
-                  : item.order_status === "Rejected"
-                  ? "❌"
-                  : ""
-              }
-            </td>
+            
             <td>${item.quantity}</td>
             <td>${item.mobile_no}</td>
             <td>

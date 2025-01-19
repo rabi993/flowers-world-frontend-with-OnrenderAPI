@@ -4,6 +4,246 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="..."
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    
+    <link rel="stylesheet" href="style2.css" />
+    
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    
+    <header>
+      <nav class="navbar navbar-expand-lg  py-3">
+        <div class="container-fluid container ">
+          <div class=" col-lg-4 logo-container d-flex align-items-center gap-2 ">
+            <img id="logo_img" src="./Images/flogo.png" alt="" />
+            <h2 style="padding-top: 10px;">Flower's World</h2>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse col-lg-8  "  id="navbarSupportedContent" style="text-align: end;">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav_text  gap-3 " >
+              
+              <li class="menu nav-item"><a  href="index2.html">Home</a></li>
+              <li class="menu nav-item"><a  href="allflowers.html">All_Flower</a></li>
+              <!-- <li class="menu aut_menu nav-item"><a href="AddFlowersUser.html">Add</a></li> -->
+              <!-- <li class="menu nav-item"><a href="service.html">Services</a></li> -->
+              <!-- <li class="menu nav-item"><a href="reviews.html">Reviews</a></li> -->
+              <li class="menu nav-item"><a   href="aboutUs.html">About_us</a></li>
+              <li class="menu nav-item"><a  href="contactus.html">Contact_us</a></li>
+              
+              <!-- <li class="menu aut_menu2 nav-item"><a href="order.html">Orders</a></li> -->
+<!--               
+              <li class="menu login-menu nav-item"><a href="login.html">Login</a></li>
+              <li class="menu registration-menu nav-item"><a href="registration.html">Registration</a></li>
+              <li class="menu logout-menu d-none nav-item" onclick="handlelogOut()"><a href="#">Logout</a></li>
+              <li class="menu profile-menu d-none nav-item"><a href="profile.html">Profile</a></li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="obtnp" style="height: 32px; width: 32px; margin-top: -15px; margin-left: 0px; border:2px solid #F95441; border-radius: 50%;" src="./Images/profile.png" alt="">
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item ndropdown-item  menu dash-menu d-none nav-item" href="dashboard.html">Dashboard</a></li>
+                  <li><a class="dropdown-item ndropdown-item menu login-menu nav-item" style="color: #F95441;" href="login.html">Login</a></li>
+                  <li><a class="dropdown-item ndropdown-item menu registration-menu nav-item" href="registration.html">Registration</a></li>
+                  <li><a class="dropdown-item ndropdown-item menu logout-menu d-none nav-item" onclick="handlelogOut()" href="#">Logout</a></li>
+                </ul>
+              </li>
+              <li class="menu aut_menu1 nav-item"><a  href="cart.html"><img style="margin-top: -6px; margin-left: 0px;"   src="./Images/shoppingcart.png" alt=""></a></li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+      
+
+      <!-- banner contianer  -->
+
+      <div class="  text-center text-light">
+        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/banerflo.png); background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
+          
+            
+            <div>
+                <h3 style="font-size: 35px;"><b>Login Page</b></h3>
+            
+                <p style="font-size: 20px; ">
+                    <b>
+                        <a style="text-decoration: none;color: aliceblue; " href="index2.html">Home</a> / Login
+                    </b>
+                </p>
+            
+            </div>
+          
+          
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- add login from here  -->
+  
+  
+    <!-- contact form -->
+    <!-- <div style="margin-top: -50px;" class="login-container container row d-flex justify-content-center">
+      <div class="col-lg-7 col-md-7">
+        <h1 class="title mt-5">Please write to us</h1>
+        <form action="" onsubmit="handlecontact(event)">
+          <p id="error" class="text-danger"></p>
+          <input id="name" type="text" class="input" placeholder="Name" required />
+          <input
+            id="phone"
+            type="text"
+            class="input"
+            placeholder="Phone"
+            pattern="[0-9]{11}" 
+            title="Enter a valid 10-digit phone number"
+            required
+          />
+          <textarea id="content" class="input" placeholder="Message" rows="4" required></textarea>
+          <input type="submit" class="submit-btn" value="Submit" />
+        </form>
+        
+      </div>
+      <div class="col-lg-4 col-md-4 ">
+        <img class="img-fluid" src="./Images/login.png" alt="" />
+      </div>
+    </div> -->
+    <div class="login-container d-flex justify-content-center w-75 m-auto  ">
+      <div style="padding: 50px 0;" class="col-md-6 text-center">
+        <h1 class="title mt-5">Please Login</h1>
+        <form  action="">
+
+          <input value="" id="login-username" type="text" class="input" placeholder="username" required />
+          <input id="login-password" type="password" class="input" placeholder="password" required value="" />
+          
+          <button onclick="handleLogin(event)"  class=" submit-btn">Login</button>
+          
+        </form>
+      </div>
+      <div  class="col-md-6 ">
+        <img class="w-75 " src="./Images/reg.png" alt="" />
+      </div>
+    </div>
+      
+      <hr style=" margin: auto; ">
+      <div style="background-image: url(./Images/last1.png);background-repeat: no-repeat; background-position: center;" class="">
+        <div class="">
+          <br><br><br>
+          <p style="padding-left: 100px;" class="text-center " >.</p>
+          <p style="padding-right: 200px;" class="text-center " >.</p>
+          <p style="padding-left: 500px;" class="text-center " >.</p>
+          <p style="padding-right: 600px;" class="text-center " >.</p>
+          <p  class="text-center " >.</p><br><br>
+          
+          
+        </div>
+      </div>
+    </main>
+    <footer class="p-5">
+      <div style="width: 90%;" class="  m-auto row p-5">
+        <div  class="col-md-6">
+          <h5>Address</h5>
+          <p>No: 58 A, East Madison Street, Baltimore, MD,<br>USA 4508</p>
+          <p>0000 - 123 - 456789</p>
+          <p>info@example.com</p>
+          <div class="icons">
+            <img class="icon" src="./Images/LinkedIn.png" alt="" />
+            <img class="icon" src="./Images/YouTube.png" alt="" />
+            <img class="icon" src="./Images/LinkedIn.png" alt="" />
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>Help</h5>
+          <li>Information</li>
+          <li>Advanced Search</li>
+          <li>Help & Faq's</li>
+          <li>Store Location</li>
+          <li>Order & Return</li>
+        </div>
+        <div class="col-md-2">
+          <h5>Support</h5>
+          <li>Services</li>
+          <li>Clothing</li>
+          <li>Bags</li>
+          <li>Shoes</li>
+          <li>Accessories</li>
+        </div>
+        <div class="col-md-2">
+          <h5>Information</h5>
+          <li>Contact Us</li>
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Refund & Return</li>
+          <li>Deliveries</li>
+        </div>
+      </div>
+      <hr/>
+      <p class="text-center mt-3">
+        <small>Copyright © Flower's World. All Rights Reserved</small>
+      </p>
+    </footer>
+
+    
+    
+    
+    <!-- <script src="./contactus.js"></script> -->
+    <script src="./auth.js"></script>
+    <script src="./logout.js"></script>
+    <script src="./index2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"
+      integrity="..."
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+      integrity="sha512-pMNxjrrUOMvcmfwE6S8wroAWXZcllEYcBLf1m5SvI8BG+LKyHNDsnrtXZAbYaIQX9+R29FQqkCn+jrBLYBdksA=="
+      crossorigin="anonymous"
+      >
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    
+  
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
@@ -62,7 +302,7 @@
           <input id="login-password" type="password" class="input" placeholder="password" required value="abcd1234%" />
           
           <button onclick="handleLogin(event)" class="submit-btn">Login</button>
-          <!-- <p><a href="registration.html">go to Registration page</a></p> -->
+          
         </form>
       </div>
       <div class="col-md-6">
@@ -101,7 +341,7 @@
         <small>Copyright © Flower's World. All Rights Reserved</small>
       </p>
     </footer>
-    <!-- script tag from here  -->
+    
     <script src="./app.js"></script>
     <script src="./auth.js"></script>
     <script src="./flowerDetails.js"></script>
@@ -119,4 +359,4 @@
     
     
   </body>
-</html>
+</html> -->

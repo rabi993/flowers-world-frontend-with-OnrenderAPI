@@ -13,7 +13,7 @@ const fetchReviews = () => {
                     <td>${review.rating}</td>
                     <td>${new Date(review.created).toLocaleString()}</td>
                     <td>
-                        <button class="btn btn-danger btn-sm" onclick="deleteReview(${review.id})">Delete</button>
+                        <button class="btn obtn" onclick="deleteReview(${review.id})">🗑️</button>
                     </td>
                 `;
                 reviewsList.appendChild(row);

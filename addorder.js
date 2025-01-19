@@ -197,13 +197,7 @@ const loadAllOrder = (filterStatus = null, fromDate = null, toDate = null) => {
             <td>${item.flower}</td>
             <td>${item.order_types}</td>
             <td id="order-status-${item.id}">${item.order_status}</td>
-            <td>
-                ${item.order_status == "Pending" ? "💤"
-                  : item.order_status == "Processing" ? "🔄"
-                  : item.order_status == "Completed" ? "✅"
-                  : item.order_status == "Rejected" ? "❌"
-                  : ""}
-            </td>
+            
             <td>${item.quantity}</td>
             <td>${item.mobile_no}</td>
             <td>
@@ -231,22 +225,22 @@ const loadAllOrder = (filterStatus = null, fromDate = null, toDate = null) => {
                 : "N/A"}
             </td>
             <td>${item.delivery_address}</td>
-            <td>${item.price} $</td>
+            
             <td>${item.total_price} $</td>
             <td>
               ${item.paid 
-                ? `<button class="btn btn-success">Paid</button>` 
-                : `<button class="btn btn-secondary">NoPay</button>`}
+                ? `<p class="">Y</p>` 
+                : `<p class="btn bg-danger">N</p>`}
             </td>
             <td>
               ${!item.paid
-                ? `<button class="btn btn-info">In Customer's Cart (not paid)</button>
-                   <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>`
-                : `<button class="btn btn-secondary btn-update" data-id="${item.id}" data-status="Pending">💤</button>
-                   <button class="btn btn-info btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
-                   <button class="btn btn-success btn-update" data-id="${item.id}" data-status="Completed">✅</button>
-                   <button class="btn btn-secondary btn-update mx-3" data-id="${item.id}" data-status="Rejected">❌</button>
-                   <button class="btn btn-danger" onclick="deleteOrder(${item.id})">Delete</button>`}
+                ? `<button class="btn  text-danger">In Customer's Cart (not paid)</button>
+                   <button class="btn obtn " onclick="deleteOrder(${item.id})">🗑️</button>`
+                : `<button class="btn obtn btn-update" data-id="${item.id}" data-status="Pending">💤</button>
+                   <button class="btn obtn  btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
+                   <button class="btn obtn btn-update" data-id="${item.id}" data-status="Completed">✅</button>
+                   <button class="btn obtn btn-update mx-1" data-id="${item.id}" data-status="Rejected">❌</button>
+                   <button class="btn obtn" onclick="deleteOrder(${item.id})">🗑️</button>`}
             </td>
         `;
         parent.appendChild(tr);
