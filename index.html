@@ -18,7 +18,7 @@
     
     
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
   </head>
   <body>
     
@@ -35,20 +35,32 @@
           <div class="collapse navbar-collapse col-lg-8  "  id="navbarSupportedContent" style="text-align: end;">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav_text  gap-3 " >
               
-              <li class="menu nav-item"><a class="btn btn-secondary"  href="index.html">Home</a></li>
+              <li class="menu nav-item"><a style="color: #F95441;"  href="index.html">Home</a></li>
               <li class="menu nav-item"><a  href="allflowers.html">All_Flower</a></li>
-              <li class="menu aut_menu nav-item"><a href="AddFlowersUser.html">Add</a></li>
-              <li class="menu nav-item"><a href="service.html">Services</a></li>
-              <li class="menu nav-item"><a href="reviews.html">Reviews</a></li>
+              <!-- <li class="menu aut_menu nav-item"><a href="AddFlowersUser.html">Add</a></li> -->
+              <!-- <li class="menu nav-item"><a href="service.html">Services</a></li> -->
+              <!-- <li class="menu nav-item"><a href="reviews.html">Reviews</a></li> -->
+              <li class="menu nav-item"><a href="aboutUs.html">About_us</a></li>
               <li class="menu nav-item"><a href="contactus.html">Contact_us</a></li>
-              <li class="menu aut_menu1 nav-item"><a href="cart.html">Cart</a></li>
               
-              <li class="menu aut_menu2 nav-item"><a href="order.html">Orders</a></li>
-
+              <!-- <li class="menu aut_menu2 nav-item"><a href="order.html">Orders</a></li> -->
+<!--               
               <li class="menu login-menu nav-item"><a href="login.html">Login</a></li>
               <li class="menu registration-menu nav-item"><a href="registration.html">Registration</a></li>
               <li class="menu logout-menu d-none nav-item" onclick="handlelogOut()"><a href="#">Logout</a></li>
-              <li class="menu profile-menu d-none nav-item"><a href="profile.html">Profile</a></li>
+              <li class="menu profile-menu d-none nav-item"><a href="profile.html">Profile</a></li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="obtnp" style="height: 32px; width: 32px; margin-top: -15px; margin-left: 0px;" src="./Images/profile.png" alt="">
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item ndropdown-item  menu dash-menu d-none nav-item" href="dashboard.html">Dashboard</a></li>
+                  <li><a class="dropdown-item ndropdown-item menu login-menu nav-item" href="login.html">Login</a></li>
+                  <li><a class="dropdown-item ndropdown-item menu registration-menu nav-item" href="registration.html">Registration</a></li>
+                  <li><a class="dropdown-item ndropdown-item menu logout-menu d-none nav-item" onclick="handlelogOut()" href="#">Logout</a></li>
+                </ul>
+              </li>
+              <li class="menu aut_menu1 nav-item"><a  href="cart.html"><img style="margin-top: -6px; margin-left: 0px;"   src="./Images/shoppingcart.png" alt=""></a></li>
             </ul>
             
           </div>
@@ -58,152 +70,255 @@
 
       <!-- banner contianer  -->
 
-      <div class="banner-container container">
-        <div class="banner row">
-          <div class="banner-left col-md-4 col-lg-6">
-            <h1>
-              Providing Quality
-              <br />
-              Flower's World
+      <div class="  text-center text-light">
+        <div style="width: 100%; margin: auto; height: 500px;  background-image: url(./Images/banerflo.png); background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
+          
+            
+            <div>
+              <h3 style="font-size: 35px;"><b>Every Occasion is Unique</b></h3>
+            
+            <h1 style="font-size: 50px;">
+              <b>
+                 Your favourate Floristry & Decor <br> Studio
+              </b>
             </h1>
-            <p class="w-75 m-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at
-              nunc feugiat, pretium quam malesuada, luctus ex. Duis eu dui
-              rhoncus, faucibus diam ac, iaculis urna. Phasellus pellentesque
-              dui in suscipit eleifend.
-            </p>
-          </div>
-          <div class="  col-md-8 col-lg-6">
-            <img class="bn-img img-fluid" src="./Images/b1.png" alt="" />
-          </div>
+            <a href="allflowers.html"class=" btn p-2" style="font-size: 30px; background-color: #F95441; ">Shop Now</a>
+            </div>
+          
+          
         </div>
       </div>
     </header>
     <main>
       <!-- add services from here  -->
     
-        
-        
-      <div class="service-container container w-75 m-auto">
-        <h1 class="title">Services we provide</h1>
-        <p class="description text-center w-50 m-auto mb-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          <br />
-          quis sit, aperiam deserunt at accusamus!
-        </p>
-        <div
-          class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
-        >
-          <ul id="service-container" class="slider-container "></ul>
-
-          <button
-            type="button"
-            class="slider-nav"
-            aria-label="Go left"
-          ></button>
-          <button
-            type="button"
-            class="slider-nav slider-nav-next"
-            aria-label="Go left"
-          ></button>
-
-          <div class="slider-indicators">
-            <button class="active" aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide" class=""></button>
+      <div style="width: 90%;" class="d-flex row justify-content-center m-auto p-4">
+        <div class="col-lg-3 col-md-3 d-flex  justify-content-center gap-2">
+          <div ><img  src="./Images/mobile-shopping.png" alt=""></div>
+          <div>
+            <h4>Order Online</h4>
+            <p>Order bouquet via mobile</p>
           </div>
         </div>
+        <div class="col-lg-3 col-md-3 d-flex justify-content-center gap-2">
+          <div><img src="./Images/free-delivery.png" alt=""></div>
+          <div>
+            <h4>Free Shipping</h4>
+            <p>For all orders from $120</p>
+          </div>
+        </div>
+        <div class=" col-lg-3 col-md-3 d-flex justify-content-center gap-2">
+          <div><img  src="./Images/flowers.png" alt=""></div>
+          <div>
+            <h4>More Freshness</h4>
+            <p>Bouquet are fresh & blooms</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 d-flex justify-content-center gap-2">
+          <div><img src="./Images/payment-protection.png" alt=""></div>
+          <div>
+            <h4>Safe Payment</h4>
+            <p>Protected online payment</p>
+          </div>
+        </div>
+        
       </div>
-
+      <div  style="background-image: url(./Images/images__1_-removebg-preview.png); ">
+        
+        <p style="padding-left: 100px;" class="text-center " >.</p>
+        <p style="padding-right: 200px;" class="text-center " >.</p>
+        <p style="padding-left: 500px;" class="text-center " >.</p>
+        <h6 style="padding-right: 600px;" class="text-center " >.</h6>
+        
+      </div> 
+      <h1 class="text-center " >Our New Arrivals Products</h1>
+      
       <!-- all flowers section  -->
-
+      
       <div class="container my-3 m-auto  row d-flex justify-content-center">
         <div class="col-md-4 text-center tora d-flex gap-3 justify-content-start">
           <div class="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
+            class="btn btcn dropdown-toggle"
+            type="button"
               id="dropdownMenuButton2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
+              >
               Flower Category
             </button>
             <ul
-              id="drop-cat"
-              class="dropdown-menu dropdown-menu-dark"
+            id="drop-cat"
+            class="dropdown-menu "
               aria-labelledby="dropdownMenuButton2"
             ></ul>
           </div>
           <div class="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton2"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+            class="btn btcn dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
             >
-              Flower Color
-            </button>
-            <ul
-              id="drop-color"
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="dropdownMenuButton2"
-            ></ul>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <!-- <input class="border rounded-2" id="search" type="text" placeholder="search..." /> -->
-          <input id="search" 
-         type="text" 
-         class="rounded-2 bg-light" 
-         placeholder="Search..." 
-         onkeydown="if(event.key === 'Enter') handleSearch()" />
-          <button class="btn btn-secondary mb-2" onclick="handleSearch()">Search</button>
-          <div id="flowers" class="flowers d-flex  row gap-3 mt-5 container justify-content-center"></div>
-          <div id="nodata" class="nodata">
-            <img src="./Images/nodata.png" alt="" />
-          </div>
-          <div id="spinner" class="loading text-center">
-            <h4>loading....</h4>
-          </div>
+            Flower Color
+          </button>
+          <ul
+          id="drop-color"
+          class="dropdown-menu "
+          aria-labelledby="dropdownMenuButton2"
+          ></ul>
         </div>
       </div>
+      <div class="col-md-8">
+        <!-- <input class="border rounded-2" id="search" type="text" placeholder="search..." /> -->
+        <input id="search" 
+        type="text" 
+        class="rounded-2 bg-light " 
+        style="border: 1px solid #e07265;"
+        placeholder="Search..." 
+        onkeydown="if(event.key === 'Enter') handleSearch()" />
+        <button class="btn btc mb-2 text-white" onclick="handleSearch()">Search</button>
+          
+      </div>
+    </div>
+    <div style="background-image: url(./Images/home-product-grid.png); background-repeat: no-repeat; background-size: cover;" >
+      <div id="flowers"  class="flowers d-flex   row gap-3 py-3  justify-content-center m-auto">
       
-      <div class="container text-center py-3">
-
-        <a style="text-decoration: none; padding: 5px; font-weight: 500; font-size: larger;" class="btn btn-info p-2"  href="allflowers.html">See More Flower</a>
       </div>
-      <hr style="width: 75%; margin: auto; ">
-      <div class="banner-container container">
-        <div class="bottom_banner">
-          <div >
-            <h1 style="color: rgb(5, 79, 21);">
-              Spring Special Offer!!
-              <br />
-              <b  style="color: rgb(12, 119, 117);">Flower's World</b>
-            </h1>
-            <p style="padding-top: 190px;" class="w-75 m-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at
-              nunc feugiat, pretium quam malesuada, luctus ex.
-            </p>
-          </div>
+      <div class="w-25 m-auto">
+        <div id="nodata" class="nodata">
+          <img src="./Images/nodata.png" alt="" />
+        </div>
+        <div id="spinner" class="loading text-center">
+          <h4>loading....</h4>
+        </div>
+        
+      </div>
+      <div class=" text-center py-3">
+        <a style=" text-decoration: none; padding: 5px; font-weight: 500; font-size: larger; color: #F95441;" class=" p-2 " onmouseover="this.style.color='black'" 
+        onmouseout="this.style.color='#F95441'" href="allflowers.html">See More Flower</a>
+      </div>
+      <hr class="container text-danger">
+      <div style="width: 90%;" class="justify-content-around  m-auto  row p-5">
+        <div  class="col-md-3 ">
+          <h4><b>Emotions dressed with </b></h4>
+          <h4><b>lovely flowers.</b></h4>
+          
+        </div>
+        <div class="col-md-3 px-5">
+          <img src="./Images/icon-6_medium.png" alt="">
+          <h5>Delivering Your Emotions</h5>
+          <li>Send lovely flowers and gifts same day to surprise your loved one</li>
+          
+        </div>
+        <div class="col-md-3 px-5">
+          <img src="./Images/icon-7_medium.png" alt="">
+          <h5>100% Fresh Flowers</h5>
+          <li>Fresh Flower Basket, Cut Flowers & more at lower price</li>
+         
+        </div>
+        <div class="col-md-3 px-5">
+          <img src="./Images/icon-5_medium.png" alt="">
+          <h5>Online Flowers Delivery</h5>
+          <li>24/7 Flower & Bouquet delivery with hassle free support</li>
           
         </div>
       </div>
-      <!-- all reviews -->
-      <div class="review-container container  w-75 m-auto">
-        <h1 class="title">Clients Review about us</h1>
+    </div>
+    
+    
+    
+    
+    
+    <!-- <div class=" text-center py-3">
+      <a style="text-decoration: none; padding: 5px; font-weight: 500; font-size: larger; color: #F95441;" class=" p-2 "  href="allflowers.html">See More Flower</a>
+    </div>
+    <hr style="width: 75%; margin: auto; "> -->
+    
+    
+    
+    <div class="" style="background-image: url(./Images/spri.png); ">
+      
+      <p style="padding-left: 100px;" class="text-center " >.</p>
+      <p style="padding-right: 200px;" class="text-center " >.</p>
+      <p style="padding-left: 500px;" class="text-center " >.</p>
+      <h6 style="padding-right: 600px;" class="text-center " >.</h6>
+      
+    </div> 
+    <h1 class="text-center " >Our Spring Special Offer!!</h1>
+    <hr style="width: 75%; margin: auto; ">
+
+    
+    <div class="btcn">
+      <div style="width: 75%; margin-top: 50px; margin-bottom: 50px;"  class=" row d-flex justify-content-center m-auto  ">
+        <div class="col-md-4 col-lg-4 " style="background-image:url(./Images/product-bg_600x.webp) ; background-size: cover; background-position: center; margin-top: 20px; margin-bottom: 20px;">
+          <div style="margin: 100px 50px;text-align: center; background-color: aliceblue; padding: 100px 20px;">
+            <h3 >Take Upto 50% Off</h3>
+            <h1 style="font-size: 60px;"><span style="padding-right: 100px;">Spring</span> <br><span style="padding-left: 100px;">Sale</span></h1>
+            <p style="width: 100px;" class="m-auto" ><a class="btc p-2 " style="text-decoration: none;color: aliceblue; border: none;"  href="allflowers.html">Shop Now</a></p>
+          </div>
+        </div>
+        <div class="col-md-8 col-lg-8 mt-3" >
+          <div id="flowers2" class="flowers d-flex   row gap-3 py-3   justify-content-end m-auto"></div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center w-75 row m-auto ">
+      <div style="margin: 50px 0;" class=" col-12 col-lg-6 col-md-6">
+        <div style="width: 100%;margin: auto;"  class="col-md-3  py-5">
+          <h2><b>The Florist -</b></h2>
+          <h2><b>to fulfill your bouquet needs</b></h2>
+          
+        </div>
+        <div style="width: 100%;" class="justify-content-around  m-auto  row ">
+        
+          <div class="col-md-6  pb-3">
+            <img src="./Images/icon-4_180x.png" alt="">
+            <h5>Adorning Life Moments</h5>
+            <li>Vitae et leo duis ut diam quam. Aliquam vestibulum morbi blandit.</li>
+            
+          </div>
+          <div class="col-md-6  pb-3">
+            <img src="./Images/icon-2_180x.png" alt="">
+            <h5>100% Freshness Guaranteed</h5>
+            <li>Turpis egestas pretium aenean pharetra magna ac placerat.</li>
+            
+          </div>
+          <div class="col-md-6 ">
+            <img src="./Images/icon-3_180x.png" alt="">
+            <h5>Delivering Smiles Daily!</h5>
+            <li>Aliquam id diam maecenas ultricies mi eget mauris pharetraet.</li>
+           
+          </div>
+          <div class="col-md-6 ">
+            <img src="./Images/icon-1_180x.png" alt="">
+            <h5>Best Flowers. Lower Prices.</h5>
+            <li>Gravida arcu ac tortor dignissim convallis aenean et tortor.</li>
+            
+          </div>
+        </div>
+      </div>
+      <div class=" col-12 col-lg-6 col-md-6  " style=" margin: 50px 0;">
+        <img class="img-fluid" src="./Images/img-1_970x.webp" alt="">
+      </div>
+
+
+
+    </div>
+    
+    
+    <!-- all reviews -->
+      <div  class="review-container btcn  m-auto">
+        <h1 class="text-light text-center">Clients Review about us</h1>
         <p class="description text-center w-50 m-auto">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
           <br />
           quis sit, aperiam deserunt at accusamus!
         </p>
-        <div class="reviews">
+        <div class="reviews m-auto " style="width: 90%;">
           <div
-            class="swiffy-slider slider-item-show3 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
+            class="swiffy-slider slider-item-show4  slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
           >
             <ul id="review-container"  class="slider-container pt-3 mb-2"></ul>
 
@@ -222,39 +337,56 @@
           </div>
         </div>
       </div>
-      <hr style="width: 75%; margin: auto; ">
-      <div class="banner-container container">
+      <hr style=" margin: auto; ">
+      <div style="background-image: url(./Images/last1.png);background-repeat: no-repeat; background-position: center;" class="">
         <div class="">
-          <img class="bottom_banner2" src="./Images/ban-10.png" alt="" />
+          <br><br><br>
+          <p style="padding-left: 100px;" class="text-center " >.</p>
+          <p style="padding-right: 200px;" class="text-center " >.</p>
+          <p style="padding-left: 500px;" class="text-center " >.</p>
+          <p style="padding-right: 600px;" class="text-center " >.</p>
+          <p  class="text-center " >.</p><br><br>
           
           
         </div>
       </div>
     </main>
     <footer class="p-5">
-      <div class="container w-75 m-auto row p-5">
-        <div class="col-md-6">
-          <p><small>Copyright © Flower's World. All Rights Reserved</small></p>
-          <h5>Follow US</h5>
+      <div style="width: 90%;" class="  m-auto row p-5">
+        <div  class="col-md-6">
+          <h5>Address</h5>
+          <p>No: 58 A, East Madison Street, Baltimore, MD,<br>USA 4508</p>
+          <p>0000 - 123 - 456789</p>
+          <p>info@example.com</p>
           <div class="icons">
             <img class="icon" src="./Images/LinkedIn.png" alt="" />
             <img class="icon" src="./Images/YouTube.png" alt="" />
             <img class="icon" src="./Images/LinkedIn.png" alt="" />
           </div>
         </div>
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <li>ABout</li>
-          <li>Contact us</li>
-          <li>Culture</li>
-          <li>Blog</li>
+        <div class="col-md-2">
+          <h5>Help</h5>
+          <li>Information</li>
+          <li>Advanced Search</li>
+          <li>Help & Faq's</li>
+          <li>Store Location</li>
+          <li>Order & Return</li>
         </div>
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <li>ABout</li>
-          <li>Contact us</li>
-          <li>Culture</li>
-          <li>Blog</li>
+        <div class="col-md-2">
+          <h5>Support</h5>
+          <li>Services</li>
+          <li>Clothing</li>
+          <li>Bags</li>
+          <li>Shoes</li>
+          <li>Accessories</li>
+        </div>
+        <div class="col-md-2">
+          <h5>Information</h5>
+          <li>Contact Us</li>
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Refund & Return</li>
+          <li>Deliveries</li>
         </div>
       </div>
       <hr/>
@@ -282,7 +414,7 @@
     <script src="./app.js"></script>
     <script src="./flowerDetails.js"></script>
     <script src="./logout.js"></script>
-    <script src="./index.js"></script>
+    <script src="./index2.js"></script>
     <!-- <script src="./allflowers.js"></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"

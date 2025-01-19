@@ -85,7 +85,7 @@ const getValue = (id) => {
 //           if (data.is_superuser) {
 //               window.location.href = "adminPanel.html";
 //           } else {
-//               window.location.href = "index.html";
+//               window.location.href = "index3.html";
 //           }
           
 //         }
@@ -155,13 +155,13 @@ const handleLogin = (event) => {
             if (userData.is_superuser) {
               window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/adminDashboard.html";
             } else {
-              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index2.html";
+              window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index.html";
               
             }
             // if (userData.is_superuser) {
             //   window.location.href = "http://127.0.0.1:5503/adminDashboard.html";
             // } else {
-            //   window.location.href = "http://127.0.0.1:5503/index2.html";
+            //   window.location.href = "http://127.0.0.1:5503/index.html";
               
             // }
           })
