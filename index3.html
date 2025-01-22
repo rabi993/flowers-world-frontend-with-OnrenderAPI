@@ -15,6 +15,15 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 12px;
+      }
+  </style>
+  <link rel="stylesheet" type="text/css" href="./Noty-JS-main/dist/noty.min.css" />
+    
+
     
     
 
@@ -57,6 +66,24 @@
       
 
       <!-- banner contianer  -->
+      <h2>Default</h2>
+      <button id="default">Default / Log</button>
+      <button id="success">Success</button>
+      <button id="warning">Warning</button>
+      <button id="error">Error</button>
+      <button id="confirm">Confirmation</button>
+      <h2>With title</h2>
+      <button id="title_default">Default / Log</button>
+      <button id="title_success">Success</button>
+      <button id="title_warning">Warning</button>
+      <button id="title_error">Error</button>
+      <button id="title_confirm">Confirmation</button>
+      <h2>Timeout</h2>
+      <button id="timeout_false">False</button>
+      <button id="timeout_1000">1000</button>
+      <button id="timeout_5000">5000</button>
+      <button id="timeout_10000">10000</button>
+      <button id="timeout_600000">600000</button>
 
       <div class="banner-container container">
         <div class="banner row">
@@ -276,6 +303,9 @@
             }
           }, 1500); 
         };
+        
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
 
@@ -295,7 +325,135 @@
     ></script>
    
     
-    
+    <script src="./Noty-JS-main/dist/noty.js"></script>
+    <link rel="stylesheet" href="./dist/noty.min.css" />
+<script src="./dist/noty.js"></script>
+
+<button id="confirm">Confirmation</button>
+<h2>With title</h2>
+<button id="title_default">Default / Log</button>
+<button id="title_success">Success</button>
+<button id="title_warning">Warning</button>
+<button id="title_error">Error</button>
+<button id="title_confirm">Confirmation</button>
+<h2>Timeout</h2>
+<button id="timeout_false">False</button>
+<button id="timeout_1000">1000</button>
+<button id="timeout_5000">5000</button>
+<button id="timeout_10000">10000</button>
+<button id="timeout_600000">600000</button>
+
+<script>
+  // Notification examples using Noty
+  function createNoty(options) {
+    new Noty(options).show();
+  }
+
+  document.getElementById("confirm").addEventListener("click", function () {
+    createNoty({
+      text: "Confirmation text",
+      buttons: [
+        Noty.button("OK", "btn btn-success", function () {
+          alert("OK button clicked");
+        }),
+        Noty.button("Close", "btn btn-danger", function (noty) {
+          noty.close();
+        }),
+      ],
+    });
+  });
+
+  document.getElementById("title_default").addEventListener("click", function () {
+    createNoty({
+      title: "Default / Log",
+      text: "I am a default message",
+      timeout: 4000,
+    });
+  });
+
+  document.getElementById("title_success").addEventListener("click", function () {
+    createNoty({
+      title: "Success",
+      type: "success",
+      text: "I am a success message",
+      timeout: 4000,
+    });
+  });
+
+  document.getElementById("title_warning").addEventListener("click", function () {
+    createNoty({
+      title: "Warning",
+      type: "warning",
+      text: "I am a warning message",
+      timeout: 4000,
+    });
+  });
+
+  document.getElementById("title_error").addEventListener("click", function () {
+    createNoty({
+      title: "Error",
+      type: "error",
+      text: "I am an error message",
+      timeout: 4000,
+    });
+  });
+
+  document.getElementById("title_confirm").addEventListener("click", function () {
+    createNoty({
+      title: "Box title",
+      text: "Confirmation text",
+      buttons: [
+        Noty.button("OK", "btn btn-success", function () {
+          alert("OK button clicked");
+        }),
+        Noty.button("Close", "btn btn-danger", function (noty) {
+          noty.close();
+        }),
+      ],
+    });
+  });
+
+  document.getElementById("timeout_false").addEventListener("click", function () {
+    createNoty({
+      type: "success",
+      text: "I have no timeout",
+      timeout: false,
+    });
+  });
+
+  document.getElementById("timeout_1000").addEventListener("click", function () {
+    createNoty({
+      type: "success",
+      text: "I have 1 second timeout",
+      timeout: 1000,
+    });
+  });
+
+  document.getElementById("timeout_5000").addEventListener("click", function () {
+    createNoty({
+      type: "success",
+      text: "I have 5 seconds timeout",
+      timeout: 5000,
+    });
+  });
+
+  document.getElementById("timeout_10000").addEventListener("click", function () {
+    createNoty({
+      type: "success",
+      text: "I have 10 seconds timeout",
+      timeout: 10000,
+    });
+  });
+
+  document.getElementById("timeout_600000").addEventListener("click", function () {
+    createNoty({
+      type: "success",
+      text: "I have 1 minute timeout",
+      timeout: 600000,
+    });
+  });
+</script>
+
     
     
   </body>
