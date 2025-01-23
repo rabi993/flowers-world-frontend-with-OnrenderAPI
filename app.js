@@ -103,9 +103,9 @@ const loadFlowers = (search = "") => {
       
       if (index >= showLimit) return;
       const div = document.createElement("div");
-      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","bg-light");
+      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","pb-2",);
       div.innerHTML = `
-        <img class="allflow-img2" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img2 img-fluid w-100" src="${flower.image}" alt="${flower.title}" />
         
         
         
@@ -114,7 +114,7 @@ const loadFlowers = (search = "") => {
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
         <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
         
-          <a style="text-decoration: none;" class="btn btc rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
+          <a style="text-decoration: none;" class="btn btc rounded text-white mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
           
         
       `;
@@ -133,7 +133,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn text-white" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -149,7 +149,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn text-white" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -211,18 +211,18 @@ const loadFlowersspring = () => {
       
       if (index >= showLimit) return;
       const div = document.createElement("div");
-      div.classList.add("allflower-card3", "col-12", "col-md-6", "col-lg-6","bg-light");
+      div.classList.add("allflower-card3", "col-md-6", "col-lg-6",);
       div.innerHTML = `
-        <img class="allflow-img3" src="${flower.image}" alt="${flower.title}" />
+      <a style="text-decoration: none;"  href="flowerDetails.html?flowerId=${flower.id}">
+        <img class="allflow-img3 img-fluid" src="${flower.image}" alt="${flower.title}" />
         
         
         
-        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> </h4>
-      
-        <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
-        <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
+        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")}  </h4>
+        <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> 
         
-          <a style="text-decoration: none;" class="btn btc rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
+        
+          </a>
           
         
       `;
