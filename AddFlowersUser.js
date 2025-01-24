@@ -1,7 +1,7 @@
 
 const fetchFlowers = () => {
   const flowersList = document.getElementById("flowers-list");
-  flowersList.innerHTML = `<tr><td colspan="8" class="text-center">Loading flowers...</td></tr>`;
+  flowersList.innerHTML = `<tr><td colspan="9" class="text-center">Loading flowers...</td></tr>`;
 
   fetch("https://flowers-world.onrender.com/flowers/list/")
     .then((response) => {
@@ -33,7 +33,7 @@ const fetchFlowers = () => {
             <td>${flower.content.length > 50 ? flower.content.slice(0, 50) + '...' : flower.content}</td>
             <td>
               <img src="${flower.image}" alt="${flower.title}" 
-                   style="width: 100px; height: 100px; object-fit: cover;">
+                   style="width: 40px; height: 40px; object-fit: cover;">
             </td>
             <td>${Array.isArray(flower.category) ? flower.category.join(", ") : "N/A"}</td>
             <td>${Array.isArray(flower.color) ? flower.color.join(", ") : "N/A"}</td>

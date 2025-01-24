@@ -81,13 +81,14 @@ const displayDetails = (flower) => {
       </p>
       <button
       type="button"
-      class="btn btc"
+      class="btn btc text-white"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
       id="buyNowBtn" onclick="openOrderModal()"
       >
       Buy Now
       </button>
+      <button  class="btn btc text-white"data-bs-toggle="modal" data-bs-target="#exampleModal1">Write Review</button>
     </div>
     `;
   parent.appendChild(div);

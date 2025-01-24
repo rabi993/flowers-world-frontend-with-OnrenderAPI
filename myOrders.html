@@ -88,7 +88,7 @@
     <main>
         <div class="banner-container ">
             <div class=" row">
-              <div class=" dash_bar col-md-2 col-lg-2" style="padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+              <div class=" dash_bar col-md-2 col-lg-2" style="padding: 10px;  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                 <div><a   href="dashboard.html">Profile</a></div>
                 <div><a href="AddFlowersUser.html">Add Flower</a></div>
                 <div><a href="saleDetails.html">Sale details</a></div>
@@ -97,20 +97,22 @@
                 
               </div>
               <div class="  col-md-10 col-lg-10">
-                
-                <h3 class="text-center"><b>My All Order History </b></h3>
-                <hr class="container">
-          
-                <div class="container my-1  text-center ">
-                  <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
-                  <select class="h5 border  rounded text-center bg-light" id="status-filter" onchange="handleStatusFilter()">
-                    <option value="All">All</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Processing">Processing</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Rejected">Rejected</option>
-                  </select>
+                <div class="d-flex justify-content-between pt-3" style="width: 98%;">
+                  <h5 class="text-center"><b>My Order History </b></h5>
+                  <div class="  text-center ">
+                    <label for="status-filter"><h5><b>Filter by Order Status:  </b></h5></label>
+                    <select class="p border  rounded text-center bg-light" id="status-filter" onchange="handleStatusFilter()">
+                      <option value="All">All</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Processing">Processing</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Rejected">Rejected</option>
+                    </select>
+                  </div>
                 </div>
+                
+          
+                
             
                 
                 

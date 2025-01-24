@@ -69,12 +69,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create the card element
         const card = document.createElement("div");
-        card.className = "card p-3 shadow-lg";
+        card.className = " p-3 shadow";
         card.style.width = "25rem";
 
         // Populate the card with user and buyer details
         card.innerHTML = `
           <div class="card-body">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <a target="" style="background-color: #F95441;" class="text-white text-decoration-none btn  border rounded p-2" href="changepass.html">Change Password</a>
+              <a target="" style="background-color: #F95441;" class="text-white text-decoration-none btn  border rounded p-2" href="updateProfile.html">Update Your Profile</a>
+                    
+            </div>
             <h5 class="card-title text-center">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
             <div class="card-text w-25 m-auto">
             ${

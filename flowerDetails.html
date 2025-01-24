@@ -50,8 +50,12 @@
               <li class="menu logout-menu d-none nav-item" onclick="handlelogOut()"><a href="#">Logout</a></li>
               <li class="menu profile-menu d-none nav-item"><a href="profile.html">Profile</a></li> -->
               <li class="nav-item dropdown">
-                <a class="nav-link  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <!-- <a class="nav-link  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img class="" style="height: 32px; width: 32px; margin-top: -15px; margin-left: 0px;" src="./Images/profile.png" alt="">
+                </a> -->
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img id="profile_icon" style="height: 32px; width: 32px; margin-top: -15px; margin-left: 0px;" src="./Images/profile.png" alt="Default Profile">
+                  <img id="profile_icon2" style="height: 32px; width: 32px; margin-top: -15px; margin-left: 0px; display: none; border-radius: 50%; border: 2px solid #F95441;" src="" alt="User Profile">
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item ndropdown-item  menu dash-menu d-none nav-item" href="dashboard.html">Dashboard</a></li>
@@ -77,7 +81,7 @@
     <!-- <div class="w-25 m-auto mt-5 mb-3">
       <a id="reportButton" class="text-danger py-2 " style="text-decoration: none;" target="_blank">Report PDF last order this item</a>
     </div> -->
-    <div class="review-form-container w-50 m-auto">
+    <!-- <div class="review-form-container w-50 m-auto">
       <h3>Submit Your Review</h3>
       <form id="review-form" onsubmit="handleReviewSubmission(event)">
         <div class="mb-3">
@@ -123,7 +127,7 @@
         </div>
         <button type="submit" class="btn btc text-white">Submit Review</button>
       </form>
-    </div>
+    </div> -->
     
     
     
@@ -262,6 +266,65 @@
       </div>
     </div> 
       
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create Review</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          
+          
+            <form class="mx-5 my-3" id="review-form" onsubmit="handleReviewSubmission(event)">
+              <div class="mb-1">
+                <label for="reviewerName" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  id="reviewerName"
+                  class="form-control"
+                  placeholder="Your name"
+                  readonly
+                />
+              </div>
+              <div class="mb-1">
+                <label for="flowerName" class="form-label">Flower Name</label>
+                <input
+                  type="text"
+                  id="flowerName"
+                  class="form-control"
+                  placeholder="Flower name"
+                  readonly
+                />
+              </div>
+              <div class="mb-1">
+                <label for="reviewBody" class="form-label">Your Review</label>
+                <textarea
+                  id="reviewBody"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Write your review here"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-1">
+                <label for="reviewRating" class="form-label">Rating</label>
+                <select id="reviewRating" class="form-control" required>
+                  <option value="" disabled selected>Select a rating</option>
+                  <option value="⭐">1 - Poor</option>
+                  <option value="⭐⭐">2 - Fair</option>
+                  <option value="⭐⭐⭐">3 - Good</option>
+                  <option value="⭐⭐⭐⭐">4 - Very Good</option>
+                  <option value="⭐⭐⭐⭐⭐">5 - Excellent</option>
+                </select>
+              </div>
+              <button type="button" class="btn btcn text-white" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btc text-white">Submit Review</button>
+            </form>
+            
+            
+        </div>
+      </div>
+    </div>
       
       
       

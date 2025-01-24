@@ -17,13 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create the card element
         const card = document.createElement("div");
-        card.className = "card p-3 shadow-lg";
-        card.style.width = "25rem";
+        card.className = " p-3 shadow-lg";
+        // card.style.width = "30rem";
 
         // Populate the card with user and buyer details
         card.innerHTML = `
           <div class="card-body">
-            <h5 class="card-title text-center">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
+            
+            <h4 class="card-title text-center">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h4>
             <div class="card-text w-25 m-auto">
             ${
               buyer.image
@@ -43,7 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class="card-text"><strong>Buyer ID:</strong> ${buyer.id}</p>
             <p class="card-text"><strong>Mobile No:</strong> ${buyer.mobile_no || "N/A"}</p>
             <p class="card-text"><strong>Address:</strong> ${buyer.address || "N/A"}</p>
-            
+            <div class="my-3 w-50 m-auto">
+              <a style="background-color: #F95441;" target="" class="text-white text-decoration-none btn  border rounded p-2" href="changepass.html">Change Password</a>
+            </div>
         `;
 
         // Append the card to the container

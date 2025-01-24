@@ -53,7 +53,7 @@ const loadFlowers = (search = "") => {
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
         <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
         
-          <a style="text-decoration: none;" class="btn btc rounded  mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
+          <a style="text-decoration: none;" class="btn btc rounded text-white mt-1" href="flowerDetails.html?flowerId=${flower.id}">Details</a>
           
         
       `;

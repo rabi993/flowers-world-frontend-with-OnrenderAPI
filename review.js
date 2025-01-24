@@ -35,7 +35,7 @@ const loadReviews = async () => {
 
         // Create and append review card
         const div = document.createElement("div");
-        div.classList.add("review-card","col-md-3","col-lg-3");
+        div.classList.add("allreview-card","col-md-3","col-lg-3");
         div.innerHTML = `
         <img src="${image}" alt="Reviewer Image" /> 
         <h6>${fullName}</h6> 
