@@ -42,9 +42,9 @@ const loadFlowers = (search = "") => {
     sortedflowers.forEach((flower, index) => {
       const isNew = index < newTagLimit; 
       const div = document.createElement("div");
-      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6");
+      div.classList.add("allflower-card", "col-12", "col-md-6", "col-lg-6","pb-2");
       div.innerHTML = `
-        <img class="allflow-img2 img-fluid" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img img-fluid" src="${flower.image}" alt="${flower.title}" />
         
         
         
@@ -72,7 +72,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn text-white" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -88,7 +88,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn text-white" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })

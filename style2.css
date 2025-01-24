@@ -8,7 +8,7 @@ li{
     list-style: none;
 }
 nav{
-    background-color:#e8e8e8;
+    background-color:#fcfbfb;
     
 
 }
@@ -162,6 +162,12 @@ nav{
     /* border-radius: 10px; */
     
 }
+.allflow-img{
+    width: 100%;
+    height: 350px;
+    /* border-radius: 10px; */
+    
+}
 .allflower-card3{
     /* width: 300px; */
 
@@ -197,7 +203,7 @@ nav{
     width: 200px;
     height: 250px;
     /* box-shadow: 4px 4px 8px  gray; */
-    border-radius:5px;
+    /* border-radius:5px; */
     text-align: center;
     padding-bottom: 20px;
     padding-right: 5px;
@@ -213,13 +219,13 @@ nav{
 
 footer{
     padding: 50px;
-    /* background-color: #F95441; */
+    background-color: #FFD0CB;
     /* background: linear-gradient(66deg, #F95441 -5.25%, #e07265 46.76%, #F95441 98.77%);; */
-    background-image: url(./Images/footer-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-image: url(./Images/footer-bg.jpg); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     /* background-position: center; */
-    background: fluid;
+    /* background: fluid; */
 }
 
 .flower-img img{

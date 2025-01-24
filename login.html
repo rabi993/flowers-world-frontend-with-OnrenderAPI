@@ -16,10 +16,41 @@
       crossorigin="anonymous"
     />
 
-    
+    <style>
+      body{
+          background-color:white;
+      }
+      .login-container{
+          /* height:100vh; */
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          align-items:center;
+          width:75%;
+          margin: auto;
+      }
+      .input{
+          padding: 10px 10px;
+          border: 1px solid orangered;
+          margin: 5px;
+          width: 80%;
+          /* box-shadow: 4px 4px 8px gray; */
+          /* border-radius: 5px; */
+      }
+      .submit-btn{
+          padding: 15px 25px;
+          width:80%;
+          margin: 10px;
+          margin: auto;
+          border: none;
+          background-color: #F95441;
+          color: white;
+          font-size: 20px;
+      }
+    </style>
     <link rel="stylesheet" href="style2.css" />
     
-    <link rel="stylesheet" href="login.css" />
+    <!-- <link rel="stylesheet" href="login.css" /> -->
   </head>
   <body>
     
@@ -72,7 +103,7 @@
       <!-- banner contianer  -->
 
       <div class="  text-center text-light">
-        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/banerflo.png); background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
+        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/aabb.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
           
             
             <div>
@@ -121,34 +152,22 @@
     </div> -->
     <div class="login-container d-flex justify-content-center w-75 m-auto  ">
       <div style="padding: 50px 0;" class="col-md-6 text-center">
-        <h1 class="title mt-5">Please Login</h1>
+        <h1 class="mt-5">Please Login</h1>
         <form  action="">
 
           <input value="" id="login-username" type="text" class="input" placeholder="username" required />
           <input id="login-password" type="password" class="input" placeholder="password" required value="" />
           
-          <button onclick="handleLogin(event)"  class=" submit-btn">Login</button>
+          <button onclick="handleLogin(event)"  class="text-white btc input">Login</button>
           
         </form>
       </div>
       <div  class="col-md-6 ">
-        <img class="w-75 " src="./Images/reg.png" alt="" />
+        <img class="w-75 " src="./Images/undraw_mobile-login_4ntr.png" alt="" />
       </div>
     </div>
       
-      <hr style=" margin: auto; ">
-      <div style="background-image: url(./Images/last1.png);background-repeat: no-repeat; background-position: center;" class="">
-        <div class="">
-          <br><br><br>
-          <p style="padding-left: 100px;" class="text-center " >.</p>
-          <p style="padding-right: 200px;" class="text-center " >.</p>
-          <p style="padding-left: 500px;" class="text-center " >.</p>
-          <p style="padding-right: 600px;" class="text-center " >.</p>
-          <p  class="text-center " >.</p><br><br>
-          
-          
-        </div>
-      </div>
+      
     </main>
     <footer class="p-5">
       <div style="width: 90%;" class="  m-auto row p-5">

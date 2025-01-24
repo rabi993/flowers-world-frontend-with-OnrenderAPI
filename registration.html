@@ -15,11 +15,43 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <style>
+      body{
+          background-color:white;
+      }
+      .login-container{
+          /* height:100vh; */
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          align-items:center;
+          width:75%;
+          margin: auto;
+      }
+      .input{
+          padding: 10px 10px;
+          border: 1px solid orangered;
+          margin: 5px;
+          width: 80%;
+          /* box-shadow: 4px 4px 8px gray; */
+          /* border-radius: 5px; */
+      }
+      .submit-btn{
+          padding: 15px 25px;
+          width:80%;
+          margin: 10px;
+          margin: auto;
+          border: none;
+          background-color: #F95441;
+          color: white;
+          font-size: 20px;
+      }
+    </style>
 
     
     <link rel="stylesheet" href="style2.css" />
     
-    <link rel="stylesheet" href="login.css" />
+    <!-- <link rel="stylesheet" href="login.css" /> -->
   </head>
   <body>
     
@@ -72,7 +104,7 @@
       <!-- banner contianer  -->
 
       <div class="  text-center text-light">
-        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/banerflo.png); background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
+        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/aabb.jpg); background-repeat: no-repeat;background-size: cover; background-position: center; padding-top: 140px;" class=" row">
           
             
             <div>
@@ -94,7 +126,7 @@
       <!-- add login from here  -->
       <div class="login-container row d-flex justify-content-center">
         <div class="col-md-6">
-          <h1 class="title mt-1">Please Registration</h1>
+          <h1 class="px-1 mt-1">Please Registration</h1>
           <form action="" onsubmit="handleRegistration(event)">
             <p id="error" class="text-danger"></p>
             <input id="username" type="text" class="input" placeholder="username" required />
@@ -104,31 +136,19 @@
             <input id="address" type="text" class="input" placeholder="Address" required />
             <input id="password" type="password" class="input" placeholder="password" required />
             <input id="confirm_password" type="password" class="input" placeholder="Confirm password" required />
-            <input type="submit" class="submit-btn" value="Registration" />
+            <input type="submit" class="btc text-white input" value="Registration" />
             <!-- <p><a href="login.html">go to login page</a></p> -->
           </form>
         </div>
         <div class="col-md-5">
-          <img class="w-100" src="./Images/login.png" alt="" />
+          <img class="w-100" src="./Images/undraw_sign-up_z2ku.png" alt="" />
         </div>
       </div>
   
   
     
       
-      <hr style=" margin: auto; ">
-      <div style="background-image: url(./Images/last1.png);background-repeat: no-repeat; background-position: center;" class="">
-        <div class="">
-          <br><br><br>
-          <p style="padding-left: 100px;" class="text-center " >.</p>
-          <p style="padding-right: 200px;" class="text-center " >.</p>
-          <p style="padding-left: 500px;" class="text-center " >.</p>
-          <p style="padding-right: 600px;" class="text-center " >.</p>
-          <p  class="text-center " >.</p><br><br>
-          
-          
-        </div>
-      </div>
+     
     </main>
     <footer class="p-5">
       <div style="width: 90%;" class="  m-auto row p-5">

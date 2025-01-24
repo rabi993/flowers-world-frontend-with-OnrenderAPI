@@ -15,11 +15,43 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <style>
+      body{
+          background-color:white;
+      }
+      .login-container{
+          /* height:100vh; */
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          align-items:center;
+          width:75%;
+          margin: auto;
+      }
+      .input{
+          padding: 10px 10px;
+          border: 1px solid orangered;
+          margin: 5px;
+          width: 80%;
+          /* box-shadow: 4px 4px 8px gray; */
+          /* border-radius: 5px; */
+      }
+      .submit-btn{
+          padding: 15px 25px;
+          width:80%;
+          margin: 10px;
+          margin: auto;
+          border: none;
+          background-color: #F95441;
+          color: white;
+          font-size: 20px;
+      }
+    </style>
 
     
     <link rel="stylesheet" href="style2.css" />
     
-    <link rel="stylesheet" href="login.css" />
+    <!-- <link rel="stylesheet" href="login.css" /> -->
   </head>
   <body>
     
@@ -72,7 +104,7 @@
       <!-- banner contianer  -->
 
       <div class="  text-center text-light">
-        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/banerflo.png); background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
+        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/aabb.jpg);background-size: cover; background-repeat: no-repeat; background-position: center; padding-top: 140px;" class=" row">
           
             
             <div>
@@ -132,8 +164,8 @@
 
     <!-- contact form -->
     <div style="margin-top: -50px;" class="login-container container row d-flex justify-content-center">
-      <div class="col-lg-7 col-md-7">
-        <h1 class="title mt-5">Please write to us</h1>
+      <div class="col-lg-6 col-md-6">
+        <h1 class=" mt-5 px-2">Please write to us</h1>
         <form action="" onsubmit="handlecontact(event)">
           <p id="error" class="text-danger"></p>
           <input id="name" type="text" class="input" placeholder="Name" required />
@@ -147,28 +179,16 @@
             required
           />
           <textarea id="content" class="input" placeholder="Message" rows="4" required></textarea>
-          <input type="submit" class="submit-btn" value="Submit" />
+          <input type="submit" style="font-size: 20px;"  class="btc input text-white" value="Submit" />
         </form>
         
       </div>
-      <div class="col-lg-4 col-md-4 ">
-        <img class="img-fluid" src="./Images/login.png" alt="" />
+      <div class="col-lg-5 col-md-5 ">
+        <img class="img-fluid" src="./Images/undraw_contact-us_kcoa.png" alt="" />
       </div>
     </div>
       
-      <hr style=" margin: auto; ">
-      <div style="background-image: url(./Images/last1.png);background-repeat: no-repeat; background-position: center;" class="">
-        <div class="">
-          <br><br><br>
-          <p style="padding-left: 100px;" class="text-center " >.</p>
-          <p style="padding-right: 200px;" class="text-center " >.</p>
-          <p style="padding-left: 500px;" class="text-center " >.</p>
-          <p style="padding-right: 600px;" class="text-center " >.</p>
-          <p  class="text-center " >.</p><br><br>
-          
-          
-        </div>
-      </div>
+      
     </main>
     <footer class="p-5">
       <div style="width: 90%;" class="  m-auto row p-5">
