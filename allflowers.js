@@ -48,7 +48,7 @@ const loadFlowers = (search = "") => {
         
         
         
-        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> ${isNew ? '<button class="btn btcn btn-sm ms-2 new2">NEW Arrival</button>' : ''}</h4>
+        <h5>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> ${isNew ? '<button class="btn btcn btn-sm ms-2 new2">NEW Arrival</button>' : ''}</h5>
       
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
         <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
