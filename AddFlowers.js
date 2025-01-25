@@ -1,7 +1,7 @@
 
 const fetchFlowers = () => {
     const flowersList = document.getElementById("flowers-list");
-    flowersList.innerHTML = `<tr><td colspan="8" class="text-center">Loading flowers...</td></tr>`;
+    flowersList.innerHTML = `<tr><td colspan="10" class="text-center">Loading flowers...</td></tr>`;
   
     fetch("https://flowers-world.onrender.com/flowers/list/")
       .then((response) => {

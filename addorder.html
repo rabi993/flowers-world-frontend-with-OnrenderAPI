@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel</title>
+    <title>Add Order</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,18 +25,20 @@
         <div class="container-fluid container ">
           <div class=" col-lg-8 logo-container d-flex align-items-center gap-2 ">
             <img id="logo_img" src="./Images/flogo.png" alt="" />
-            <a style="padding-top: 10px; text-decoration: none; color: rgb(4, 66, 66);"  href="adminDashboard.html"><h2><b>Flower's World</b> Admin Dashboard</h2></a>
+            <a style="padding-top: 10px; text-decoration: none; color: rgb(4, 66, 66);"  href="adminDashboard.html"><h2><b>Flower's World</b></h2></a>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse col-lg-4  "  id="navbarSupportedContent" style="text-align: end;">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav_text  gap-3 " >
-              
-              
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav_text  gap-3 " > 
+              <li>
+                <h4 class="pt-3">Admin Dashboard</h4>
+              </li>                          
               <li class="nav-item dropdown">
+                
                 <a class="nav-link  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img class="" style="height: 32px; width: 32px; margin-top: -15px; margin-left: 0px;" src="./Images/profile.png" alt="">
+                    <img class="" style="height: 32px; width: 32px; margin-top: 7px; margin-left: 0px;" src="./Images/profile.png" alt="">
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item ndropdown-item  menu dash-menu  nav-item" href="profileadmin.html">Profile</a></li>
@@ -91,30 +93,34 @@
             </div>
             <div class="col-md-10 pt-1">
                 <!-- dashboard details -->
-                <div class="container my-3  text-center ">
-                  <label for="status-filter"><h3><b>Filter by Order Status:  </b></h3></label>
-                  <select class="h5 border  rounded text-center bg-light me-3" id="status-filter" >
-                    <option value="All">All</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Processing">Processing</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Rejected">Rejected</option>
-                  </select>
-                
-                  <label for="from-date"><h4><b>From:</b></h4></label>
-                  <input class="h6 border  rounded text-center bg-light " type="date" id="from-date" >
+                 <div class=" row container m-auto d-flex  justify-content-end">
+                  <div class="col-lg-4 col-md-4 mt-3 my-1"><h5>All Order</h5></div>
+                  <div class="container my-1 mt-2  text-center col-lg-8 col-md-8">
+                    <label for="status-filter"><p><b>Filter by Order Status:  </b></p></label>
+                    <select class="p border  rounded text-center bg-light me-3" id="status-filter" >
+                      <option value="All">All</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Processing">Processing</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Rejected">Rejected</option>
+                    </select>
                   
-                
-                  <label for="to-date"><h4><b>--  To:</b></h4></label>
-                  <input class="h6 border  rounded text-center bg-light me-3" type="date" id="to-date" >
-    
-                  <!-- <label for="single-date"><h4><b>Single Date:</b></h4></label>
-                  <input class="h6 border  rounded text-center bg-light " type="date" id="single-date" > -->
-    
-                  <button class="btn btc py-2 px-4" onclick="handleStatusFilter()">Filter</button>
-    
+                    <label for="from-date"><p><b>From:</b></p></label>
+                    <input class="h6 border  rounded text-center bg-light " type="date" id="from-date" >
+                    
                   
-                </div>
+                    <label for="to-date"><p><b>--  To:</b></p></label>
+                    <input class="h6 border  rounded text-center bg-light me-3" type="date" id="to-date" >
+      
+                    <!-- <label for="single-date"><h4><b>Single Date:</b></h4></label>
+                    <input class="h6 border  rounded text-center bg-light " type="date" id="single-date" > -->
+      
+                    <button class="btn btc py-2 px-4" onclick="handleStatusFilter()">Filter</button>
+      
+                    
+                  </div>
+                 </div>
+                
 
                 <div class="">
                   
@@ -162,9 +168,8 @@
       
       
     </main>
-    <footer class="mt-1">
-      <hr />
-      <p class="text-center mt-3">
+    <footer class="">
+      <p class="text-center">
         <small>Copyright © Flower's World. All Rights Reserved</small>
       </p>
     </footer>

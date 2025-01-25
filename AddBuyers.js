@@ -10,7 +10,7 @@ const fetchBuyers = () => {
                 row.innerHTML = `
                     <td>${buyer.id}</td>
                     <td>${buyer.user}</td>
-                    <td><img src="${buyer.image ? buyer.image : 'https://via.placeholder.com/100'}" alt="Image" style="width: 100px; height: 100px;"></td>
+                    <td><img style="width:50px;height:50px;" class="img-fluid" src="${buyer.image ? buyer.image : 'https://via.placeholder.com/100'}" alt="Image" style="width: 100px; height: 100px;"></td>
                     <td>${buyer.mobile_no || 'N/A'}</td>
                     <td>${buyer.address}</td>
                     <td>

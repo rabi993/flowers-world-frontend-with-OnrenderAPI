@@ -14,15 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((user) => {
         // Create the card element
         const card = document.createElement("div");
-        card.className = "card p-3 shadow-lg";
-        card.style.width = "20rem";
+        card.className = " shadow-lg";
+        // card.style.width = "50rem";
 
         // Populate the card with user details
         card.innerHTML = `
-          <div class="card-body">
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-center gap-3 py-2">
+                        
+              <a target="" class="text-white text-decoration-none btn btc border rounded p-2" href="changepassAdmin.html">Change Password</a>
+              <a target="" class="text-white text-decoration-none btn btc border rounded p-2" href="updateProfileAdmin.html">Update Your Profile</a>
+                        
+            </div>
             <h5 class="card-title text-center">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
-            <div class="card-text w-50 m-auto">           
-              <img src="./Images/man.jpg" alt="Admin Image" class="img-fluid rounded mt-2" style="max-height: 200px;">                          
+            <div class="card-text justify-content-center">           
+              <img src="./Images/man.jpg" alt="Admin Image" class="img-fluid rounded mt-2" style="max-height: 60px;">                          
             </div>
             <h5 class="card-title text-center">Admin Details</h5>
             <p class="card-text"><strong>ID:</strong> ${user.id}</p>
@@ -31,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class="card-text"><strong>Last Name:</strong> ${user.last_name || "N/A"}</p>
             <p class="card-text"><strong>Email:</strong> ${user.email}</p>
             <p class="card-text"><strong>Is Superuser:</strong> ${user.is_superuser ? "Yes" : "No"}</p>
-          </div>
+            </br>
+            </div>
         `;
 
         // Append the card to the container

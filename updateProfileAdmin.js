@@ -14,12 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create the card element
         const card = document.createElement("div");
-        card.className = "card p-3 shadow-lg";
-        card.style.width = "25rem";
+        card.className = "text-center p-3 ";
+        card.style.width = "30rem";
 
         // Populate the card with user and buyer details
         card.innerHTML = `
           <div class="card-body">
+            
             <h5 class="card-title text-center">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
             <div class="card-text w-25 m-auto">
             
@@ -34,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class="card-text"><strong>Last Name:</strong> ${user.last_name || "N/A"}</p>
             <p class="card-text"><strong>Email:</strong> ${user.email}</p>
             <p class="card-text"><strong>User's Roll:</strong> ${user.is_superuser ? "Admin/Superuser" : "Buyer"}</p>
-            
+            <div class=" w-50 m-auto my-1">
+              <a target="" class="text-white text-decoration-none btn btc border rounded p-2" href="changepassAdmin.html">Change Password</a>
+            </div>
             
             
         `;
