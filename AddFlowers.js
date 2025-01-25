@@ -27,7 +27,7 @@ const fetchFlowers = () => {
               <td>${flower.title}</td>
               <td>${flower.FlowerMalik}</td>
               <td>${flower.content}</td>
-              <td><img src="${flower.image}" alt="${flower.title}" style="width: 100px; height: 100px; object-fit: cover;"></td>
+              <td><img src="${flower.image}" alt="${flower.title}" style="width: 40px; height: 40px; object-fit: cover;"></td>
               <td>${flower.category.join(", ")}</td>
               <td>${flower.color.join(", ")}</td>
               <td>${flower.available}</td>

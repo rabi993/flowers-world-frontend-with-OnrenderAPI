@@ -395,3 +395,8 @@ border-radius:100px;
     color: white;
     
 }
+
+.dropdown-item:active {
+    background-color: white !important; /* Change background to white */
+    color: black !important;          /* Ensure text color is readable */
+  }
