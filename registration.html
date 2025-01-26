@@ -31,7 +31,7 @@
       .input{
           padding: 10px 10px;
           border: 1px solid orangered;
-          margin: 5px;
+          margin:10px 5px;
           width: 80%;
           /* box-shadow: 4px 4px 8px gray; */
           /* border-radius: 5px; */
@@ -104,15 +104,15 @@
       <!-- banner contianer  -->
 
       <div class="  text-center text-light">
-        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/aabb.jpg); background-repeat: no-repeat;background-size: cover; background-position: center; padding-top: 140px;" class=" row">
+        <div style="width: 100%; margin: auto; height: 300px;  background-image: url(./Images/lbanner4.jpg); background-repeat: no-repeat;background-size: cover; background-position: center; padding-top: 140px;" class=" row">
           
             
             <div>
-                <h3 style="font-size: 35px;"><b>Login Page</b></h3>
+                <h3 style="font-size: 35px;"><b>Registration Page</b></h3>
             
                 <p style="font-size: 20px; ">
                     <b>
-                        <a style="text-decoration: none;color: aliceblue; " href="index.html">Home</a> / Login
+                        <a style="text-decoration: none;color: aliceblue; " href="index.html">Home</a> / Registration
                     </b>
                 </p>
             
@@ -126,8 +126,8 @@
       <!-- add login from here  -->
       <div class="login-container row d-flex justify-content-center">
         <div class="col-md-6">
-          <h1 class="px-1 mt-1">Please Registration</h1>
-          <form action="" onsubmit="handleRegistration(event)">
+          <h3 class="px-1 mt-5">Please Registration</h3>
+          <form class="pb-2" action="" onsubmit="handleRegistration(event)">
             <p id="error" class="text-danger"></p>
             <input id="username" type="text" class="input" placeholder="username" required />
             <input id="first_name" type="text" class="input" placeholder="First Name" required />
@@ -136,7 +136,7 @@
             <input id="address" type="text" class="input" placeholder="Address" required />
             <input id="password" type="password" class="input" placeholder="password" required />
             <input id="confirm_password" type="password" class="input" placeholder="Confirm password" required />
-            <input type="submit" class="btc text-white input" value="Registration" />
+            <input type="submit" class="btc mb-5 text-white input" value="Registration" />
             <!-- <p><a href="login.html">go to login page</a></p> -->
           </form>
         </div>

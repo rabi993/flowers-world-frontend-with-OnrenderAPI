@@ -70,36 +70,49 @@ document.addEventListener("DOMContentLoaded", function () {
         // Create the card element
         const card = document.createElement("div");
         card.className = " p-3 shadow";
-        card.style.width = "25rem";
+        // card.style.width = "50rem";
 
         // Populate the card with user and buyer details
         card.innerHTML = `
-          <div class="card-body">
-            <div class="d-flex justify-content-center gap-3 mb-3">
-              <a target="" style="background-color: #F95441;" class="text-white text-decoration-none btn  border rounded p-2" href="changepass.html">Change Password</a>
-              <a target="" style="background-color: #F95441;" class="text-white text-decoration-none btn  border rounded p-2" href="updateProfile.html">Update Your Profile</a>
-                    
-            </div>
-            <h5 class="card-title text-center">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
-            <div class="card-text w-25 m-auto">
-            ${
-              buyer.image
-                ? `<img src="${buyer.image}" alt="Buyer Image" class="img-fluid rounded mt-2" style="max-height: 200px;">`
-                : "<p class='text-muted'>No image available</p>"
-            }
-            </div>
-            <h6 class="mt-3">User Details:</h6>
-            <p class="card-text"><strong>ID:</strong> ${user.id}</p>
-            <p class="card-text"><strong>Username:</strong> ${user.username}</p>
-            <p class="card-text"><strong>First Name:</strong> ${user.first_name || "N/A"}</p>
-            <p class="card-text"><strong>Last Name:</strong> ${user.last_name || "N/A"}</p>
-            <p class="card-text"><strong>Email:</strong> ${user.email}</p>
-            <p class="card-text"><strong>User's Roll:</strong> ${user.is_superuser ? "Admin/Superuser" : "Buyer"}</p>
+          <div class="card-body ">
             
-            <h6 class="mt-3">Buyer Details:</h6>
-            <p class="card-text"><strong>Buyer ID:</strong> ${buyer.id}</p>
-            <p class="card-text"><strong>Mobile No:</strong> ${buyer.mobile_no || "N/A"}</p>
-            <p class="card-text"><strong>Address:</strong> ${buyer.address || "N/A"}</p>
+            <div class="d-flex justify-content-center gap-3 p-3">
+                  <div class="col-lg-4 col-md-4">
+<h5 class="card-title ">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
+                    ${
+                      buyer.image
+                        ? `<img src="${buyer.image}" alt="Buyer Image" class="img-fluid rounded mt-2" style="max-height: 200px;">`
+                        : "<p class='text-muted'>No image available</p>"
+                    }
+                    
+                    
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                    <h6 class="mt-3">User Details:</h6>
+                    <p class="card-text"><strong>ID:</strong> ${user.id}</p>
+                    <p class="card-text"><strong>Username:</strong> ${user.username}</p>
+                    <p class="card-text"><strong>First Name:</strong> ${user.first_name || "N/A"}</p>
+                    <p class="card-text"><strong>Last Name:</strong> ${user.last_name || "N/A"}</p>
+                    <p class="card-text"><strong>Email:</strong> ${user.email}</p>
+                    <p class="card-text"><strong>User's Roll:</strong> ${user.is_superuser ? "Admin/Superuser" : "Buyer"}</p>
+                    
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                    <h6 class="mt-3">Buyer Details:</h6>
+                    <p class="card-text"><strong>Buyer ID:</strong> ${buyer.id}</p>
+                    <p class="card-text"><strong>Mobile No:</strong> ${buyer.mobile_no || "N/A"}</p>
+                    <p class="card-text"><strong>Address:</strong> ${buyer.address || "N/A"}</p>
+                    
+                      <a target="" style="background-color: #F95441;" class="mb-4 text-white text-decoration-none btn  border rounded p-2" href="changepass.html"><small>Change Password</small></a>
+                      </br>
+                      <a target="" style="background-color: #F95441;" class="text-white text-decoration-none btn  border rounded p-2" href="updateProfile.html"><small>Update Your Profile</small></a>
+                            
+                    
+                  </div>
+            </div>
+            
+            
+            
             
         `;
 

@@ -35,13 +35,13 @@ const loadReviews = async () => {
 
         // Create and append review card
         const div = document.createElement("div");
-        div.classList.add("allreview-card","col-md-3","col-lg-3");
+        div.classList.add("allreview-card");
         div.innerHTML = `
         <img src="${image}" alt="Reviewer Image" /> 
-        <h6>${fullName}</h6> 
+        <h5>${fullName}</h5> 
         <p >Flower Name: ${flowerName}</p> 
-        <small style="margin-top:-10px;">${review.body.slice(0, 100)}</small>
-        <h6>Rating: ${review.rating}</h6>
+        <p >${review.body.slice(0, 100)}</p>
+        <h3> ${review.rating}</h3>
         `;
         parent.appendChild(div);
       } catch (error) {

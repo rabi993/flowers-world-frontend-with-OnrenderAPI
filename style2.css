@@ -71,11 +71,11 @@ nav{
 }
 
 .dash_bar div a:hover {
-    color: #fff;
-    background-color: #F95441;
-    border-radius: 5px;
-    padding: 5px 20px;
-    width: 80%;
+    color: #F95441;
+    /* background-color: #F95441; */
+    /* border-radius: 5px; */
+    /* padding: 5px 20px; */
+    /* width: 80%; */
     
 }
 
@@ -176,11 +176,12 @@ nav{
     /* border-radius: 10px; */
     text-align:center;
     /* padding: 5px; */
-    margin-bottom: 60px;
-    margin-top: 30px;
+    margin-bottom: 20px;
+    /* margin-top: 30px; */
+   
 }
 .allflow-img3{
-    width: 400px;
+    width: 460px;
     height: 200px;
     /* border-radius: 10px; */
 }
@@ -203,18 +204,18 @@ nav{
 .review-card{
     width: 200px;
     height: 250px;
-    /* box-shadow: 4px 4px 8px  gray; */
-    /* border-radius:5px; */
+    box-shadow: 4px 4px 8px  rgb(179, 178, 178);
+    border-radius:5px;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     padding-right: 5px;
     padding-left: 5px;
-    padding-top: 20px;
-    background: #dfdfdf;
+    padding-top: 40px;
+    background: #ffffff;
 }
 .review-card img{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius:50px;
 }
 
@@ -391,8 +392,8 @@ border-radius:100px;
 }
 .obtnd:hover{
     
-    background-color: #e07265;
-    color: white;
+    /* background-color: #e07265; */
+    color: orangered;
     
 }
 

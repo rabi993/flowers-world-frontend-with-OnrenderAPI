@@ -42,7 +42,7 @@ const loadFlowers = (search = "") => {
     sortedflowers.forEach((flower, index) => {
       const isNew = index < newTagLimit; 
       const div = document.createElement("div");
-      div.classList.add("allflower-card", "col-12", "col-md-6", "col-lg-6","pb-2");
+      div.classList.add("allflower-card", "col-12", "col-md-6", "col-lg-6","my-4");
       div.innerHTML = `
         <img class="allflow-img img-fluid" src="${flower.image}" alt="${flower.title}" />
         
@@ -70,9 +70,9 @@ const loadFlowers = (search = "") => {
         const parent = document.getElementById("drop-cat");
         parent.innerHTML = ""; // Clear previous items
         data.forEach((item) => {
-          const li = document.createElement("li");
+          const li = document.createElement("div");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn text-white" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:75%; " class="btn ms-auto text-start text-black " onclick="loadFlowers('${item.name}')">♦️ ${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -86,9 +86,9 @@ const loadFlowers = (search = "") => {
         const parent = document.getElementById("drop-color");
         parent.innerHTML = ""; // Clear previous items
         data.forEach((item) => {
-          const li = document.createElement("li");
+          const li = document.createElement("div");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:100%; margin:auto;" class="btn btcn text-white" onclick="loadFlowers('${item.name}')">${item.name}</button>`;
+          li.innerHTML = `<button style="width:75%; " class="btn ms-auto text-start text-black " onclick="loadFlowers('${item.name}')">♦️ ${item.name}</button>`;
           parent.appendChild(li);
         });
       })

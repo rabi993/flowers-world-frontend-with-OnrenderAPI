@@ -103,7 +103,7 @@ const loadFlowers = (search = "") => {
       
       if (index >= showLimit) return;
       const div = document.createElement("div");
-      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","pb-2",);
+      div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","mb-4",);
       div.innerHTML = `
         <img class="allflow-img2 img-fluid w-100" src="${flower.image}" alt="${flower.title}" />
         
@@ -200,7 +200,7 @@ const loadFlowersspring = () => {
     
 
     
-    let showLimit = 4;
+    let showLimit = 6;
 
   
     const flowersContainer = document.getElementById("flowers2");
@@ -213,13 +213,12 @@ const loadFlowersspring = () => {
       const div = document.createElement("div");
       div.classList.add("allflower-card3", "col-md-6", "col-lg-6",);
       div.innerHTML = `
-      <a style="text-decoration: none;"  href="flowerDetails.html?flowerId=${flower.id}">
-        <img class="allflow-img3 img-fluid" src="${flower.image}" alt="${flower.title}" />
+      <a style="text-decoration: none; color:black"  href="flowerDetails.html?flowerId=${flower.id}">
+        <img class="allflow-img3 img-fluid " src="${flower.image}" alt="${flower.title}" />
         
         
         
-        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")}  </h4>
-        <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> 
+        <h4>${flower.title} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small>  </h4>
         
         
           </a>
@@ -288,10 +287,10 @@ const displayReview = (reviews) => {
         div.classList.add("review-card");
         div.innerHTML = `
           <img src="${image}" alt="Reviewer Image" />
-          <h4>${fullName}</h4>
-          <h5><b>Flower:</b> ${flowerName}</h5>
-          <p>${review.body.slice(0, 100)}</p>
-          <h6>Rating: ${review.rating}</h6>
+          <h6>${fullName}</h6>
+          <small>Flower: ${flowerName}</small></br>
+          <small>${review.body.slice(0, 30)}</small>
+          <h6>${review.rating}</h6>
         `;
         parent.appendChild(div);
       })

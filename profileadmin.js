@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Populate the card with user details
         card.innerHTML = `
-          <div class="card-body text-center">
-            <div class="d-flex justify-content-center gap-3 py-2">
+          <div class="card-body text-center py-4">
+            <div class="d-flex justify-content-center gap-3 pb-3">
                         
               <a target="" class="text-white text-decoration-none btn btc border rounded p-2" href="changepassAdmin.html">Change Password</a>
               <a target="" class="text-white text-decoration-none btn btc border rounded p-2" href="updateProfileAdmin.html">Update Your Profile</a>
@@ -30,14 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="card-text justify-content-center">           
               <img src="./Images/man.jpg" alt="Admin Image" class="img-fluid rounded mt-2" style="max-height: 60px;">                          
             </div>
-            <h5 class="card-title text-center">Admin Details</h5>
             <p class="card-text"><strong>ID:</strong> ${user.id}</p>
             <p class="card-text"><strong>Username:</strong> ${user.username}</p>
             <p class="card-text"><strong>First Name:</strong> ${user.first_name || "N/A"}</p>
             <p class="card-text"><strong>Last Name:</strong> ${user.last_name || "N/A"}</p>
             <p class="card-text"><strong>Email:</strong> ${user.email}</p>
             <p class="card-text"><strong>Is Superuser:</strong> ${user.is_superuser ? "Yes" : "No"}</p>
-            </br>
+            
             </div>
         `;
 

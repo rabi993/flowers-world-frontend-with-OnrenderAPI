@@ -1,29 +1,31 @@
 #allreview-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* gap: 20px; */
     padding-bottom: 20px;
   }
   .allreview-card {
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 20px;
     background-color: #ffffff;
-    border: 1px solid #9d9999;
+    border: 1px solid #e07265;
     /* border-radius: 8px; */
     padding: 15px;
-    width: 250px;
-    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom:10px ;
+    /* text-align: center; */
     box-shadow: 0 4px 6px rgba(70, 68, 68, 0.1);
   }
   .allreview-card img {
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+    /* object-fit: cover; */
+    /* margin-bottom: 10px; */
   }
-  .allreview-card h4 {
-    margin: 10px 0 5px;
-    font-size: 1.2em;
-  }
+  
   .allreview-card h5 {
     margin: 5px 0 10px;
     color: #555;
