@@ -168,7 +168,7 @@ const fetchFlowers = () => {
       formMessage.innerHTML = `<div class="alert alert-info">Uploading flower...</div>`;
   
       // Upload image to imgbb
-      const imgbbAPIKey = "b2a423828b40419b6c5c7a8821da59b5"; // Replace with your actual API key
+      const imgbbAPIKey = "6b0c007afbf8da08520a75fb493991aa"; // Replace with your actual API key
       const imgbbFormData = new FormData();
       imgbbFormData.append("image", image);
   
