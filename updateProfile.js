@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle image upload to imgbb if a new file is selected
     const fileInput = formData.get("image");
-    const imgbbApiKey = "6b0c007afbf8da08520a75fb493991aa"; // Replace with your imgbb API key
+    const imgbbApiKey = "b2a423828b40419b6c5c7a8821da59b5"; // Replace with your imgbb API key
     let imgbbUploadPromise = Promise.resolve(null);
 
     if (fileInput && fileInput.size > 0) {

@@ -138,7 +138,7 @@ const fetchFlowers = () => {
   
     try {
       // Upload image to imgbb
-      const imgbbAPIKey = "6b0c007afbf8da08520a75fb493991aa"; // Replace with your actual API key
+      const imgbbAPIKey = "b2a423828b40419b6c5c7a8821da59b5"; // Replace with your actual API key
       const imgbbFormData = new FormData();
       imgbbFormData.append("image", image);
   
@@ -213,7 +213,7 @@ const handleEditFlower = (flower) => {
     event.preventDefault();
 
     try {
-      const imgbbAPIKey = "6b0c007afbf8da08520a75fb493991aa"; 
+      const imgbbAPIKey = "b2a423828b40419b6c5c7a8821da59b5"; 
       const fileInput = document.getElementById("flowerImage");
       let imageUrl = flower.image;
 
