@@ -1,6 +1,6 @@
 const loadServices = () => {
   // Fetch services from the API
-  fetch('https://flowers-world.onrender.com/services/')
+  fetch('https://flowers-world-unkt.onrender.com/services/')
     .then((res) => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
@@ -65,7 +65,7 @@ const loadFlowers = (search = "") => {
   spinner.style.display = "block";
   noData.style.display = "none";
 
-  const url = `https://flowers-world.onrender.com/flowers/list/?search=${search}`;
+  const url = `https://flowers-world-unkt.onrender.com/flowers/list/?search=${search}`;
   console.log("Fetching data from:", url);
 
   fetch(url)
@@ -125,7 +125,7 @@ const loadFlowers = (search = "") => {
 
   
   const loadCategory = () => {
-    fetch("https://flowers-world.onrender.com/categories/")
+    fetch("https://flowers-world-unkt.onrender.com/categories/")
       .then((res) => res.json())
       .then((data) => {
         const parent = document.getElementById("drop-cat");
@@ -141,7 +141,7 @@ const loadFlowers = (search = "") => {
   };
   
   const loadColor = () => {
-    fetch("https://flowers-world.onrender.com/colors/")
+    fetch("https://flowers-world-unkt.onrender.com/colors/")
       .then((res) => res.json())
       .then((data) => {
         const parent = document.getElementById("drop-color");
@@ -172,7 +172,7 @@ const loadFlowersspring = () => {
   spinner.style.display = "block";
   noData.style.display = "none";
 
-  const url = `https://flowers-world.onrender.com/flowers/list/`;
+  const url = `https://flowers-world-unkt.onrender.com/flowers/list/`;
   console.log("Fetching data from:", url);
 
   fetch(url)
@@ -240,7 +240,7 @@ const loadFlowersspring = () => {
 
 
 const loadReview = () => {
-  fetch("https://flowers-world.onrender.com/flowers/reviews/")
+  fetch("https://flowers-world-unkt.onrender.com/flowers/reviews/")
     .then((res) => res.json())
     .then((data) => displayReview(data))
     .catch((error) => console.error("Error fetching reviews:", error));
@@ -257,14 +257,14 @@ const displayReview = (reviews) => {
     let flowerName = "Unknown Flower";
 
     // Fetch reviewer information
-    fetch(`https://flowers-world.onrender.com/users/${review.reviewer}`)
+    fetch(`https://flowers-world-unkt.onrender.com/users/${review.reviewer}`)
       .then((res) => res.json())
       .then((userData) => {
         username = userData.username;
         fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
 
         // Fetch the complete buyer list
-        return fetch("https://flowers-world.onrender.com/buyers/list/");
+        return fetch("https://flowers-world-unkt.onrender.com/buyers/list/");
       })
       .then((res) => res.json())
       .then((buyersData) => {
@@ -276,7 +276,7 @@ const displayReview = (reviews) => {
         }
 
         // Fetch flower information
-        return fetch(`https://flowers-world.onrender.com/flowers/list/${review.flower}`);
+        return fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${review.flower}`);
       })
       .then((res) => res.json())
       .then((flowerData) => {
@@ -313,7 +313,7 @@ const loadBuyerId = () => {
   }
 
   // Step 1: Fetch the username using user_id
-  fetch(`https://flowers-world.onrender.com/users/${user_id}/`)
+  fetch(`https://flowers-world-unkt.onrender.com/users/${user_id}/`)
     .then((res) => {
       if (!res.ok) {
         throw new Error(`Failed to fetch user: ${res.statusText}`);
@@ -326,7 +326,7 @@ const loadBuyerId = () => {
       const username = userData.username;
 
       // Step 2: Fetch the list of buyers
-      return fetch(`https://flowers-world.onrender.com/buyers/list/`);
+      return fetch(`https://flowers-world-unkt.onrender.com/buyers/list/`);
     })
     .then((res) => {
       if (!res.ok) {

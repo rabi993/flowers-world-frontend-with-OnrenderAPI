@@ -12,7 +12,7 @@ const orderdelete = () => {
 
   // Loop through each order ID and delete the order from the server
   orderIds.forEach((orderId) => {
-    fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, { method: "DELETE" })
+    fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, { method: "DELETE" })
       .then((res) => {
         if (res.ok) {
           console.log(`Order ID ${orderId} deleted successfully.`);
@@ -39,7 +39,7 @@ const handlelogOut = () => {
   
   const token = localStorage.getItem("token");
 
-  fetch("https://flowers-world.onrender.com/buyers/logout/", {
+  fetch("https://flowers-world-unkt.onrender.com/buyers/logout/", {
     method: "POST",
     headers: {
       Authorization: `Token ${token}`,

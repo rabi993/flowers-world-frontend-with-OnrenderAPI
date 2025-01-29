@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const profileIcon2 = document.getElementById('profile_icon2');
 
   if (buyerId) {
-    fetch(`https://flowers-world.onrender.com/buyers/list/${buyerId}`)
+    fetch(`https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

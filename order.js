@@ -2,7 +2,7 @@
 
 const loadAllOrder = (filterStatus = null) => {
   const buyer_id = localStorage.getItem("buyer_id");
-  fetch(`https://flowers-world.onrender.com/orders/?buyer_id=${buyer_id}`)
+  fetch(`https://flowers-world-unkt.onrender.com/orders/?buyer_id=${buyer_id}`)
     .then((res) => {
       if (!res.ok) {
         throw new Error("Failed to fetch orders");

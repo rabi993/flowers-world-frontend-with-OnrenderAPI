@@ -1,7 +1,7 @@
 
   
 // const loadAllOrder = (filterStatus = null) => {
-//   fetch("https://flowers-world.onrender.com/orders/")
+//   fetch("https://flowers-world-unkt.onrender.com/orders/")
 //     .then((res) => {
 //       if (!res.ok) {
 //         throw new Error("Failed to fetch orders");
@@ -23,7 +23,7 @@
 //       }
 
 //       // Fetch all flowers
-//       fetch("https://flowers-world.onrender.com/flowers/list/")
+//       fetch("https://flowers-world-unkt.onrender.com/flowers/list/")
 //         .then((res) => {
 //           if (!res.ok) {
 //             throw new Error("Failed to fetch flowers");
@@ -133,7 +133,7 @@
 // // Load all orders on page load
 // loadAllOrder();
 const loadAllOrder = (filterStatus = null) => {
-  fetch("https://flowers-world.onrender.com/orders/")
+  fetch("https://flowers-world-unkt.onrender.com/orders/")
     .then((res) => {
       if (!res.ok) {
         throw new Error("Failed to fetch orders");
@@ -155,7 +155,7 @@ const loadAllOrder = (filterStatus = null) => {
       }
 
       // Fetch all flowers
-      fetch("https://flowers-world.onrender.com/flowers/list/")
+      fetch("https://flowers-world-unkt.onrender.com/flowers/list/")
         .then((res) => {
           if (!res.ok) {
             throw new Error("Failed to fetch flowers");

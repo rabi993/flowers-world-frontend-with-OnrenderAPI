@@ -2,7 +2,7 @@
 async function fetchFlowerCount() {
     try {
       // Fetch the data from the server
-      const response = await fetch('https://flowers-world.onrender.com/flowers/list/');
+      const response = await fetch('https://flowers-world-unkt.onrender.com/flowers/list/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -30,7 +30,7 @@ async function fetchFlowerCount() {
 
   async function fetchOrderCount() {
   try {
-    const response = await fetch('https://flowers-world.onrender.com/orders/');
+    const response = await fetch('https://flowers-world-unkt.onrender.com/orders/');
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', fetchOrderCount);
 async function fetchBuyerCount() {
     try {
       // Fetch the data from the server
-      const response = await fetch('https://flowers-world.onrender.com/buyers/list/');
+      const response = await fetch('https://flowers-world-unkt.onrender.com/buyers/list/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -142,7 +142,7 @@ async function fetchBuyerCount() {
   async function fetchUserCount() {
     try {
       // Fetch the data from the server
-      const response = await fetch('https://flowers-world.onrender.com/users/');
+      const response = await fetch('https://flowers-world-unkt.onrender.com/users/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -176,7 +176,7 @@ async function fetchBuyerCount() {
   async function fetchCounts() {
     try {
       // Fetch category data
-      const categoryResponse = await fetch('https://flowers-world.onrender.com/categories/');
+      const categoryResponse = await fetch('https://flowers-world-unkt.onrender.com/categories/');
       if (!categoryResponse.ok) {
         throw new Error(`HTTP error! Status: ${categoryResponse.status}`);
       }
@@ -184,7 +184,7 @@ async function fetchBuyerCount() {
       const categoryCount = categories.length;
       
       // Fetch color data
-      const colorResponse = await fetch('https://flowers-world.onrender.com/colors/');
+      const colorResponse = await fetch('https://flowers-world-unkt.onrender.com/colors/');
       if (!colorResponse.ok) {
         throw new Error(`HTTP error! Status: ${colorResponse.status}`);
       }
@@ -192,7 +192,7 @@ async function fetchBuyerCount() {
       const colorCount = colors.length;
   
       // Fetch review data
-      const reviewResponse = await fetch('https://flowers-world.onrender.com/flowers/reviews/');
+      const reviewResponse = await fetch('https://flowers-world-unkt.onrender.com/flowers/reviews/');
       if (!reviewResponse.ok) {
         throw new Error(`HTTP error! Status: ${reviewResponse.status}`);
       }
@@ -225,7 +225,7 @@ async function fetchBuyerCount() {
   async function fetchServiceAndContactCounts() {
     try {
       // Fetch service data
-      const serviceResponse = await fetch('https://flowers-world.onrender.com/services/');
+      const serviceResponse = await fetch('https://flowers-world-unkt.onrender.com/services/');
       if (!serviceResponse.ok) {
         throw new Error(`HTTP error! Status: ${serviceResponse.status}`);
       }
@@ -233,7 +233,7 @@ async function fetchBuyerCount() {
       const serviceCount = services.length;
       
       // Fetch contact form data
-      const contactResponse = await fetch('https://flowers-world.onrender.com/contact_us/');
+      const contactResponse = await fetch('https://flowers-world-unkt.onrender.com/contact_us/');
       if (!contactResponse.ok) {
         throw new Error(`HTTP error! Status: ${contactResponse.status}`);
       }
