@@ -1,4 +1,4 @@
-fetch("https://flowers-world.onrender.com/colors/")
+fetch("https://flowers-world-unkt.onrender.com/colors/")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch colors");
         return response.json();

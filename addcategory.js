@@ -16,7 +16,7 @@ const handleAddCategory = (event) => {
   };
 
   // Submit the category
-  fetch("https://flowers-world.onrender.com/categories/", {
+  fetch("https://flowers-world-unkt.onrender.com/categories/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const handleAddCategory = (event) => {
 };
 
 const fetchCategories = () => {
-  fetch("https://flowers-world.onrender.com/categories/")
+  fetch("https://flowers-world-unkt.onrender.com/categories/")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch categories.");
@@ -95,7 +95,7 @@ const handleEditCategory = (id, currentName) => {
   const slug = newName.toLowerCase().replace(/\s+/g, "-"); 
   const categoryData = { name: newName, slug };
 
-  fetch(`https://flowers-world.onrender.com/categories/${id}/`, {
+  fetch(`https://flowers-world-unkt.onrender.com/categories/${id}/`, {
     method: "PUT", 
     headers: {
       "Content-Type": "application/json",
@@ -126,7 +126,7 @@ const handleDeleteCategory = (id) => {
     return;
   }
 
-  fetch(`https://flowers-world.onrender.com/categories/${id}/`, {
+  fetch(`https://flowers-world-unkt.onrender.com/categories/${id}/`, {
     method: "DELETE", 
     headers: {
       "Content-Type": "application/json",

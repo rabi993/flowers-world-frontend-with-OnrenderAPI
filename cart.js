@@ -3,7 +3,7 @@ const loadorder = () => {
   const buyer_id = localStorage.getItem("buyer_id");
   const orderIds = JSON.parse(localStorage.getItem("order_ids")) || []; // Get stored order IDs
 
-  fetch(`https://flowers-world.onrender.com/orders/?buyer_id=${buyer_id}`)
+  fetch(`https://flowers-world-unkt.onrender.com/orders/?buyer_id=${buyer_id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log("All Orders:", data);
@@ -126,7 +126,7 @@ document.addEventListener("click", (event) => {
     console.log(`Deleting order: ID=${orderId}, Flower=${flower}, Quantity=${quantity}`);
 
     // Call delete API and update the available quantity
-    fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, { method: "DELETE" })
+    fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, { method: "DELETE" })
       .then((res) => {
         if (res.ok) {
           alert("Order deleted successfully!");
@@ -168,7 +168,7 @@ document.addEventListener("click", (event) => {
     console.log(`Reordering: ID=${orderId}, Flower=${flower}, Quantity=${quantity}`);
 
     // Delete the existing order
-    fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, { method: "DELETE" })
+    fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, { method: "DELETE" })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to delete the order.");
 
@@ -180,7 +180,7 @@ document.addEventListener("click", (event) => {
         console.log("Order deleted, fetching flower list...");
 
         // Fetch flower details
-        return fetch("https://flowers-world.onrender.com/flowers/list/");
+        return fetch("https://flowers-world-unkt.onrender.com/flowers/list/");
       })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch flower list.");

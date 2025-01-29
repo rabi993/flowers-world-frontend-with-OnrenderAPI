@@ -1,6 +1,6 @@
 
 const fetchContactUs = () => {
-    fetch("https://flowers-world.onrender.com/contact_us/")
+    fetch("https://flowers-world-unkt.onrender.com/contact_us/")
       .then((response) => response.json())
       .then((contacts) => {
         const contactUsList = document.getElementById("contactus-list");
@@ -49,7 +49,7 @@ const fetchContactUs = () => {
       content: content,
     };
   
-    fetch("https://flowers-world.onrender.com/contact_us/", {
+    fetch("https://flowers-world-unkt.onrender.com/contact_us/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const fetchContactUs = () => {
 const deleteContactUs = (contactId) => {
   if (!confirm("Are you sure you want to delete this entry?")) return;
 
-  fetch(`https://flowers-world.onrender.com/contact_us/${contactId}/`, {
+  fetch(`https://flowers-world-unkt.onrender.com/contact_us/${contactId}/`, {
     method: "DELETE",
   })
     .then((response) => {

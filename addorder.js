@@ -2,7 +2,7 @@
 
 
 // const loadAllOrder3 = (filterStatus = null, fromDate = null, toDate = null, singleDate = null) => {
-//   fetch(`https://flowers-world.onrender.com/orders/`)
+//   fetch(`https://flowers-world-unkt.onrender.com/orders/`)
 //     .then((res) => res.json())
 //     .then((data) => {
 //       console.log(data);
@@ -154,7 +154,7 @@
 
 
 const loadAllOrder = (filterStatus = null, fromDate = null, toDate = null) => {
-  fetch(`https://flowers-world.onrender.com/orders/`)
+  fetch(`https://flowers-world-unkt.onrender.com/orders/`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -268,7 +268,7 @@ const handleStatusFilter = () => {
 
 
 const loadAllOrder1 = (filterStatus = null) => {
-  fetch(`https://flowers-world.onrender.com/orders/`)
+  fetch(`https://flowers-world-unkt.onrender.com/orders/`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -383,7 +383,7 @@ const handleStatusFilter1 = () => {
 };
 
 const updateOrderStatus = (orderId, newStatus) => {
-  fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, {
+  fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, {
     method: "PATCH", // Use PATCH for partial updates
     headers: {
       "Content-Type": "application/json",
@@ -414,7 +414,7 @@ const updateOrderStatus = (orderId, newStatus) => {
 // Function to delete an order
 const deleteOrder = (orderId) => {
   if (confirm(`Are you sure you want to delete Order #${orderId}?`)) {
-    fetch(`https://flowers-world.onrender.com/orders/${orderId}/`, {
+    fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, {
       method: "DELETE",
     })
       .then((response) => {

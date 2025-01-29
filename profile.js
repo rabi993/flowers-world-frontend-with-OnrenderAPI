@@ -1,7 +1,7 @@
 // Fetch and display user data
 document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem('user_id'); // Get the user ID from local storage
-    const apiUrl = `https://flowers-world.onrender.com/users/${userId}`; // Correctly interpolate the userId into the URL
+    const apiUrl = `https://flowers-world-unkt.onrender.com/users/${userId}`; // Correctly interpolate the userId into the URL
     const tableBody = document.getElementById("user-table-body");
   
     fetch(apiUrl)
@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem('user_id'); // Get the user ID from local storage
     const buyerId = localStorage.getItem('buyer_id'); // Get the buyer ID from local storage
-    const userApiUrl = `https://flowers-world.onrender.com/users/${userId}`; // User API URL
-    const buyerApiUrl = `https://flowers-world.onrender.com/buyers/list/${buyerId}`; // Buyer API URL
+    const userApiUrl = `https://flowers-world-unkt.onrender.com/users/${userId}`; // User API URL
+    const buyerApiUrl = `https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}`; // Buyer API URL
     const cardContainer = document.getElementById("user-card-container");
 
     // Fetch user and buyer data in parallel

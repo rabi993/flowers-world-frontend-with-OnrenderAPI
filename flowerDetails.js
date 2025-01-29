@@ -1,11 +1,11 @@
 const getparams = () => {
   const param = new URLSearchParams(window.location.search).get("flowerId");
   
-  fetch(`https://flowers-world.onrender.com/flowers/list/${param}`)
+  fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${param}`)
     .then((res) => res.json())
     .then((data) => displayDetails(data));
 
-  fetch(`https://flowers-world.onrender.com/flowers/reviews/?flower_id=${param}`)
+  fetch(`https://flowers-world-unkt.onrender.com/flowers/reviews/?flower_id=${param}`)
     .then((res) => res.json())
     .then((data) => flowerReview(data));
 };
@@ -16,13 +16,13 @@ const flowerReview = async (reviews) => {
   for (const review of reviews) {
     try {
       // Fetch user data
-      const buyerResponse = await fetch(`https://flowers-world.onrender.com/users/${review.reviewer}`);
+      const buyerResponse = await fetch(`https://flowers-world-unkt.onrender.com/users/${review.reviewer}`);
       const userData = await buyerResponse.json();
       const username = userData.username;
       const fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
 
       // Fetch the complete user list
-      const userResponse = await fetch(`https://flowers-world.onrender.com/buyers/list/`);
+      const userResponse = await fetch(`https://flowers-world-unkt.onrender.com/buyers/list/`);
       const buyersData = await userResponse.json();
       const buyerData = buyersData.find((buyer) => buyer.user === username);
       if (!buyerData) {
@@ -32,7 +32,7 @@ const flowerReview = async (reviews) => {
       const image = buyerData.image || "./Images/man.jpg";
 
       // Fetch flower information
-      const flowerResponse = await fetch(`https://flowers-world.onrender.com/flowers/list/${review.flower}`);
+      const flowerResponse = await fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${review.flower}`);
       const flowerData = await flowerResponse.json();
       const flowerName = flowerData.title;
 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Fetch and fill the reviewer's name
-  fetch(`https://flowers-world.onrender.com/users/${userId}/`) // Replace with your actual user API endpoint
+  fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`) // Replace with your actual user API endpoint
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch user details");
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // Fetch and fill the flower's name
-  fetch(`https://flowers-world.onrender.com/flowers/${flowerId}/`) 
+  fetch(`https://flowers-world-unkt.onrender.com/flowers/${flowerId}/`) 
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch flower details");
@@ -161,7 +161,7 @@ const handleReviewSubmission = (event) => {
   };
 
   // Submit the review
-  fetch("https://flowers-world.onrender.com/flowers/reviews/", {
+  fetch("https://flowers-world-unkt.onrender.com/flowers/reviews/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -180,7 +180,7 @@ const handleReviewSubmission = (event) => {
       // Optionally reload reviews section
       const reviewList = document.getElementById("flower-details-review");
       reviewList.innerHTML = ""; // Clear existing reviews
-      fetch(`https://flowers-world.onrender.com/flowers/reviews/?flower_id=${flowerId}`)
+      fetch(`https://flowers-world-unkt.onrender.com/flowers/reviews/?flower_id=${flowerId}`)
         .then((res) => res.json())
         .then((data) => flowerReview(data)); // Update the reviews display
     })
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const flowerId = new URLSearchParams(window.location.search).get("flowerId");
 
   if (flowerId) {
-    fetch(`https://flowers-world.onrender.com/flowers/${flowerId}/`)
+    fetch(`https://flowers-world-unkt.onrender.com/flowers/${flowerId}/`)
       .then((res) => res.json())
       .then((data) => {
         flowerPrice = data.price; // Store the flower price
@@ -259,7 +259,7 @@ const submitOrderForm = (event) => {
   console.log("Order Data:", orderData);
 
   // Send the data to the API
-  fetch(`https://flowers-world.onrender.com/orders/?flower_id=${flowerId}&buyer_id=${buyerId}`, {
+  fetch(`https://flowers-world-unkt.onrender.com/orders/?flower_id=${flowerId}&buyer_id=${buyerId}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(orderData),
