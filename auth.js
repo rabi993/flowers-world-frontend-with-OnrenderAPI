@@ -26,7 +26,7 @@ const handleRegistration = (event) => {
     ) {
       console.log(info);
 
-      fetch("https://flowers-world-unkt.onrender.com/buyers/register/", {
+      fetch("https://flowers-world.onrender.com/buyers/register/", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(info),
@@ -69,7 +69,7 @@ const getValue = (id) => {
 //     return;
 //   }
 //   else  {
-//     fetch("https://flowers-world-unkt.onrender.com/buyers/login/", {
+//     fetch("https://flowers-world.onrender.com/buyers/login/", {
 //       method: "POST",
 //       headers: { "content-type": "application/json" },
 //       body: JSON.stringify({ username, password }),
@@ -109,7 +109,7 @@ const handleLogin = (event) => {
   }
 
   // API call for login
-  fetch("https://flowers-world-unkt.onrender.com/buyers/login/", {
+  fetch("https://flowers-world.onrender.com/buyers/login/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password }),
@@ -135,7 +135,7 @@ const handleLogin = (event) => {
 
         // Use `user_id` to fetch user details
         const userId = data.user_id;
-        fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`, {
+        fetch(`https://flowers-world.onrender.com/users/${userId}/`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

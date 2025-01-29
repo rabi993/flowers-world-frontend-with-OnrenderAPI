@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchServices(); // Load the services when the page loads
 });
 const fetchServices = () => {
-  fetch("https://flowers-world-unkt.onrender.com/services/")
+  fetch("https://flowers-world.onrender.com/services/")
     .then((response) => response.json())
     .then((services) => {
       const serviceList = document.getElementById("service-list");
@@ -91,8 +91,8 @@ const handleAddService = async (event) => {
     // Determine HTTP method and URL
     const method = serviceId ? "PUT" : "POST"; // Update or add
     const url = serviceId
-      ? `https://flowers-world-unkt.onrender.com/services/${serviceId}/`
-      : "https://flowers-world-unkt.onrender.com/services/";
+      ? `https://flowers-world.onrender.com/services/${serviceId}/`
+      : "https://flowers-world.onrender.com/services/";
 
     // Send service data to backend
     const response = await fetch(url, {
@@ -134,7 +134,7 @@ const handleDeleteService = (id) => {
     return;
   }
 
-  fetch(`https://flowers-world-unkt.onrender.com/services/${id}/`, {
+  fetch(`https://flowers-world.onrender.com/services/${id}/`, {
     method: "DELETE", // Assuming the API uses DELETE for deletions
   })
     .then((response) => {

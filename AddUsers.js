@@ -1,6 +1,6 @@
 
 const fetchUsers = () => {
-    fetch("https://flowers-world-unkt.onrender.com/users/")
+    fetch("https://flowers-world.onrender.com/users/")
         .then((response) => response.json())
         .then((users) => {
             const usersList = document.getElementById("users-list");
@@ -55,7 +55,7 @@ const handleAddUser = (event) => {
         address
     };
 
-    fetch("https://flowers-world-unkt.onrender.com/users/", {
+    fetch("https://flowers-world.onrender.com/users/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -78,7 +78,7 @@ const handleAddUser = (event) => {
 fetchUsers();
 
 const openEditModal = (userId) => {
-    fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`)
+    fetch(`https://flowers-world.onrender.com/users/${userId}/`)
         .then((response) => response.json())
         .then((user) => {
             document.getElementById("editUserId").value = user.id;
@@ -106,7 +106,7 @@ const handleEditUser = (event) => {
 
     const data = { username, email, first_name: firstName, last_name: lastName };
 
-    fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`, {
+    fetch(`https://flowers-world.onrender.com/users/${userId}/`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -134,7 +134,7 @@ const handleEditUser = (event) => {
 const deleteUser = (userId) => {
     if (!confirm("Are you sure you want to delete this user?")) return;
 
-    fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`, {
+    fetch(`https://flowers-world.onrender.com/users/${userId}/`, {
         method: "DELETE",
     })
         .then((response) => {

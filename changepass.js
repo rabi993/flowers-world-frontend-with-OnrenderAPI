@@ -14,7 +14,7 @@ document.getElementById("change-password-form").addEventListener("submit", async
   }
 
   try {
-      const response = await fetch("https://flowers-world-unkt.onrender.com/buyers/change-password/", {
+      const response = await fetch("https://flowers-world.onrender.com/buyers/change-password/", {
           method: "POST",
           headers: {
               "Content-Type": "application/json",

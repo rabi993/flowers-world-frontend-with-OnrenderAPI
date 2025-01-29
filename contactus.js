@@ -18,7 +18,7 @@ const getValue = (id) => {
   
     const info = { name, phone, content };
   
-    fetch("https://flowers-world-unkt.onrender.com/contact_us/", {
+    fetch("https://flowers-world.onrender.com/contact_us/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info),

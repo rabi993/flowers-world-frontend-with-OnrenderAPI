@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem('user_id'); // Get the user ID from local storage
-    const apiUrl = `https://flowers-world-unkt.onrender.com/users/${userId}`; // Correctly interpolate the userId into the URL
+    const apiUrl = `https://flowers-world.onrender.com/users/${userId}`; // Correctly interpolate the userId into the URL
     const cardContainer = document.getElementById("user-card-container");
 
     fetch(apiUrl)

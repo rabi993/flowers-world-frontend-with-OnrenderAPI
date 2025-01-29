@@ -1,5 +1,5 @@
 const fetchReviews = () => {
-    fetch("https://flowers-world-unkt.onrender.com/flowers/reviews/")
+    fetch("https://flowers-world.onrender.com/flowers/reviews/")
         .then((response) => response.json())
         .then((reviews) => {
             const reviewsList = document.getElementById("reviews-list");
@@ -44,7 +44,7 @@ const handleAddReview = (event) => {
         rating: reviewRating,
     };
 
-    fetch("https://flowers-world-unkt.onrender.com/flowers/reviews/", {
+    fetch("https://flowers-world.onrender.com/flowers/reviews/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -68,7 +68,7 @@ fetchReviews();
 const deleteReview = (reviewId) => {
     if (!confirm("Are you sure you want to delete this review?")) return;
 
-    fetch(`https://flowers-world-unkt.onrender.com/flowers/reviews/${reviewId}/`, {
+    fetch(`https://flowers-world.onrender.com/flowers/reviews/${reviewId}/`, {
         method: "DELETE",
     })
         .then((response) => {

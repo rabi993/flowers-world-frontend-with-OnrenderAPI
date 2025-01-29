@@ -3,7 +3,7 @@ const fetchFlowers = () => {
   const flowersList = document.getElementById("flowers-list");
   flowersList.innerHTML = `<tr><td colspan="9" class="text-center">Loading flowers...</td></tr>`;
 
-  fetch("https://flowers-world-unkt.onrender.com/flowers/list/")
+  fetch("https://flowers-world.onrender.com/flowers/list/")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch flowers.");
@@ -55,7 +55,7 @@ const fetchFlowers = () => {
 
   // Fetch categories and populate the multiple select dropdown
   const fetchCategories = () => {
-    fetch("https://flowers-world-unkt.onrender.com/categories/")
+    fetch("https://flowers-world.onrender.com/categories/")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch categories");
         return response.json();
@@ -75,7 +75,7 @@ const fetchFlowers = () => {
   
   // Fetch colors and populate the multiple select dropdown
   const fetchColor = () => {
-    fetch("https://flowers-world-unkt.onrender.com/colors/")
+    fetch("https://flowers-world.onrender.com/colors/")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch colors");
         return response.json();
@@ -101,7 +101,7 @@ const fetchFlowers = () => {
   document.addEventListener("DOMContentLoaded", () => {
     const userId = localStorage.getItem("user_id"); 
     
-    fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`) 
+    fetch(`https://flowers-world.onrender.com/users/${userId}/`) 
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch user details");
@@ -202,7 +202,7 @@ const fetchFlowers = () => {
   
       // Send flower data to your backend
       const response = await fetch(
-        "https://flowers-world-unkt.onrender.com/flowers/list/",
+        "https://flowers-world.onrender.com/flowers/list/",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
