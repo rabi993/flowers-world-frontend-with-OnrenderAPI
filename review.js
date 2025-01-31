@@ -38,7 +38,7 @@ const loadReviews = async () => {
         div.classList.add("allreview-card");
         div.innerHTML = `
         <img src="${image}" alt="Reviewer Image" /> 
-        <h5>${fullName}</h5> 
+        <h6 style="font-size:18px;" class="">${fullName}</h6> 
         <p >Flower Name: ${flowerName}</p> 
         <p >${review.body.slice(0, 100)}</p>
         <h3> ${review.rating}</h3>
