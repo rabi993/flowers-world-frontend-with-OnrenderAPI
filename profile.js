@@ -69,14 +69,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create the card element
         const card = document.createElement("div");
-        card.className = " p-3 shadow";
+        card.className = " p-5 shadow";
         // card.style.width = "50rem";
 
         // Populate the card with user and buyer details
         card.innerHTML = `
           <div class="card-body ">
             
-            <div class="d-flex justify-content-center gap-3 p-3">
+            <div class="d-flex justify-content-around gap-3 p-3">
                   <div class="col-lg-4 col-md-4">
 <h5 class="card-title ">${user.first_name || "N/A"} ${user.last_name || "N/A"}'s Profile</h5>
                     ${
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="card-text"><strong>User's Roll:</strong> ${user.is_superuser ? "Admin/Superuser" : "Buyer"}</p>
                     
                   </div>
-                  <div class="col-lg-4 col-md-4">
+                  <div class="col-lg-4 col-md-4 ps-3">
                     <h6 class="mt-3">Buyer Details:</h6>
                     <p class="card-text"><strong>Buyer ID:</strong> ${buyer.id}</p>
                     <p class="card-text"><strong>Mobile No:</strong> ${buyer.mobile_no || "N/A"}</p>

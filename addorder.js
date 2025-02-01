@@ -190,13 +190,26 @@ const loadAllOrder = (filterStatus = null, fromDate = null, toDate = null) => {
       filteredData.sort((a, b) => b.id - a.id);
 
       filteredData.forEach((item) => {
+        
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${item.id}</td>
             <td>${item.buyer}</td>
             <td>${item.flower}</td>
             <td>${item.order_types}</td>
-            <td id="order-status-${item.id}">${item.order_status}</td>
+            <td id="order-status-${item.id}">
+              ${(() => {
+                const statusClasses = {
+                  Pending: "text-dark",
+                  Processing: "text-dark",
+                  Completed: "text-success",
+                  Rejected: "text-danger",
+                };
+                return item.order_status in statusClasses
+                  ? `<p class="${statusClasses[item.order_status]}">${item.order_status}</p>`
+                  : "";
+              })()}
+            </td>
             
             <td>${item.quantity}</td>
             <td>${item.mobile_no}</td>
@@ -232,20 +245,15 @@ const loadAllOrder = (filterStatus = null, fromDate = null, toDate = null) => {
                 ? `<p class="">Y</p>` 
                 : `<p class="btn bg-danger">N</p>`}
             </td>
-            <td>
-              ${!item.paid
-                ? `<button class="btn  text-danger">In Customer's Cart (not paid)</button>
-                   <button class="btn obtn " onclick="deleteOrder(${item.id})">🗑️</button>`
-                : `<button class="btn obtn btn-update" data-id="${item.id}" data-status="Pending">💤</button>
-                   <button class="btn obtn  btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
-                   <button class="btn obtn btn-update" data-id="${item.id}" data-status="Completed">✅</button>
-                   <button class="btn obtn btn-update mx-1" data-id="${item.id}" data-status="Rejected">❌</button>
-                   <button class="btn obtn" onclick="deleteOrder(${item.id})">🗑️</button>`}
+            
+            <td id="order-actions-${item.id}">
+              ${getActionButtons(item)}
             </td>
         `;
         parent.appendChild(tr);
       });
-
+      
+    
       // Add click event listeners to status buttons
       document.querySelectorAll(".btn-update").forEach((button) => {
         button.addEventListener("click", (event) => {
@@ -265,7 +273,86 @@ const handleStatusFilter = () => {
 
   loadAllOrder(filterStatus === "All" ? null : filterStatus, fromDate, toDate); // Reload data with filters
 };
+// Generate Action Buttons
+const getActionButtons = (item) => {
+  let buttons = "";
 
+  if (item.order_status === "Rejected") {
+    // Show delete button only
+    buttons += `<button class="btn obtn" onclick="deleteOrder(${item.id})">🗑️</button>`;
+  } 
+  else if (item.order_status === "Pending") {
+    // Show all buttons except "Pending"
+    buttons += `
+      <button class="btn obtn pr btn-update" data-id="${item.id}" data-status="Processing">🔄</button>
+      <button class="btn obtn cp btn-update" data-id="${item.id}" data-status="Completed">✅</button>
+      <button class="btn obtn btn-update mx-1" data-id="${item.id}" data-status="Rejected">❌</button>
+      <button class="btn obtn" onclick="deleteOrder(${item.id})">🗑️</button>
+    `;
+  } 
+  else if (item.order_status === "Processing") {
+    // Show "Completed", "Rejected", and "Delete" buttons
+    buttons += `
+      <button class="btn obtn cp btn-update" data-id="${item.id}" data-status="Completed">✅</button>
+      <button class="btn obtn btn-update mx-1" data-id="${item.id}" data-status="Rejected">❌</button>
+      <button class="btn obtn" onclick="deleteOrder(${item.id})">🗑️</button>
+    `;
+  } 
+  else if (item.order_status === "Completed") {
+    // Show "Completed" button (styled green) and Delete button
+    buttons += `
+      <small class=" cp btn-update" style="color: green; font-size:10px;" disabled>Completed</small>
+      <button class="btn obtn" onclick="deleteOrder(${item.id})">🗑️</button>
+    `;
+  }
+
+  return buttons;
+};
+
+
+const updateOrderStatus = (orderId, newStatus) => {
+  fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, {
+    method: "PATCH", // Use PATCH for partial updates
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ order_status: newStatus }), // Only sending the field to update
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Failed to update order status.");
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Order updated:", data);
+      const statusCell = document.getElementById(`order-status-${orderId}`);
+      statusCell.textContent = newStatus;
+      alert(`Order #${orderId} status updated to ${newStatus}.`);
+      location.reload();
+    })
+    .catch((error) => {
+      console.error("Error updating order status:", error.message);
+      alert(`Failed to update order status: ${error.message}`);
+    });
+};
+// Function to delete an order
+const deleteOrder = (orderId) => {
+  if (confirm(`Are you sure you want to delete Order #${orderId}?`)) {
+    fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to delete order.");
+        alert(`Order #${orderId} deleted successfully.`);
+        loadAllOrder(); // Reload the table to reflect changes
+      })
+      .catch((error) => {
+        console.error("Error deleting order:", error.message);
+        alert(`Failed to delete order: ${error.message}`);
+      });
+  }
+};
+// Load all orders on page load
+loadAllOrder();
 
 const loadAllOrder1 = (filterStatus = null) => {
   fetch(`https://flowers-world-unkt.onrender.com/orders/`)
@@ -382,52 +469,10 @@ const handleStatusFilter1 = () => {
   loadAllOrder(filterStatus === "All" ? null : filterStatus); // Reload data with filter
 };
 
-const updateOrderStatus = (orderId, newStatus) => {
-  fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, {
-    method: "PATCH", // Use PATCH for partial updates
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ order_status: newStatus }), // Only sending the field to update
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to update order status.");
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Order updated:", data);
-      const statusCell = document.getElementById(`order-status-${orderId}`);
-      statusCell.textContent = newStatus;
-      alert(`Order #${orderId} status updated to ${newStatus}.`);
-      location.reload();
-    })
-    .catch((error) => {
-      console.error("Error updating order status:", error.message);
-      alert(`Failed to update order status: ${error.message}`);
-    });
-};
 
 
 
 
 
-// Function to delete an order
-const deleteOrder = (orderId) => {
-  if (confirm(`Are you sure you want to delete Order #${orderId}?`)) {
-    fetch(`https://flowers-world-unkt.onrender.com/orders/${orderId}/`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to delete order.");
-        alert(`Order #${orderId} deleted successfully.`);
-        loadAllOrder(); // Reload the table to reflect changes
-      })
-      .catch((error) => {
-        console.error("Error deleting order:", error.message);
-        alert(`Failed to delete order: ${error.message}`);
-      });
-  }
-};
-// Load all orders on page load
-loadAllOrder();
+
 

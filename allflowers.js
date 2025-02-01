@@ -44,7 +44,7 @@ const loadFlowers = (search = "") => {
       const div = document.createElement("div");
       div.classList.add("allflower-card", "col-12", "col-md-6", "col-lg-6","my-4");
       div.innerHTML = `
-        <img class="allflow-img img-fluid" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img img-fluid mb-3" src="${flower.image}" alt="${flower.title}" />
         
         
         
@@ -72,7 +72,7 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("div");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:75%; " class="btn ms-auto text-start text-black " onclick="loadFlowers('${item.name}')">♦️ ${item.name}</button>`;
+          li.innerHTML = `<button style="width:75%; " class="btn ms-auto text-start text-black " onclick="loadFlowers('${item.name}')">${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -88,7 +88,29 @@ const loadFlowers = (search = "") => {
         data.forEach((item) => {
           const li = document.createElement("div");
           li.classList.add("dropdown-item");
-          li.innerHTML = `<button style="width:75%; " class="btn ms-auto text-start text-black " onclick="loadFlowers('${item.name}')">♦️ ${item.name}</button>`;
+
+          let bgColorStyle = "";
+          if (item.name.toLowerCase() === "black") {
+            bgColorStyle = "background-color: black; color: white; border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "white") {
+            bgColorStyle = "background-color: white; color: black;border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "pink") {
+            bgColorStyle = "background-color: #F7899C; color: white;border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "merun") {
+            bgColorStyle = "background-color: #7C0000; color: white;border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "yellow") {
+            bgColorStyle = "background-color: yellow; color: black;border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "green") {
+            bgColorStyle = "background-color: green; color: white;border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "blue") {
+            bgColorStyle = "background-color: blue; color: white;border:1px solid gray;";
+          } else if (item.name.toLowerCase() === "red") {
+            bgColorStyle = "background-color: red; color: white;border:1px solid gray;";
+          } else{
+            bgColorStyle = "background-color: white; color: black;border:1px solid gray;";
+          }
+
+          li.innerHTML = `<button style="width:75%; ${bgColorStyle} " class="btn my-1 pb-2 ms-auto text-start  " onclick="loadFlowers('${item.name}')"> ${item.name}</button>`;
           parent.appendChild(li);
         });
       })
@@ -107,3 +129,8 @@ const loadFlowers = (search = "") => {
     loadColor();
   });
 
+  if (item.name === "black") {
+    document.querySelector(".colorbutton").classList.add("text-danger");
+} else if (item.name === "white") {
+    document.querySelector(".colorbutton").classList.add("text-success");
+}

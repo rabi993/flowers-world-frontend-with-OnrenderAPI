@@ -40,10 +40,10 @@ const flowerReview = async (reviews) => {
       const div = document.createElement("div");
       div.classList.add("review-card");
       div.innerHTML = `
-        <img src="${image}" alt="User Image" />
-        <h4>${fullName}</h4>
-        <h5>${flowerName}</h5>
-        <p>${review.body.slice(0, 100)}</p>
+        <img src="${image}" alt="Reviewer Image" />
+        <h6>${fullName}</h6>
+        <small>Flower: ${flowerName}</small></br>
+        <small>${review.body.slice(0, 30)}</small>
         <h6>${review.rating}</h6>
       `;
       parent.appendChild(div);
@@ -57,12 +57,12 @@ const displayDetails = (flower) => {
   console.log(flower);
   const parent = document.getElementById("flower-details");
   const div = document.createElement("div");
-  div.classList.add("flower-details-container", "row" ,"py-3", "gap-5","d-flex","justify-content-center");
+  div.classList.add("flower-details-container", "row" ,"py-5", "gap-5","d-flex","justify-content-center");
   div.innerHTML = `
     <div class="flower-img img-fluid col-md-4 col-lg-4 obtni">
       <img src=${flower.image} alt="" />
     </div>
-    <div class="doc-info col-md-4 col-lg-4 py-4 px-4 ">
+    <div class="doc-info col-md-4 col-lg-4  px-4 ">
       <h4>${flower?.title}</h4>
       ${flower?.category?.map((item) => {
         return `<b class=" "> Category: <span class="text-danger">${item}</span></b>`;

@@ -105,7 +105,7 @@ const loadFlowers = (search = "") => {
       const div = document.createElement("div");
       div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","mb-4",);
       div.innerHTML = `
-        <img class="allflow-img2 img-fluid w-100" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img2 img-fluid w-100 mb-3" src="${flower.image}" alt="${flower.title}" />
         
         
         
