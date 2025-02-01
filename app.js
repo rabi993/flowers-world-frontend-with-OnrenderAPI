@@ -105,11 +105,11 @@ const loadFlowers = (search = "") => {
       const div = document.createElement("div");
       div.classList.add("allflower-card2", "col-12", "col-md-6", "col-lg-6","mb-4",);
       div.innerHTML = `
-        <img class="allflow-img2 img-fluid w-100 mb-3" src="${flower.image}" alt="${flower.title}" />
+        <img class="allflow-img2 img-fluid w-100" src="${flower.image}" alt="${flower.title}" />
         
         
         
-        <h4>${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> ${isNew ? '<button class="btn btcn btn-sm ms-2 new2">NEW Arrival</button>' : ''}</h4>
+        <h4 class="pt-3">${flower.title} ${flower.category.map((item) => `<small  style="color: #e07265;font-size:10px; " class="">${item}</small>`).join("")} <small style="margin: 0px;font-size:15px; "><b>Available:</b> ${flower.available} Piece</small> ${isNew ? '<button class="btn btcn btn-sm ms-2 new2">NEW Arrival</button>' : ''}</h4>
       
         <p style="margin: 0px; "<b>Price:</b> ${flower.price}$</p>
         <div>${flower.color.map((item) => `<small style="color: #e07265; " class="  ">${item}, </small>`).join("")}</div>
