@@ -7,7 +7,7 @@ const loadFlowers = (search = "") => {
   spinner.style.display = "block";
   noData.style.display = "none";
 
-  const url = `https://flowers-world-unkt.onrender.com/flowers/list/?search=${search}`;
+  const url = `https://flowers-world-two.vercel.app/flowers/list/?search=${search}`;
   console.log("Fetching data from:", url);
 
   fetch(url)
@@ -64,7 +64,7 @@ const loadFlowers = (search = "") => {
 
   
   const loadCategory = () => {
-    fetch("https://flowers-world-unkt.onrender.com/categories/")
+    fetch("https://flowers-world-two.vercel.app/categories/")
       .then((res) => res.json())
       .then((data) => {
         const parent = document.getElementById("drop-cat");
@@ -80,7 +80,7 @@ const loadFlowers = (search = "") => {
   };
   
   const loadColor = () => {
-    fetch("https://flowers-world-unkt.onrender.com/colors/")
+    fetch("https://flowers-world-two.vercel.app/colors/")
       .then((res) => res.json())
       .then((data) => {
         const parent = document.getElementById("drop-color");

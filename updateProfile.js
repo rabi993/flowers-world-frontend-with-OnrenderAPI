@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem('user_id'); // Get the user ID from local storage
     const buyerId = localStorage.getItem('buyer_id'); // Get the buyer ID from local storage
-    const userApiUrl = `https://flowers-world-unkt.onrender.com/users/${userId}`; // User API URL
-    const buyerApiUrl = `https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}`; // Buyer API URL
+    const userApiUrl = `https://flowers-world-two.vercel.app/users/${userId}`; // User API URL
+    const buyerApiUrl = `https://flowers-world-two.vercel.app/buyers/list/${buyerId}`; // Buyer API URL
     const cardContainer = document.getElementById("user-card-container1");
 
     // Fetch user and buyer data in parallel
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const buyerId = localStorage.getItem("buyer_id");
   const userId = localStorage.getItem("user_id");
 
-  const buyerApiUrl = `https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}/`;
-  const userApiUrl = `https://flowers-world-unkt.onrender.com/users/${userId}/`;
+  const buyerApiUrl = `https://flowers-world-two.vercel.app/buyers/list/${buyerId}/`;
+  const userApiUrl = `https://flowers-world-two.vercel.app/users/${userId}/`;
 
   const updateForm = document.getElementById("update-profile-form");
 

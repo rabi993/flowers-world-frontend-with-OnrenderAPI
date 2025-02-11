@@ -1,6 +1,6 @@
 
 const fetchBuyers = () => {
-    fetch("https://flowers-world-unkt.onrender.com/buyers/list/")
+    fetch("https://flowers-world-two.vercel.app/buyers/list/")
         .then((response) => response.json())
         .then((buyers) => {
             const buyersList = document.getElementById("buyers-list");
@@ -49,8 +49,8 @@ const handleAddOrUpdateBuyer = (event) => {
   
     const method = buyerId ? "PUT" : "POST";
     const url = buyerId
-      ? `https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}/`
-      : "https://flowers-world-unkt.onrender.com/buyers/list/";
+      ? `https://flowers-world-two.vercel.app/buyers/list/${buyerId}/`
+      : "https://flowers-world-two.vercel.app/buyers/list/";
   
     fetch(url, {
       method: method,
@@ -74,7 +74,7 @@ fetchBuyers();
 
 
 const editBuyer = (buyerId) => {
-    fetch(`https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}/`)
+    fetch(`https://flowers-world-two.vercel.app/buyers/list/${buyerId}/`)
       .then((response) => response.json())
       .then((buyer) => {
         document.getElementById("buyerId").value = buyer.id;
@@ -95,7 +95,7 @@ const editBuyer = (buyerId) => {
 const deleteBuyer = (buyerId) => {
     if (!confirm("Are you sure you want to delete this buyer?")) return;
   
-    fetch(`https://flowers-world-unkt.onrender.com/buyers/list/${buyerId}/`, {
+    fetch(`https://flowers-world-two.vercel.app/buyers/list/${buyerId}/`, {
       method: "DELETE",
     })
       .then((response) => {

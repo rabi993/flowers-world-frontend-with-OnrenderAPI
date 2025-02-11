@@ -3,7 +3,7 @@ const fetchFlowers = () => {
     const flowersList = document.getElementById("flowers-list");
     flowersList.innerHTML = `<tr><td colspan="10" class="text-center">Loading flowers...</td></tr>`;
   
-    fetch("https://flowers-world-unkt.onrender.com/flowers/list/")
+    fetch("https://flowers-world-two.vercel.app/flowers/list/")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch flowers.");
@@ -54,7 +54,7 @@ const fetchFlowers = () => {
   
 
   const fetchCategories = () => {
-    fetch("https://flowers-world-unkt.onrender.com/categories/")
+    fetch("https://flowers-world-two.vercel.app/categories/")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch categories");
         return response.json();
@@ -73,7 +73,7 @@ const fetchFlowers = () => {
   };
   
   const fetchColor = () => {
-    fetch("https://flowers-world-unkt.onrender.com/colors/")
+    fetch("https://flowers-world-two.vercel.app/colors/")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch colors");
         return response.json();
@@ -99,7 +99,7 @@ const fetchFlowers = () => {
   document.addEventListener("DOMContentLoaded", () => {
     const userId = localStorage.getItem("user_id"); 
     
-    fetch(`https://flowers-world-unkt.onrender.com/users/${userId}/`) 
+    fetch(`https://flowers-world-two.vercel.app/users/${userId}/`) 
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch user details");
@@ -167,7 +167,7 @@ const fetchFlowers = () => {
       };
   
       // Send flower data to your backend
-      const response = await fetch("https://flowers-world-unkt.onrender.com/flowers/list/", {
+      const response = await fetch("https://flowers-world-two.vercel.app/flowers/list/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(flowerData),
@@ -244,7 +244,7 @@ const handleEditFlower = (flower) => {
         color: Array.from(colorSelect.selectedOptions).map(option => option.value),
       };
 
-      const response = await fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${flower.id}/`, {
+      const response = await fetch(`https://flowers-world-two.vercel.app/flowers/list/${flower.id}/`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedFlower),
@@ -268,7 +268,7 @@ const handleEditFlower = (flower) => {
 
   const handleDeleteFlower = (id) => {
     if (confirm("Are you sure you want to delete this flower?")) {
-      fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${id}/`, {
+      fetch(`https://flowers-world-two.vercel.app/flowers/list/${id}/`, {
         method: "DELETE",
       })
         .then(response => {

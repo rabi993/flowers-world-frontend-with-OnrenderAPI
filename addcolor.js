@@ -17,7 +17,7 @@ const handleAddColor = (event) => {
   };
 
   // Submit the color
-  fetch("https://flowers-world-unkt.onrender.com/colors/", {
+  fetch("https://flowers-world-two.vercel.app/colors/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const handleAddColor = (event) => {
 
 
 const fetchColors = () => {
-  fetch("https://flowers-world-unkt.onrender.com/colors/")
+  fetch("https://flowers-world-two.vercel.app/colors/")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch colors.");
@@ -98,7 +98,7 @@ const handleEditColor = (id, currentName) => {
   const slug = newName.toLowerCase().replace(/\s+/g, "-"); // Generate slug
   const colorData = { name: newName, slug };
 
-  fetch(`https://flowers-world-unkt.onrender.com/colors/${id}/`, {
+  fetch(`https://flowers-world-two.vercel.app/colors/${id}/`, {
     method: "PUT", 
     headers: {
       "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const handleDeleteColor = (id) => {
     return;
   }
 
-  fetch(`https://flowers-world-unkt.onrender.com/colors/${id}/`, {
+  fetch(`https://flowers-world-two.vercel.app/colors/${id}/`, {
     method: "DELETE", 
     headers: {
       "Content-Type": "application/json",

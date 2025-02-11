@@ -1,5 +1,5 @@
 const loadAllOrder = (filterStatus = null) => {
-    fetch("https://flowers-world-unkt.onrender.com/orders/")
+    fetch("https://flowers-world-two.vercel.app/orders/")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch orders");
@@ -21,7 +21,7 @@ const loadAllOrder = (filterStatus = null) => {
         }
   
         // Fetch all flowers
-        fetch("https://flowers-world-unkt.onrender.com/flowers/list/")
+        fetch("https://flowers-world-two.vercel.app/flowers/list/")
           .then((res) => {
             if (!res.ok) {
               throw new Error("Failed to fetch flowers");

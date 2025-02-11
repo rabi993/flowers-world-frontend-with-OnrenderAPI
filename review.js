@@ -1,6 +1,6 @@
 const loadReviews = async () => {
     try {
-      const response = await fetch("https://flowers-world-unkt.onrender.com/flowers/reviews/");
+      const response = await fetch("https://flowers-world-two.vercel.app/flowers/reviews/");
       const reviews = await response.json();
       await displayReviews(reviews);
     } catch (error) {
@@ -16,12 +16,12 @@ const loadReviews = async () => {
     for (const review of reviews) {
       try {
         // Fetch buyer information
-        const buyerResponse = await fetch(`https://flowers-world-unkt.onrender.com/users/${review.reviewer}`);
+        const buyerResponse = await fetch(`https://flowers-world-two.vercel.app/users/${review.reviewer}`);
         const userData = await buyerResponse.json();
         const username = userData.username;
         const fullName = `${userData.first_name || "admin"} ${userData.last_name || "islam"}`;
         // Fetch the complete user list
-        const userResponse = await fetch(`https://flowers-world-unkt.onrender.com/buyers/list/`);
+        const userResponse = await fetch(`https://flowers-world-two.vercel.app/buyers/list/`);
         const buyersData = await userResponse.json();
         const buyerData = buyersData.find((buyer) => buyer.user === username);
         if (!buyerData) {
@@ -29,7 +29,7 @@ const loadReviews = async () => {
         }
         const image = buyerData.image || "./Images/man.jpg";
         // Fetch flower information
-        const flowerResponse = await fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${review.flower}`);
+        const flowerResponse = await fetch(`https://flowers-world-two.vercel.app/flowers/list/${review.flower}`);
         const flowerData = await flowerResponse.json();
         const flowerName = flowerData.title;
 

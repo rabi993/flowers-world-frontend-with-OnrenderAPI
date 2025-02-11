@@ -3,18 +3,18 @@ const handlePdf = () => {
   console.log(flower_id);
   const user_id = localStorage.getItem("user_id");
   const buyer_id = localStorage.getItem("buyer_id");
-  // console.log(`https://flowers-world-unkt.onrender.com/users/${user_id}`);
+  // console.log(`https://flowers-world-two.vercel.app/users/${user_id}`);
   
-  fetch(`https://flowers-world-unkt.onrender.com/orders/?flower_id=${flower_id}&buyer_id=${buyer_id}`)
+  fetch(`https://flowers-world-two.vercel.app/orders/?flower_id=${flower_id}&buyer_id=${buyer_id}`)
     .then((res) => res.json())
     .then((orderdata) => {
-      fetch(`https://flowers-world-unkt.onrender.com/users/${user_id}`)
+      fetch(`https://flowers-world-two.vercel.app/users/${user_id}`)
         .then((res) => res.json())
         .then((userdata) => {
-          fetch(`https://flowers-world-unkt.onrender.com/flowers/list/${flower_id}`)
+          fetch(`https://flowers-world-two.vercel.app/flowers/list/${flower_id}`)
             .then((res) => res.json())
             .then((flowerdata) => {
-              fetch(`https://flowers-world-unkt.onrender.com/buyers/list/${buyer_id}`)
+              fetch(`https://flowers-world-two.vercel.app/buyers/list/${buyer_id}`)
                 .then((res) => res.json())
                 .then((buyerdata) => {
                   const newData = [orderdata, userdata,flowerdata, buyerdata];

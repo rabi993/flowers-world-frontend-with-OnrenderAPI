@@ -5,7 +5,7 @@ const loadorder = () => {
   const buyer_id = localStorage.getItem("buyer_id");
   const orderIds = JSON.parse(localStorage.getItem("order_ids")) || []; // Get stored order IDs
 
-  fetch(`https://flowers-world-unkt.onrender.com/orders/?buyer_id=${buyer_id}`)
+  fetch(`https://flowers-world-two.vercel.app/orders/?buyer_id=${buyer_id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log("All Orders:", data);
