@@ -109,7 +109,7 @@ const handleAddService = async (event) => {
     fetchServices(); // Refresh the service list
   } catch (error) {
     console.error("Error adding/updating service:", error);
-    alert("Error processing service. Please try again.");
+    // alert("Error processing service. Please try again.");
   }
 };
 
