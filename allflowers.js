@@ -42,7 +42,7 @@ const loadFlowers = (search = "") => {
     sortedflowers.forEach((flower, index) => {
       const isNew = index < newTagLimit; 
       const div = document.createElement("div");
-      div.classList.add("allflower-card", "col-12", "col-md-6", "col-lg-6","my-4");
+      div.classList.add("allflower-card", "col-12", "col-md-5", "col-lg-5","my-2","boxshadow","pb-4");
       div.innerHTML = `
         <img class="allflow-img img-fluid " src="${flower.image}" alt="${flower.title}" />
         
@@ -110,7 +110,7 @@ const loadFlowers = (search = "") => {
             bgColorStyle = "background-color: white; color: black;border:1px solid gray;";
           }
 
-          li.innerHTML = `<button style="width:20%; ${bgColorStyle} " class="btn my-1 pb-2 p-4 ms-auto text-start  " onclick="loadFlowers('${item.name}')"></button>
+          li.innerHTML = `<button style="width:10%; ${bgColorStyle} " class="btn mb-1 pb-2 py-2 px-1 ms-auto text-start  " onclick="loadFlowers('${item.name}')"></button>
           <button style="width:60%; color=block;background-color: white; color: black;border:none; " class=" my-1 pb-2 ms-auto text-start  " onclick="loadFlowers('${item.name}')"> ${item.name}</button>`;
           parent.appendChild(li);
         });
