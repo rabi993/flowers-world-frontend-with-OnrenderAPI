@@ -110,7 +110,8 @@ const loadFlowers = (search = "") => {
             bgColorStyle = "background-color: white; color: black;border:1px solid gray;";
           }
 
-          li.innerHTML = `<button style="width:75%; ${bgColorStyle} " class="btn my-1 pb-2 ms-auto text-start  " onclick="loadFlowers('${item.name}')"> ${item.name}</button>`;
+          li.innerHTML = `<button style="width:20%; ${bgColorStyle} " class="btn my-1 pb-2 p-4 ms-auto text-start  " onclick="loadFlowers('${item.name}')"></button>
+          <button style="width:60%; color=block;background-color: white; color: black;border:none; " class=" my-1 pb-2 ms-auto text-start  " onclick="loadFlowers('${item.name}')"> ${item.name}</button>`;
           parent.appendChild(li);
         });
       })
