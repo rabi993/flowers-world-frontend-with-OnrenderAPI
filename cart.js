@@ -98,6 +98,7 @@ const loadorder = () => {
       parent2.innerHTML = ""; // Clear the container
       const vat = total * 0.15; // Calculate 15% VAT
       const totalWithVAT = total + vat;
+      localStorage.setItem("totalWithVAT", totalWithVAT);
 
       const div = document.createElement("div");
       div.innerHTML = `<h4>Total amount + 15% VAT: ${totalWithVAT.toFixed(2)} $</h4>`;
@@ -107,6 +108,45 @@ const loadorder = () => {
       console.error("Failed to load orders:", err);
     });
 };
+
+function handlePayment() {
+  const orderIds = JSON.parse(localStorage.getItem("order_ids")); // Parse JSON string into an array
+  const totalWithVAT = JSON.parse(localStorage.getItem("totalWithVAT")); 
+
+  if (!orderIds || orderIds.length === 0) {
+      alert("No orders found to pay!");
+      return;
+  }
+  const transactionData = {
+    user: localStorage.getItem("user_id"),
+    orderIds: orderIds,
+    amount: totalWithVAT
+    
+  };
+
+  fetch("https://flowers-world-two.vercel.app/payment/payment/", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(transactionData)
+  })
+  .then(response => response.json())
+
+  .then(data => {
+      console.log("Response from backend:", data);  // Log response for debugging
+      localStorage.removeItem("order_ids");
+      localStorage.removeItem("totalWithVAT");
+      if (data) {
+        window.open(data, "_self");
+      } else {
+          alert("Payment session creation failed: " + data.error);
+      }
+  })
+  .catch(error => console.error("Error:", error));
+
+}
+  
 
 
 document.addEventListener("click", (event) => {
