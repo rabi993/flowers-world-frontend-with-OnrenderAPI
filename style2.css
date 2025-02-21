@@ -205,7 +205,8 @@ nav{
 .review-card{
     width: 200px;
     height: 250px;
-    box-shadow: 1px 1px 4px  rgb(179, 178, 178);
+    /* box-shadow: 1px 1px 4px  rgb(179, 178, 178); */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     border-radius:5px;
     text-align: center;
     padding-bottom: 15px;
