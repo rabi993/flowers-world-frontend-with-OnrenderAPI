@@ -37,3 +37,8 @@ Database: Postgresql
 Server: Vercel for deploy backend, GitHub page for deploy frontend.
 
 Tools: Visual Studio Code, Supabase for database, imgbb for image store.
+
+Live Link:
+
+Frontend: https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index.html
+Backend: https://flowers-world-two.vercel.app/
