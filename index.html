@@ -15,6 +15,27 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <style>
+      
+      .login-container{
+          /* height:100vh; */
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          align-items:center;
+          width:75%;
+          margin: auto;
+      }
+      .input{
+          padding: 10px 10px;
+          border: 1px solid orangered;
+          margin: 10px 0px;
+          width: 80%;
+          /* box-shadow: 4px 4px 8px gray; */
+          /* border-radius: 5px; */
+      }
+      
+    </style>
     
     
 
@@ -346,6 +367,116 @@
           </div>
         </div>
       </div>
+
+      <section>
+        <div class="py-5">
+          <div class="container">
+            <h3 class=" text-center pb-5">Lets Get in Touch</h3>
+              
+              <div class="row justify-content-center m-auto ">
+                <div style="border:1px solid #F95441; padding: 30px;" class=" col-lg-3 col-md-3 m-auto gap-2 mx-3 ">
+                    <div class="text-center">
+                      <h4>ADDRESS</h4>
+                      <h6>Baltimore, MD, USA 4508</h6>
+                    </div>
+                </div>
+                <div style="border:1px solid #F95441; padding: 30px;" class=" col-lg-3 col-md-3 m-auto gap-2 mx-3">
+                    
+                      <div class="text-center">
+                        <h4>PHONE</h4>
+                        <h6>Toll-Free: 0000 - 123 - 456789</h6>
+                      </div>
+                </div>
+                <div style="border:1px solid #F95441; padding: 30px;" class=" col-lg-3 col-md-3 m-auto gap-2 mx-3">
+                    <div class="text-center">
+                      <h4>OPEN HOURS</h4>
+                      <h6>Daily, From 8am to 6pm</h6>
+                    </div>
+                </div>
+                  
+                  
+              </div>
+              
+
+  
+  
+          </div>
+      </div>
+      <div style="width: 80%;" class="row justify-content-around m-auto  pb-5">
+        <div style=" padding: 5px;" class=" col-lg-3 col-md-3 m-auto ">
+          <!-- <img style="width: 40px; height: 40px;margin-left: 115px;" src="./Images/pin.png" alt=""> -->
+          <img class="img-fluid"  src="./Images/pexel1.jpg" alt="">
+        </div>
+        <div style=" padding: 5px;" class=" col-lg-3 col-md-3 m-auto ">
+          <img class="img-fluid"  src="./Images/pexel2.jpg" alt="">
+        </div>
+        <div style=" padding: 5px;" class=" col-lg-3 col-md-3 m-auto ">
+          <img class="img-fluid"  src="./Images/pexel3.jpg" alt="">
+        </div>
+        <div style=" padding: 5px;" class=" col-lg-3 col-md-3 m-auto  ">
+          <img class="img-fluid"  src="./Images/pexel4.jpg" alt="">
+        </div>
+          
+          
+      </div>
+
+      </section>
+
+      <section>
+        <div style="width: 80%;" class="row justify-content-around m-auto  pb-5">
+          <div style=" padding: 5px;" class=" col-lg-4 col-md-4 m-auto align-items-center text-center">
+            <h2 class="text-center">YOUR ONE & ONLY</h2>
+            <h2 class="text-center ">FLOWER SHOP</h2>
+            <h6 class="pt-4 pb-4">crafting beauty since 1997</h6>
+            <a href="allflowers.html"class="btc py-3 px-5 text-white mb-3" style="font-size: 20px; text-decoration: none;font-weight: 700; border: 1px solid white;  "  onmouseover="this.style.backgroundColor='#e07265'" 
+            onmouseout="this.style.backgroundColor='#F95441'">Shop Now</a>
+
+          </div>
+          <div style=" padding: 5px;" class=" col-lg-4 col-md-4 m-auto ">
+            <img class="img-fluid"  src="./Images/pexel6.jpg" alt="">
+          </div>
+          <div style=" padding: 0px 50px;" class=" col-lg-4 col-md-4 m-auto ">
+            <img class="img-fluid"  src="./Images/pexel8.jpg" alt="">
+          </div>
+          
+            
+            
+        </div>
+      </section>
+
+      <section>
+        <!-- contact form -->
+        <h3 class=" text-center pb-5">Contact Us</h3>
+        <div style="margin-top: -50px;" class="mb-5 login-container container row d-flex justify-content-center">
+          <div class="col-lg-6 col-md-6">
+            <h4 class=" mt-5 ">Please write to us</h4>
+            <form action="" onsubmit="handlecontact(event)">
+              <p id="error" class="text-danger"></p>
+              <input id="name" type="text" class="input" placeholder="Name" required />
+              
+              <input
+                id="phone"
+                type="text"
+                class="input"
+                placeholder="Phone"
+                pattern="[0-9]{11}" 
+                title="Enter a valid 10-digit phone number"
+                required
+              />
+              <textarea id="content" class="input" placeholder="Message" rows="4" required></textarea>
+              <input type="submit" style="font-size: 20px;"  class="btc input text-white" value="Submit" />
+            </form>
+            
+          </div>
+          <div class="col-lg-5 col-md-5 ">
+            <img class="img-fluid" src="./Images/undraw_contact-us_kcoa.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+
+      </section>
       
     </main>
     <footer class="p-5">
@@ -412,7 +543,7 @@
     <script src="./flowerDetails.js"></script>
     <script src="./logout.js"></script>
     <script src="./index2.js"></script>
-    <!-- <script src="./allflowers.js"></script> -->
+    <script src="./contactus.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"
       integrity="..."
