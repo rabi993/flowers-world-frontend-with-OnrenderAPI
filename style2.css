@@ -409,8 +409,13 @@ border-radius:100px;
 .dropdown-item:active {
     background-color: white !important; /* Change background to white */
     color: black !important;          /* Ensure text color is readable */
-  }
+}
 
-  .boxshadow{
+.boxshadow{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .mobile_none{
+        display: none;
+    }
   }
