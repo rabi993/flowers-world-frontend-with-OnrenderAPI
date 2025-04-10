@@ -1,4 +1,4 @@
-
+location.reload();
 // Check if the user is logged in
 if (localStorage.getItem("buyer_id")) {
   // Show Logout and Profile links
