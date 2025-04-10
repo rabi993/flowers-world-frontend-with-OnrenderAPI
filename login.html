@@ -149,7 +149,12 @@
           <input value="rabi" id="login-username" type="text" class="input" placeholder="username" required />
           <input id="login-password" type="password" class="input" placeholder="password" required value="rabi@1233" />
           
-          <button onclick="handleLogin(event)"  class="text-white btc input">Login</button>
+          <!-- <button onclick="handleLogin(event)"  class="text-white btc input">Login</button> -->
+          <button id="loginBtn" onclick="handleLogin(event)" class="text-white btc input">
+            <span id="loginSpinner" class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
+            Login
+          </button>
+          
           <p class="ps-1">Admin Login >> Username: <b>admin</b> | Password: <b>admin</b> </p>
           <p class="ps-1"><a class="text-decoration-none text-danger" href="https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/registration.html">If You Have no Account Please Sign Up</a></p>
         </form>

@@ -108,6 +108,13 @@ const handleLogin = (event) => {
     return;
   }
 
+  const loginBtn = document.getElementById("loginBtn");
+  const loginSpinner = document.getElementById("loginSpinner");
+
+  loginBtn.disabled = true;
+  loginSpinner.classList.remove("d-none");
+
+
   // API call for login
   fetch("https://flowers-world-two.vercel.app/buyers/login/", {
     method: "POST",
@@ -156,8 +163,7 @@ const handleLogin = (event) => {
               window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/adminDashboard.html";
             } else {
               window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index.html";
-              // window.location.href = "index.html";
-              // location.reload();
+              
             }
             // if (userData.is_superuser) {
             //   window.location.href = "http://127.0.0.1:5503/adminDashboard.html";
@@ -177,5 +183,9 @@ const handleLogin = (event) => {
     .catch((error) => {
       console.error("Login error:", error);
       alert(error.message);
+    })
+    .finally(() => {
+      loginBtn.disabled = false;
+      loginSpinner.classList.add("d-none");
     });
 };
