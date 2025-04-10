@@ -226,6 +226,11 @@ document.getElementById("quantity").addEventListener("input", () => {
 const submitOrderForm = (event) => {
   event.preventDefault(); // Prevent the form from reloading the page
 
+
+  const submitBtn = document.getElementById("submitOrder");
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Placing...";
+  
   const flowerId = new URLSearchParams(window.location.search).get("flowerId");
   const buyerId = localStorage.getItem("buyer_id");
 
