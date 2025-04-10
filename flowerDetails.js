@@ -292,5 +292,11 @@ const submitOrderForm = (event) => {
       alert("Order placed successfully!");
       location.reload();
     })
+    .catch((error) => {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Place Order";
+    });
     
 };
