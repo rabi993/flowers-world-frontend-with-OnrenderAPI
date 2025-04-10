@@ -156,7 +156,8 @@ const handleLogin = (event) => {
               window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/adminDashboard.html";
             } else {
               window.location.href = "https://rabi993.github.io/flowers-world-frontend-with-OnrenderAPI/index.html";
-              
+              // window.location.href = "index.html";
+              // location.reload();
             }
             // if (userData.is_superuser) {
             //   window.location.href = "http://127.0.0.1:5503/adminDashboard.html";
