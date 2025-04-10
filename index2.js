@@ -1,4 +1,4 @@
-location.reload();
+
 // Check if the user is logged in
 if (localStorage.getItem("buyer_id")) {
   // Show Logout and Profile links
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
           profileIcon2.style.display = 'inline'; // Show the new image
           profileIcon.style.display = 'none';   // Hide the default image
         }
+        
       })
       .catch(error => {
         console.error('Error fetching buyer data:', error);
