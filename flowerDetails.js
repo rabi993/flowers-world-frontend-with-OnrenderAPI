@@ -230,12 +230,14 @@ const submitOrderForm = (event) => {
   const submitBtn = document.getElementById("submitOrder");
   submitBtn.disabled = true;
   submitBtn.innerText = "Placing...";
-  
+
   const flowerId = new URLSearchParams(window.location.search).get("flowerId");
   const buyerId = localStorage.getItem("buyer_id");
 
   if (!flowerId || !buyerId) {
     alert("Missing flower or buyer information.");
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Place Order";
     return;
   }
 
